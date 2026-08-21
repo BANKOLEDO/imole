@@ -16,7 +16,8 @@ router.get('/classes', async (req, res) => {
     )
     res.json(rows)
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -33,7 +34,8 @@ router.post('/classes', async (req, res) => {
     )
     res.status(201).json({ id, name, code })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -52,7 +54,8 @@ router.get('/classes/:id', async (req, res) => {
     )
     res.json(rows.map((p) => ({ ...p, average_score: Math.round(p.average_score * 10) / 10 })))
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -74,7 +77,8 @@ router.post('/classes/:id/enroll', async (req, res) => {
     }
     res.json({ ok: true, added })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -98,7 +102,8 @@ router.get('/students/:id', async (req, res) => {
       history: history.rows.map((h) => ({ ...h, completedAt: Number(h.completed_at) })),
     })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 

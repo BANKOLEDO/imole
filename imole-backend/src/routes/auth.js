@@ -49,7 +49,8 @@ async function login(req, res, table, role) {
     }
     res.json({ token: sign({ id: rows[0].id, role }) })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 }
 

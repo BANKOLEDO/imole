@@ -138,7 +138,8 @@ router.get('/daily', async (req, res) => {
 
     res.json(challenge)
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -185,7 +186,8 @@ router.post('/:id/submit', async (req, res) => {
       freezes: streak.freezes,
     })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 

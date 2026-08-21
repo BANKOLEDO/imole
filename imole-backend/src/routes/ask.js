@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/', async (req, res) => {
   try {
     const { profileId, message, sessionId } = req.body
-    if (!profileId || !message) {
+    if (!profileId || !message || typeof message !== 'string' || message.length > 1000) {
       return res.status(400).json({ error: 'profileId and message are required' })
     }
 
@@ -34,13 +34,13 @@ router.post('/', async (req, res) => {
     )
 
     const history = await pool.query(
-      'SELECT role, content FROM chat_messages WHERE session_id = $1 ORDER BY created_at ASC LIMIT 20',
+      'SELECT role, content FROM chat_messages WHERE session_id = $1 ORDER BY created_at DESC LIMIT 8',
       [id],
     )
 
     const reply = await aiService.askQuestion({
       message,
-      history: history.rows,
+      history: history.rows.reverse(),
       language: 'en',
     })
 
@@ -52,7 +52,8 @@ router.post('/', async (req, res) => {
 
     res.json({ reply, sessionId: id })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -67,7 +68,8 @@ router.get('/sessions', async (req, res) => {
     )
     res.json(rows.map((s) => ({ ...s, createdAt: Number(s.created_at), updatedAt: Number(s.updated_at) })))
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -86,7 +88,8 @@ router.get('/sessions/:id/messages', async (req, res) => {
     )
     res.json(rows.map((m) => ({ ...m, createdAt: Number(m.created_at) })))
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -96,7 +99,8 @@ router.delete('/sessions/:id', async (req, res) => {
     await pool.query('DELETE FROM chat_sessions WHERE id = $1', [req.params.id])
     res.json({ ok: true })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 

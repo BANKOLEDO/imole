@@ -21,9 +21,11 @@ const app = express();
 
 app.set('trust proxy', 1);
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors(process.env.FRONTEND_ORIGIN ? { origin: process.env.FRONTEND_ORIGIN } : undefined),
+);
 app.use(morgan('dev'));
-app.use(express.json({ limit: '25mb' }));
+app.use(express.json({ limit: '10mb' }));
 
 const rateLimiter = rateLimit({
   windowMs: 60 * 1000,
@@ -50,7 +52,7 @@ app.use((req, res) => res.status(404).json({ error: 'Not found' }));
 
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(err.status || 500).json({ error: err.message || 'Internal server error' });
+  res.status(err.status || 500).json({ error: 'Internal server error' });
 });
 
 const PORT = process.env.PORT || 3001;
