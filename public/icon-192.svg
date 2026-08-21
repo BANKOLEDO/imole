@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="icon192Title">
+  <title id="icon192Title">Imole app icon — 192px</title>
+  <desc>The glowing African sunburst mark centered on the card background.</desc>
+  <defs>
+    <radialGradient id="i192-halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF8A00" stop-opacity="0.6"/>
+      <stop offset="0.6" stop-color="#FF8A00" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FF8A00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="i192-core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#FFC66B"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+    </radialGradient>
+    <g id="r-192">
+      <line x1="96" y1="20" x2="96" y2="2" stroke="#FF8A00" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <g id="rs-192">
+      <line x1="96" y1="16" x2="96" y2="7" stroke="#FFC66B" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g id="b-192">
+      <circle cx="96" cy="52" r="4.6" fill="#FF8A00"/>
+    </g>
+  </defs>
+  <rect width="192" height="192" rx="44" fill="#F6F9FF"/>
+  <circle cx="96" cy="96" r="74" fill="url(#i192-halo)"/>
+  <use href="#r-192"/><use href="#r-192" transform="rotate(45 96 96)"/>
+  <use href="#r-192" transform="rotate(90 96 96)"/><use href="#r-192" transform="rotate(135 96 96)"/>
+  <use href="#r-192" transform="rotate(180 96 96)"/><use href="#r-192" transform="rotate(225 96 96)"/>
+  <use href="#r-192" transform="rotate(270 96 96)"/><use href="#r-192" transform="rotate(315 96 96)"/>
+  <use href="#rs-192" transform="rotate(22.5 96 96)"/><use href="#rs-192" transform="rotate(67.5 96 96)"/>
+  <use href="#rs-192" transform="rotate(112.5 96 96)"/><use href="#rs-192" transform="rotate(157.5 96 96)"/>
+  <use href="#rs-192" transform="rotate(202.5 96 96)"/><use href="#rs-192" transform="rotate(247.5 96 96)"/>
+  <use href="#rs-192" transform="rotate(292.5 96 96)"/><use href="#rs-192" transform="rotate(337.5 96 96)"/>
+  <circle cx="96" cy="96" r="58" fill="#FFF4E6" stroke="#002444" stroke-width="7"/>
+  <use href="#b-192"/><use href="#b-192" transform="rotate(45 96 96)"/>
+  <use href="#b-192" transform="rotate(90 96 96)"/><use href="#b-192" transform="rotate(135 96 96)"/>
+  <use href="#b-192" transform="rotate(180 96 96)"/><use href="#b-192" transform="rotate(225 96 96)"/>
+  <use href="#b-192" transform="rotate(270 96 96)"/><use href="#b-192" transform="rotate(315 96 96)"/>
+  <circle cx="96" cy="96" r="24" fill="url(#i192-core)"/>
+  <circle cx="96" cy="96" r="9" fill="#FFFFFF"/>
+</svg>

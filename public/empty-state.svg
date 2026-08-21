@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="emptyTitle">
+  <title id="emptyTitle">A hanging lantern holding a single spark</title>
+  <desc>Refined line-art of an unlit hanging lantern on cream; inside its glass, one white-hot spark waits to be lit.</desc>
+  <defs>
+    <linearGradient id="glassSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF7EC"/>
+      <stop offset="1" stop-color="#FFE7C4"/>
+    </linearGradient>
+    <radialGradient id="sparkGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFE4C2" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#FF8A00" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#FF8A00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sparkCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#FFD9A0"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+    </radialGradient>
+    <g id="sparkle">
+      <path d="M0 -10 L2.8 -2.8 L10 0 L2.8 2.8 L0 10 L-2.8 2.8 L-10 0 L-2.8 -2.8 Z" fill="#002444"/>
+    </g>
+  </defs>
+
+  <!-- cream backdrop -->
+  <rect width="400" height="400" fill="#FFF4E6"/>
+
+  <!-- faint texture -->
+  <g fill="#002444" opacity="0.05">
+    <circle cx="70" cy="90" r="3"/>
+    <circle cx="330" cy="130" r="3"/>
+    <circle cx="310" cy="330" r="3"/>
+    <circle cx="80" cy="320" r="3"/>
+    <circle cx="150" cy="50" r="2.4"/>
+    <circle cx="290" cy="210" r="2.4"/>
+  </g>
+
+  <!-- chain -->
+  <line x1="200" y1="0" x2="200" y2="64" stroke="#002444" stroke-width="3"/>
+
+  <!-- finial + top cap -->
+  <circle cx="200" cy="70" r="7" fill="#002444"/>
+  <rect x="148" y="80" width="104" height="16" rx="8" fill="#002444"/>
+
+  <!-- lantern body -->
+  <rect x="112" y="96" width="176" height="216" rx="34" fill="none" stroke="#002444" stroke-width="3"/>
+
+  <!-- glass panes -->
+  <rect x="140" y="120" width="120" height="168" rx="20" fill="url(#glassSoft)" stroke="#002444" stroke-width="2" opacity="0.55"/>
+  <line x1="200" y1="122" x2="200" y2="286" stroke="#002444" stroke-width="2" opacity="0.4"/>
+  <line x1="142" y1="202" x2="258" y2="202" stroke="#002444" stroke-width="2" opacity="0.4"/>
+
+  <!-- the spark -->
+  <circle cx="200" cy="200" r="52" fill="url(#sparkGlow)"/>
+  <circle cx="200" cy="200" r="14" fill="url(#sparkCore)"/>
+  <circle cx="200" cy="200" r="5.5" fill="#FFFFFF"/>
+  <g stroke="#FF8A00" stroke-width="3" stroke-linecap="round">
+    <line x1="200" y1="177" x2="200" y2="184"/>
+    <line x1="200" y1="216" x2="200" y2="223"/>
+    <line x1="177" y1="200" x2="184" y2="200"/>
+    <line x1="216" y1="200" x2="223" y2="200"/>
+  </g>
+
+  <!-- base -->
+  <rect x="148" y="312" width="104" height="14" rx="7" fill="#002444"/>
+  <rect x="136" y="326" width="128" height="10" rx="5" fill="#002444"/>
+
+  <!-- corner sparkles -->
+  <use href="#sparkle" x="70" y="140" opacity="0.4"/>
+  <use href="#sparkle" x="330" y="300" opacity="0.4"/>
+  <use href="#sparkle" x="140" y="60" opacity="0.3" transform="scale(0.8)"/>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Imole — a glowing African sunburst</title>
+  <desc>A warm sunburst light mark: a cream disc with beaded rays, navy outline and a white-hot glowing core.</desc>
+  <defs>
+    <radialGradient id="logo-halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF8A00" stop-opacity="0.55"/>
+      <stop offset="0.6" stop-color="#FF8A00" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FF8A00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="logo-core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#FFC66B"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+    </radialGradient>
+    <g id="ray">
+      <line x1="32" y1="7" x2="32" y2="1" stroke="#FF8A00" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="ray-s">
+      <line x1="32" y1="6" x2="32" y2="3" stroke="#FFC66B" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g id="bead">
+      <circle cx="32" cy="17" r="1.8" fill="#FF8A00"/>
+    </g>
+    <g id="sparkle">
+      <path d="M0 -6 L1.8 -1.8 L6 0 L1.8 1.8 L0 6 L-1.8 1.8 L-6 0 L-1.8 -1.8 Z" fill="#FFF4E6"/>
+    </g>
+  </defs>
+
+  <!-- halo of light -->
+  <circle cx="32" cy="32" r="31" fill="url(#logo-halo)"/>
+
+  <!-- sunburst rays -->
+  <use href="#ray"/><use href="#ray" transform="rotate(45 32 32)"/>
+  <use href="#ray" transform="rotate(90 32 32)"/><use href="#ray" transform="rotate(135 32 32)"/>
+  <use href="#ray" transform="rotate(180 32 32)"/><use href="#ray" transform="rotate(225 32 32)"/>
+  <use href="#ray" transform="rotate(270 32 32)"/><use href="#ray" transform="rotate(315 32 32)"/>
+  <use href="#ray-s" transform="rotate(22.5 32 32)"/><use href="#ray-s" transform="rotate(67.5 32 32)"/>
+  <use href="#ray-s" transform="rotate(112.5 32 32)"/><use href="#ray-s" transform="rotate(157.5 32 32)"/>
+  <use href="#ray-s" transform="rotate(202.5 32 32)"/><use href="#ray-s" transform="rotate(247.5 32 32)"/>
+  <use href="#ray-s" transform="rotate(292.5 32 32)"/><use href="#ray-s" transform="rotate(337.5 32 32)"/>
+
+  <!-- cream disc -->
+  <circle cx="32" cy="32" r="22" fill="#FFF4E6" stroke="#002444" stroke-width="3.5"/>
+
+  <!-- beaded ring (Adinkra / beadwork nod) -->
+  <use href="#bead"/><use href="#bead" transform="rotate(45 32 32)"/>
+  <use href="#bead" transform="rotate(90 32 32)"/><use href="#bead" transform="rotate(135 32 32)"/>
+  <use href="#bead" transform="rotate(180 32 32)"/><use href="#bead" transform="rotate(225 32 32)"/>
+  <use href="#bead" transform="rotate(270 32 32)"/><use href="#bead" transform="rotate(315 32 32)"/>
+
+  <!-- white-hot light core -->
+  <circle cx="32" cy="32" r="9" fill="url(#logo-core)"/>
+  <circle cx="32" cy="32" r="3.5" fill="#FFFFFF"/>
+
+  <!-- light sparkles -->
+  <use href="#sparkle" x="44" y="15" opacity="0.9"/>
+  <use href="#sparkle" x="18" y="12" opacity="0.55" transform="scale(0.75)"/>
+</svg>
