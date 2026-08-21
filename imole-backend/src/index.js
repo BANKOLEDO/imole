@@ -6,6 +6,17 @@ const cors = require('cors');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 
+const authRoutes = require('./routes/auth');
+const challengeRoutes = require('./routes/challenge');
+const profileRoutes = require('./routes/profile');
+const askRoutes = require('./routes/ask');
+const parentRoutes = require('./routes/parent');
+const schoolRoutes = require('./routes/school');
+const audioRoutes = require('./routes/audio');
+const memoryRoutes = require('./routes/memory');
+const leaderboardRoutes = require('./routes/leaderboard');
+const { initSchema } = require('./db');
+
 const app = express();
 
 app.set('trust proxy', 1);
@@ -25,6 +36,16 @@ app.use(rateLimiter);
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
+app.use('/auth', authRoutes);
+app.use('/challenge', challengeRoutes);
+app.use('/profile', profileRoutes);
+app.use('/ask', askRoutes);
+app.use('/parent', parentRoutes);
+app.use('/school', schoolRoutes);
+app.use('/audio', audioRoutes);
+app.use('/memory', memoryRoutes);
+app.use('/leaderboard', leaderboardRoutes);
+
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
 
 app.use((err, req, res, next) => {
@@ -35,9 +56,16 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3001;
 
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`\n  Imole API ready on http://localhost:${PORT}\n`);
-  });
+  initSchema()
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log(`\n  Imole API ready on http://localhost:${PORT}\n`);
+      });
+    })
+    .catch((err) => {
+      console.error('Failed to initialize database:', err.message);
+      process.exit(1);
+    });
 }
 
 module.exports = app;
