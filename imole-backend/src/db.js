@@ -89,6 +89,10 @@ async function initSchema() {
     skill_scores JSONB DEFAULT '{}'
   )`)
 
+  await pool.query('ALTER TABLE profiles ADD COLUMN IF NOT EXISTS child_code TEXT')
+  await pool.query('ALTER TABLE profiles ADD COLUMN IF NOT EXISTS pin TEXT')
+  await pool.query('ALTER TABLE profiles ADD COLUMN IF NOT EXISTS language TEXT DEFAULT \'en\'')
+  await pool.query('ALTER TABLE profiles ADD COLUMN IF NOT EXISTS created_at BIGINT')
   await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS name TEXT')
   await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS email TEXT')
   await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS password_hash TEXT')

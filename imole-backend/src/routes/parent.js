@@ -43,9 +43,10 @@ router.post('/link', async (req, res) => {
   try {
     const { childCode } = req.body
     if (!childCode) return res.status(400).json({ error: 'childCode is required' })
+    const normalizedCode = String(childCode).trim().toUpperCase().replace(/\s+/g, '')
 
     const { rows } = await pool.query('SELECT id FROM profiles WHERE child_code = $1', [
-      childCode.toUpperCase(),
+      normalizedCode,
     ])
     if (!rows.length) return res.status(404).json({ error: 'Child not found' })
 
