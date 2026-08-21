@@ -43,7 +43,7 @@ export function HeroSection() {
       <motion.div style={{ opacity: bgOpacity }} className="relative z-10 mx-auto flex max-w-6xl flex-col items-center justify-center px-4 pb-20 pt-28 text-center md:pt-32">
         <h1
           className="display-mega mt-6 text-white text-balance"
-          style={{ fontSize: 'clamp(2.6rem, 8vw, 6.5rem)' }}
+          style={{ fontSize: 'clamp(3rem, 9vw, 8rem)' }}
         >
           {t('landing.hero.tagline')}
         </h1>
