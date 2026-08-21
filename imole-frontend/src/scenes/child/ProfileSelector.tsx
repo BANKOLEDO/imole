@@ -97,7 +97,7 @@ export default function ProfileSelector() {
   const tryLogin = async (id: string) => {
     const profile = profiles.find((p) => p.id === id)
     if (!profile) return
-    const ok = await verifyProfile(profile.name, pins[id] ?? '')
+    const ok = await verifyProfile(profile.childCode, pins[id] ?? '')
     if (!ok) toast('error', t('challenge.error'))
   }
 
@@ -187,12 +187,16 @@ export default function ProfileSelector() {
               onConfirm={async (pin) => {
                 const profile = profiles.find((p) => p.id === deleteId)
                 if (!profile) return
-                const ok = await verifyProfile(profile.name, pin)
+                const ok = await verifyProfile(profile.childCode, pin)
                 if (!ok) {
                   toast('error', t('challenge.error'))
                   return
                 }
-                removeProfile(profile.id)
+                const deleted = await removeProfile(profile, pin)
+                if (!deleted) {
+                  toast('error', t('common.error'))
+                  return
+                }
                 setDeleteId(null)
               }}
             />

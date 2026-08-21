@@ -26,12 +26,12 @@ async function generateChildCode() {
 
 router.post('/', async (req, res) => {
   try {
-    const { name, age, language = 'en' } = req.body
+    const { name, age, language = 'en', pin } = req.body
     if (!name || !age) return res.status(400).json({ error: 'name and age are required' })
+    if (!/^\d{4}$/.test(String(pin || ''))) return res.status(400).json({ error: 'a 4-digit pin is required' })
 
     const id = generateId('prof')
     const childCode = await generateChildCode()
-    const pin = String(Math.floor(1000 + Math.random() * 9000))
     const createdAt = Date.now()
 
     await pool.query(
@@ -62,6 +62,23 @@ router.post('/verify', async (req, res) => {
     res.json({ id: p.id, name: p.name, age: p.age, language: p.language, childCode: p.child_code, createdAt: Number(p.created_at) })
   } catch (err) {
     console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { childCode, pin } = req.body
+    if (!childCode || !pin) return res.status(400).json({ error: 'childCode and pin are required' })
+
+    const { rows } = await pool.query(
+      'DELETE FROM profiles WHERE id = $1 AND child_code = $2 AND pin = $3 RETURNING id',
+      [req.params.id, childCode.toUpperCase(), hashPin(String(pin))],
+    )
+    if (!rows.length) return res.status(404).json({ error: 'Profile not found' })
+    res.json({ ok: true })
+  } catch (err) {
+    console.error(err)
     res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })

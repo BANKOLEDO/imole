@@ -70,9 +70,9 @@ type AppValue = {
   loadingChallenge: boolean
   submitting: boolean
   offline: boolean
-  createProfile: (input: { name: string; age: number | null; language: string }) => Promise<Profile>
-  verifyProfile: (name: string, pin: string) => Promise<Profile | null>
-  removeProfile: (id: string) => void
+  createProfile: (input: { name: string; age: number | null; language: string; pin: string }) => Promise<Profile>
+  verifyProfile: (childCode: string, pin: string) => Promise<Profile | null>
+  removeProfile: (profile: Profile, pin: string) => Promise<boolean>
   setCurrentProfile: (id: string | null) => void
   loadDailyChallenge: (lang?: string) => Promise<DailyChallenge | null>
   submitAnswer: (payload: { answer?: string; selectedAnswerId?: string }) => Promise<SubmitResult | null>
@@ -124,11 +124,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
   )
 
   const verifyProfile = useCallback(
-    async (name: string, pin: string) => {
+    async (childCode: string, pin: string) => {
       try {
         const found = await api<Profile>('/profile/verify', {
           method: 'POST',
-          body: JSON.stringify({ name, pin }),
+          body: JSON.stringify({ childCode, pin }),
         })
         if (!found) return null
         const existing = load<Profile[]>(K_PROFILES, [])
@@ -146,12 +146,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
   )
 
   const removeProfile = useCallback(
-    (id: string) => {
-      persistProfiles(load<Profile[]>(K_PROFILES, []).filter((p) => p.id !== id))
-      if (currentProfileId === id) {
+    async (profile: Profile, pin: string) => {
+      try {
+        await api(`/profile/${profile.id}`, {
+          method: 'DELETE',
+          body: JSON.stringify({ childCode: profile.childCode, pin }),
+        })
+      } catch {
+        return false
+      }
+      persistProfiles(load<Profile[]>(K_PROFILES, []).filter((p) => p.id !== profile.id))
+      if (currentProfileId === profile.id) {
         setCurrentProfileId(null)
         localStorage.removeItem(K_CURRENT)
       }
+      return true
     },
     [currentProfileId, persistProfiles],
   )

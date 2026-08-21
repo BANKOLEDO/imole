@@ -44,6 +44,7 @@ export default function Onboarding({ onDone, onCancel }: Props) {
         name: name.trim(),
         age: age ? Number(age) : null,
         language,
+        pin,
       })
       toast('success', `${profile.name} ✓`)
       onDone?.(profile)
