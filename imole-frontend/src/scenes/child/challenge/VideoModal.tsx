@@ -6,12 +6,13 @@ import Button from '../../../components/shared/Button'
 function toEmbedUrl(url: string): string | null {
   try {
     const u = new URL(url)
-    if (u.hostname.includes('youtube.com')) {
+    if (u.hostname === 'youtube.com' || u.hostname.endsWith('.youtube.com')) {
       const id = u.searchParams.get('v') ?? u.pathname.split('/').filter(Boolean).pop()
       return id ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1` : null
     }
     if (u.hostname === 'youtu.be') {
-      return `https://www.youtube-nocookie.com/embed${u.pathname}?autoplay=1`
+      const id = u.pathname.split('/').filter(Boolean)[0]
+      return id ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1` : null
     }
     if (/\.(mp4|webm)$/i.test(u.pathname)) return url
   } catch {

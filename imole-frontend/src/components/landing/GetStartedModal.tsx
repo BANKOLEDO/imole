@@ -46,12 +46,12 @@ export function GetStartedModal() {
         </button>
         <div className="text-center">
           <h2 className="font-heading text-xl font-black text-text-primary">
-            {profiles.length ? 'Do you have a profile?' : t('landing.beginJourney')}
+            {profiles.length ? 'Do you have a profile?' : 'Welcome to Imole'}
           </h2>
           <p className="mt-1.5 text-sm text-text-secondary">{t('app.tagline')}</p>
         </div>
         <div className="mt-6 grid gap-3">
-          {profiles.length > 0 && !currentProfile && (
+          {!currentProfile && (
             <button
               onClick={() => navigate('/app/profile')}
               className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent/40"
@@ -66,7 +66,7 @@ export function GetStartedModal() {
               <ArrowRight className="size-5 shrink-0 text-text-muted" />
             </button>
           )}
-          {profiles.length > 0 && !currentProfile && (
+          {!currentProfile && (
             <button
               onClick={() => navigate('/app/profile?create=1')}
               className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-orange/50"
@@ -81,7 +81,7 @@ export function GetStartedModal() {
               <ArrowRight className="size-5 shrink-0 text-text-muted" />
             </button>
           )}
-          {(profiles.length === 0 || currentProfile) && <button
+          {currentProfile && <button
             onClick={() => navigate(currentProfile ? '/app' : '/app/profile?create=1')}
             className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent/40"
           >
@@ -90,7 +90,7 @@ export function GetStartedModal() {
             </span>
             <span className="min-w-0 flex-1">
               <span className="block font-heading text-base font-bold text-text-primary">
-                {currentProfile ? t('home.welcome') : profiles.length ? t('profile.login') : "I'm a Child"}
+                {t('home.welcome')}
               </span>
               <span className="block text-xs text-text-muted">Learn skills · Earn streaks</span>
             </span>
