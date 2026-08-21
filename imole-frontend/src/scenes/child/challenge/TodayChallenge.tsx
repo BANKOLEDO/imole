@@ -84,7 +84,7 @@ export default function TodayChallenge() {
   return (
     <>
       <PageHero
-        className="-mx-4 md:-mx-8"
+        className="-mx-4"
         wave="#fff4e6"
         eyebrow={
           <span className="inline-flex items-center gap-1.5">

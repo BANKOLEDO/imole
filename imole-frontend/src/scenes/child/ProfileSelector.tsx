@@ -18,12 +18,16 @@ export default function ProfileSelector() {
   const [pins, setPins] = useState<Record<string, string>>({})
   const [deleteId, setDeleteId] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
+  const [loginCode, setLoginCode] = useState('')
+  const [loginPin, setLoginPin] = useState('')
+  const [loggingIn, setLoggingIn] = useState(false)
 
   if (currentProfile) {
     return (
       <div className="mx-auto w-full max-w-2xl space-y-5 px-4 pb-10">
         <PageHero
-          className="-mx-4 md:-mx-8"
+          className="-mx-4"
+          wave="#fff4e6"
           eyebrow={t('profile.title')}
           title={currentProfile.name}
           decoration={
@@ -86,8 +90,9 @@ export default function ProfileSelector() {
 
   if (creating) {
     return (
-      <div className="flex min-h-[calc(100dvh-4rem)] items-start justify-center px-4 py-10 md:items-center md:py-6">
-        <div className="w-full max-w-md">
+      <div className="min-h-[calc(100dvh-4rem)] px-4 pb-10">
+        <PageHero className="-mx-4 mb-8" wave="#fff4e6" eyebrow={t('profile.title')} title={t('profile.createTitle')} subtitle={t('profile.pinHint')} />
+        <div className="mx-auto w-full max-w-md">
           <Onboarding onDone={() => setCreating(false)} onCancel={() => setCreating(false)} />
         </div>
       </div>
@@ -104,11 +109,51 @@ export default function ProfileSelector() {
   return (
     <>
       <PageHero
+        className="-mx-4"
+        wave="#fff4e6"
         eyebrow={t('profile.title')}
         title={profiles.length ? t('profile.switch') : t('profile.createTitle')}
       />
 
-      <div className="container-main space-y-6 pb-10">
+      <div className="container-main space-y-6 pb-10 pt-8">
+      {profiles.length === 0 && (
+        <Card>
+          <CardContent className="space-y-4 py-5">
+            <div>
+              <h2 className="font-heading text-lg font-bold text-text-primary">Already have a profile?</h2>
+              <p className="text-sm text-text-muted">Use your child code and PIN to log in on this device.</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-[1fr_8rem_auto]">
+              <input
+                value={loginCode}
+                onChange={(e) => setLoginCode(e.target.value.toUpperCase())}
+                placeholder="IMOL-XXXX"
+                className="rounded-xl border border-border bg-bg-input px-4 py-2.5 text-sm outline-none focus:border-accent/40"
+              />
+              <PasswordInput
+                inputMode="numeric"
+                maxLength={4}
+                value={loginPin}
+                onChange={(e) => setLoginPin(e.target.value.replace(/\D/g, '').slice(0, 4))}
+                placeholder="PIN"
+              />
+              <Button
+                variant="orange"
+                disabled={!loginCode.trim() || loginPin.length !== 4 || loggingIn}
+                onClick={async () => {
+                  setLoggingIn(true)
+                  const profile = await verifyProfile(loginCode.trim(), loginPin)
+                  if (!profile) toast('error', t('challenge.error'))
+                  setLoggingIn(false)
+                }}
+              >
+                <LogIn className="size-4" />
+                {t('profile.login')}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}

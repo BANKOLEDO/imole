@@ -109,7 +109,7 @@ export default function AskImole() {
 
   return (
     <>
-      <PageHero className="-mx-4 md:-mx-8" eyebrow={t('nav.ask')} title={t('ask.title')} subtitle={t('ask.input')} />
+      <PageHero className="-mx-4" wave="#fff4e6" eyebrow={t('nav.ask')} title={t('ask.title')} subtitle={t('ask.input')} />
 
       <div className="container-main grid gap-4 pb-10 pt-8 lg:grid-cols-[220px_1fr]">
       <Card className="h-fit">
@@ -176,15 +176,16 @@ export default function AskImole() {
                   : 'rounded-bl-md bg-bg-card text-text-primary'
               }`}
             >
-              {msg.content}
+              <p>{msg.content}</p>
               {msg.role === 'assistant' && (
                 <button
                   type="button"
                   onClick={() => void speak(`${i}`, msg.content)}
                   aria-label={speakingId === `${i}` ? t('ask.stop') : t('ask.listen')}
-                  className="absolute -right-1 top-1/2 hidden -translate-y-1/2 translate-x-full cursor-pointer rounded-full bg-bg-surface p-1.5 text-text-muted group-hover:block hover:text-accent"
+                  className="mt-3 inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-accent/20 bg-accent-soft px-2.5 py-1 text-xs font-bold text-accent hover:bg-accent-soft/70"
                 >
                   {speakingId === `${i}` ? <Square className="size-3.5" /> : <Volume2 className="size-3.5" />}
+                  {speakingId === `${i}` ? t('ask.stop') : t('ask.listen')}
                 </button>
               )}
             </div>

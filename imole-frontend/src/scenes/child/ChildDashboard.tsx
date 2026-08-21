@@ -97,9 +97,9 @@ export default function ChildDashboard() {
   >
 
   return (
-    <div className="relative flex flex-col gap-8 px-4 pb-10 md:px-8">
+    <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 pb-10 md:px-8">
       <PageHero
-        className="-mx-4 md:-mx-8"
+        className="-mx-4"
         wave="#fff4e6"
         eyebrow={t('home.welcome')}
         title={`${currentProfile.name} 👋`}
