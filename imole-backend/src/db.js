@@ -89,6 +89,16 @@ async function initSchema() {
     skill_scores JSONB DEFAULT '{}'
   )`)
 
+  await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS name TEXT')
+  await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS email TEXT')
+  await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS password_hash TEXT')
+  await pool.query('ALTER TABLE parents ADD COLUMN IF NOT EXISTS created_at BIGINT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS name TEXT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS email TEXT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS password_hash TEXT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS school TEXT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS invite_code TEXT')
+  await pool.query('ALTER TABLE teachers ADD COLUMN IF NOT EXISTS created_at BIGINT')
   await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS question TEXT')
   await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS description TEXT')
   await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS resource JSONB')
