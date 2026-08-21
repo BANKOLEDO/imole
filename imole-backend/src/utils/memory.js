@@ -36,28 +36,18 @@ async function applyResult(profileId, skill, correct) {
   const today = dayKey(Date.now())
   const last = memory.streak.lastActive ? dayKey(Number(memory.streak.lastActive)) : null
 
-  let { current, longest, freezes } = {
-    current: memory.streak.current,
-    longest: memory.streak.longest,
-    freezes: memory.freezes,
-  }
+  let current = memory.streak.current
+  let longest = memory.streak.longest
+  let freezes = memory.freezes
 
   if (correct) {
-    if (last === today) {
-      // already counted today
-    } else if (last === today - 1) {
-      current += 1
-    } else {
-      current = 1
-    }
+    if (last === today - 1) current += 1
+    else if (last !== today) current = 1
     if (current % 7 === 0 && freezes < 3) freezes += 1
     longest = Math.max(longest, current)
   } else if (current > 0) {
-    if (freezes > 0) {
-      freezes -= 1
-    } else {
-      current = 0
-    }
+    if (freezes > 0) freezes -= 1
+    else current = 0
   }
 
   const scores = memory.skillScores
