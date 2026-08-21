@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
   try {
-    const { profileId, message, sessionId } = req.body
+    const { profileId, message, sessionId, language = 'en' } = req.body
     if (!profileId || !message || typeof message !== 'string' || message.length > 1000) {
       return res.status(400).json({ error: 'profileId and message are required' })
     }
@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
     const reply = await aiService.askQuestion({
       message,
       history: history.rows.reverse(),
-      language: 'en',
+      language,
     })
 
     await pool.query(
