@@ -1,76 +1,93 @@
-const { pool } = require('../db')
+const { Pool } = require('pg')
 
-async function ensureMemory(profileId) {
-  await pool.query(
-    `INSERT INTO profile_memory (profile_id) VALUES ($1) ON CONFLICT DO NOTHING`,
-    [profileId],
-  )
+const pool = new Pool({ connectionString: process.env.DATABASE_URL })
+
+async function initSchema() {
+  await pool.query(`CREATE TABLE IF NOT EXISTS profiles (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    age INT NOT NULL,
+    language TEXT DEFAULT 'en',
+    child_code TEXT UNIQUE,
+    pin TEXT,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS challenges (
+    id TEXT PRIMARY KEY,
+    profile_id TEXT NOT NULL,
+    skill TEXT NOT NULL,
+    title TEXT,
+    description TEXT,
+    question TEXT,
+    difficulty INT DEFAULT 1,
+    resource JSONB,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS responses (
+    id TEXT PRIMARY KEY,
+    challenge_id TEXT NOT NULL,
+    profile_id TEXT NOT NULL,
+    score INT,
+    feedback TEXT,
+    selected_answer TEXT,
+    correct BOOLEAN,
+    completed_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS chat_sessions (
+    id TEXT PRIMARY KEY,
+    profile_id TEXT NOT NULL,
+    title TEXT,
+    created_at BIGINT,
+    updated_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS chat_messages (
+    id TEXT PRIMARY KEY,
+    session_id TEXT NOT NULL,
+    role TEXT NOT NULL,
+    content TEXT NOT NULL,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS parents (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS parent_links (
+    parent_id TEXT NOT NULL,
+    profile_id TEXT NOT NULL,
+    PRIMARY KEY (parent_id, profile_id)
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS teachers (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    school TEXT,
+    invite_code TEXT,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS classes (
+    id TEXT PRIMARY KEY,
+    teacher_id TEXT NOT NULL,
+    name TEXT NOT NULL,
+    code TEXT,
+    created_at BIGINT
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS class_members (
+    class_id TEXT NOT NULL,
+    profile_id TEXT NOT NULL,
+    PRIMARY KEY (class_id, profile_id)
+  )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS profile_memory (
+    profile_id TEXT PRIMARY KEY,
+    streak_current INT DEFAULT 0,
+    streak_longest INT DEFAULT 0,
+    streak_last_active BIGINT,
+    freezes INT DEFAULT 1,
+    skill_scores JSONB DEFAULT '{}'
+  )`)
 }
 
-async function getMemory(profileId) {
-  await ensureMemory(profileId)
-  const { rows } = await pool.query(
-    `SELECT profile_id, streak_current, streak_longest, streak_last_active, freezes, skill_scores
-     FROM profile_memory WHERE profile_id = $1`,
-    [profileId],
-  )
-  const row = rows[0]
-  return {
-    profileId: row.profile_id,
-    streak: {
-      current: row.streak_current,
-      longest: row.streak_longest,
-      lastActive: row.streak_last_active,
-    },
-    freezes: row.freezes,
-    skillScores: row.skill_scores || {},
-  }
-}
-
-function dayKey(ts) {
-  return Math.floor(ts / 86400000)
-}
-
-async function applyResult(profileId, skill, correct) {
-  const memory = await getMemory(profileId)
-  const today = dayKey(Date.now())
-  const last = memory.streak.lastActive ? dayKey(Number(memory.streak.lastActive)) : null
-
-  let { current, longest, freezes } = {
-    current: memory.streak.current,
-    longest: memory.streak.longest,
-    freezes: memory.freezes,
-  }
-
-  if (correct) {
-    if (last === today) {
-      // already counted today
-    } else if (last === today - 1) {
-      current += 1
-    } else {
-      current = 1
-    }
-    if (current % 7 === 0 && freezes < 3) freezes += 1
-    longest = Math.max(longest, current)
-  } else if (current > 0) {
-    if (freezes > 0) {
-      freezes -= 1
-    } else {
-      current = 0
-    }
-  }
-
-  const scores = memory.skillScores
-  scores[skill] = [...(scores[skill] || []), correct ? 10 : 0].slice(-20)
-
-  await pool.query(
-    `UPDATE profile_memory
-     SET streak_current = $2, streak_longest = $3, streak_last_active = $4, freezes = $5, skill_scores = $6
-     WHERE profile_id = $1`,
-    [profileId, current, longest, Date.now(), freezes, JSON.stringify(scores)],
-  )
-
-  return { current, longest, freezes }
-}
-
-module.exports = { getMemory, applyResult }
+module.exports = { pool, initSchema }
