@@ -15,6 +15,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,woff2}'],
       },
       manifest: {
+        id: '/',
+        scope: '/',
         name: 'Imole — Be the Light',
         short_name: 'Imole',
         description: 'AI life-skills coach for Nigerian children aged 8–16',
@@ -23,8 +25,8 @@ export default defineConfig({
         background_color: '#f6f9ff',
         theme_color: '#002444',
         icons: [
-          { src: '/icon-192.svg', sizes: '192x192', type: 'image/svg+xml' },
-          { src: '/icon-512.svg', sizes: '512x512', type: 'image/svg+xml' },
+          { src: '/icon-192.svg', sizes: '192x192', type: 'image/svg+xml', purpose: 'any maskable' },
+          { src: '/icon-512.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' },
         ],
       },
     }),
