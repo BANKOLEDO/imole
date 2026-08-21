@@ -14,7 +14,7 @@ export default function ProfileSelector() {
   const { t } = useT()
   const toast = useToast()
   const { profiles, currentProfile, verifyProfile, removeProfile, setCurrentProfile } = useApp()
-  const [creating, setCreating] = useState(false)
+  const [creating, setCreating] = useState(() => new URLSearchParams(window.location.search).get('create') === '1')
   const [pins, setPins] = useState<Record<string, string>>({})
   const [deleteId, setDeleteId] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)

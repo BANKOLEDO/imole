@@ -14,7 +14,7 @@ export function openGetStarted() {
 export function GetStartedModal() {
   const navigate = useNavigate()
   const { t } = useT()
-  const { currentProfile } = useApp()
+  const { currentProfile, profiles } = useApp()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -46,13 +46,43 @@ export function GetStartedModal() {
         </button>
         <div className="text-center">
           <h2 className="font-heading text-xl font-black text-text-primary">
-            {currentProfile ? t('home.welcome') : t('landing.beginJourney')}
+            {profiles.length ? 'Do you have a profile?' : t('landing.beginJourney')}
           </h2>
           <p className="mt-1.5 text-sm text-text-secondary">{t('app.tagline')}</p>
         </div>
         <div className="mt-6 grid gap-3">
-          <button
-            onClick={() => navigate(currentProfile ? '/app' : '/app/profile')}
+          {profiles.length > 0 && !currentProfile && (
+            <button
+              onClick={() => navigate('/app/profile')}
+              className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent/40"
+            >
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-accent text-white">
+                <GraduationCap className="size-6" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block font-heading text-base font-bold text-text-primary">{t('profile.login')}</span>
+                <span className="block text-xs text-text-muted">{t('profile.choose')}</span>
+              </span>
+              <ArrowRight className="size-5 shrink-0 text-text-muted" />
+            </button>
+          )}
+          {profiles.length > 0 && !currentProfile && (
+            <button
+              onClick={() => navigate('/app/profile?create=1')}
+              className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-orange/50"
+            >
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-orange text-white">
+                <GraduationCap className="size-6" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block font-heading text-base font-bold text-text-primary">{t('profile.newProfile')}</span>
+                <span className="block text-xs text-text-muted">{t('profile.createTitle')}</span>
+              </span>
+              <ArrowRight className="size-5 shrink-0 text-text-muted" />
+            </button>
+          )}
+          {(profiles.length === 0 || currentProfile) && <button
+            onClick={() => navigate(currentProfile ? '/app' : '/app/profile?create=1')}
             className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-accent/40"
           >
             <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-accent text-white">
@@ -60,12 +90,12 @@ export function GetStartedModal() {
             </span>
             <span className="min-w-0 flex-1">
               <span className="block font-heading text-base font-bold text-text-primary">
-                I'm a Child
+                {currentProfile ? t('home.welcome') : profiles.length ? t('profile.login') : "I'm a Child"}
               </span>
               <span className="block text-xs text-text-muted">Learn skills · Earn streaks</span>
             </span>
             <ArrowRight className="size-5 shrink-0 text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
-          </button>
+          </button>}
           <button
             onClick={() => navigate('/parent/login')}
             className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-bg-surface p-4 text-left transition-all hover:-translate-y-0.5 hover:border-orange/50"
