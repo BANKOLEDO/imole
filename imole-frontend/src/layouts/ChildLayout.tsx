@@ -3,10 +3,10 @@ import { Zap, Trophy, MessageCircle, UserRound } from 'lucide-react'
 import { useT } from '../i18n/I18nContext'
 
 const NAV = [
-  { to: '/challenge', key: 'nav.challenge', icon: Zap },
-  { to: '/leaderboard', key: 'nav.leaderboard', icon: Trophy },
-  { to: '/ask', key: 'nav.ask', icon: MessageCircle },
-  { to: '/profile', key: 'nav.profile', icon: UserRound },
+  { to: '/app/challenge', key: 'nav.challenge', icon: Zap },
+  { to: '/app/leaderboard', key: 'nav.leaderboard', icon: Trophy },
+  { to: '/app/ask', key: 'nav.ask', icon: MessageCircle },
+  { to: '/app/profile', key: 'nav.profile', icon: UserRound },
 ]
 
 const itemClass = ({ isActive }: { isActive: boolean }) =>

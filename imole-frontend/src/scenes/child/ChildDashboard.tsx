@@ -11,6 +11,7 @@ import { useApp } from '../../context/AppContext'
 import { useT } from '../../i18n/I18nContext'
 import { localizeNumber } from '../../i18n/numbers'
 import StreakTracker from './StreakTracker'
+import { SparkleDots } from '../../components/doodles/Doodles'
 
 const SKILL_ICONS: Record<string, string> = {
   'mental-math': '#7580ef',
@@ -34,7 +35,7 @@ export default function ChildDashboard() {
         <h1 className="font-heading text-2xl font-bold text-text-primary">
           {t('home.noProfile')}
         </h1>
-        <Button variant="orange" onClick={() => window.location.assign('/profile')}>
+        <Button variant="orange" onClick={() => window.location.assign('/app/profile')}>
           <Play className="size-4" />
           {t('nav.profile')}
         </Button>
@@ -60,9 +61,12 @@ export default function ChildDashboard() {
         title={currentProfile.name}
         subtitle={quote}
         decoration={
-          <div className="flex size-20 items-center justify-center rounded-full bg-white/15 font-heading text-3xl font-black">
-            {currentProfile.name[0].toUpperCase()}
-          </div>
+          <>
+            <SparkleDots className="absolute inset-x-0 bottom-0 h-14 w-full opacity-70" />
+            <div className="relative flex size-20 items-center justify-center rounded-full bg-white/15 font-heading text-3xl font-black">
+              {currentProfile.name[0].toUpperCase()}
+            </div>
+          </>
         }
       />
 

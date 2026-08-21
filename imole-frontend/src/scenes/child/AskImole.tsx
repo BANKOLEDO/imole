@@ -40,7 +40,7 @@ export default function AskImole() {
     setMessages((prev) => [...prev, { role: 'user', content: text }])
     setBusy(true)
     try {
-      const res = await api<{ reply: string }>('/ask', {
+      const res = await api<{ reply: string }>('/app/ask', {
         method: 'POST',
         body: JSON.stringify({
           profileId: currentProfile.id,

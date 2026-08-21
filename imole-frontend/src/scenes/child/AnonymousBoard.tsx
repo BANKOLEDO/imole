@@ -23,7 +23,7 @@ export default function AnonymousBoard() {
   const [entries, setEntries] = useState<Entry[] | null>(null)
 
   useEffect(() => {
-    api<Entry[]>('/leaderboard')
+    api<Entry[]>('/app/leaderboard')
       .then(setEntries)
       .catch(() => setEntries([]))
   }, [])
