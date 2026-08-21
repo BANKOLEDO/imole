@@ -11,3 +11,14 @@ export async function api<T = unknown>(path: string, options: RequestInit = {}):
   }
   return (await res.json()) as T
 }
+
+export function authApi<T = unknown>(
+  path: string,
+  token: string,
+  options: RequestInit = {},
+): Promise<T> {
+  return api<T>(path, {
+    ...options,
+    headers: { ...(options.headers as Record<string, string>), Authorization: `Bearer ${token}` },
+  })
+}
