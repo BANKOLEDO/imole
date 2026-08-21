@@ -5,6 +5,7 @@ import './index.css'
 import { I18nProvider } from './i18n/I18nContext'
 import { ToastProvider } from './components/shared/Toast'
 import { AuthProvider } from './context/AuthContext'
+import { AppProvider } from './context/AppContext'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -13,7 +14,9 @@ createRoot(document.getElementById('root')!).render(
       <I18nProvider>
         <ToastProvider>
           <AuthProvider>
-            <App />
+            <AppProvider>
+              <App />
+            </AppProvider>
           </AuthProvider>
         </ToastProvider>
       </I18nProvider>
