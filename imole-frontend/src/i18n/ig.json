@@ -297,6 +297,10 @@
       "language": "Asụsụ",
       "saved": "Echekwara ntọala nke ọma.",
       "saveError": "Enweghị ike ichekwa ntọala"
+    },
+    "auth": {
+      "login": "Bany?",
+      "register": "Mepe akount"
     }
   },
   "school": {

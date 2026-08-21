@@ -1,14 +1,18 @@
 const jwt = require('jsonwebtoken')
 
-const SECRET = process.env.JWT_SECRET || 'imole-dev-secret'
+const SECRET = process.env.JWT_SECRET
+if (!SECRET && process.env.NODE_ENV === 'production') {
+  throw new Error('JWT_SECRET must be set in production')
+}
+const EFFECTIVE_SECRET = SECRET || 'imole-dev-secret'
 
 function sign(payload) {
-  return jwt.sign(payload, SECRET, { expiresIn: '7d' })
+  return jwt.sign(payload, EFFECTIVE_SECRET, { expiresIn: '7d' })
 }
 
 function verify(token) {
   try {
-    return jwt.verify(token, SECRET)
+    return jwt.verify(token, EFFECTIVE_SECRET)
   } catch {
     return null
   }

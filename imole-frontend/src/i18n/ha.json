@@ -297,6 +297,10 @@
       "language": "Harshe",
       "saved": "An adana saituna cikin nasara.",
       "saveError": "Ba za a iya adana saituna ba"
+    },
+    "auth": {
+      "login": "Shiga",
+      "register": "Bude asusu"
     }
   },
   "school": {

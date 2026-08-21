@@ -297,6 +297,10 @@
       "language": "Language",
       "saved": "Settings saved successfully.",
       "saveError": "Unable to save settings"
+    },
+    "auth": {
+      "login": "Log in",
+      "register": "Create account"
     }
   },
   "school": {

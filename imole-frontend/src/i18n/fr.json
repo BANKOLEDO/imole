@@ -297,6 +297,10 @@
       "language": "Langue",
       "saved": "Paramètres enregistrés avec succès.",
       "saveError": "Impossible d'enregistrer les paramètres"
+    },
+    "auth": {
+      "login": "Connexion",
+      "register": "Creer un compte"
     }
   },
   "school": {

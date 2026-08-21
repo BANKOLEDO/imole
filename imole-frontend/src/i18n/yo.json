@@ -297,6 +297,10 @@
       "language": "Ede",
       "saved": "A ti fipamọ awọn eto ni aṣeyọri.",
       "saveError": "Ko le fipamọ awọn eto"
+    },
+    "auth": {
+      "login": "Wo le",
+      "register": "Se da akanti"
     }
   },
   "school": {
