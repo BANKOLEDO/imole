@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: imole-api
+    runtime: node
+    rootDir: imole-backend
+    buildCommand: corepack enable && pnpm install --frozen-lockfile
+    startCommand: pnpm start
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: imole-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_ORIGIN
+        sync: false
+
+databases:
+  - name: imole-db
+    databaseName: imole
+    user: imole
