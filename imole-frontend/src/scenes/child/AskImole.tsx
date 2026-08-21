@@ -5,7 +5,7 @@ import { SendHorizonal, Plus, Trash2, Volume2, Square, MessageCircleHeart } from
 import Button from '../../components/shared/Button'
 import { Spinner } from '../../components/shared/Feedback'
 import PageHero from '../../components/shared/PageHero'
-import { api } from '../../lib/api'
+import { api, audioApi } from '../../lib/api'
 import { useApp } from '../../context/AppContext'
 import { useT } from '../../i18n/I18nContext'
 
@@ -18,13 +18,26 @@ export default function AskImole() {
   const [draft, setDraft] = useState('')
   const [busy, setBusy] = useState(false)
   const [speakingId, setSpeakingId] = useState<string | null>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const audioUrlRef = useRef<string | null>(null)
+  const speechTokenRef = useRef(0)
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, busy])
 
-  useEffect(() => () => window.speechSynthesis?.cancel(), [])
+  const stopSpeaking = () => {
+    speechTokenRef.current += 1
+    audioRef.current?.pause()
+    audioRef.current = null
+    if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current)
+    audioUrlRef.current = null
+    window.speechSynthesis?.cancel()
+    setSpeakingId(null)
+  }
+
+  useEffect(() => () => stopSpeaking(), [])
 
   if (!currentProfile) {
     return (
@@ -61,20 +74,35 @@ export default function AskImole() {
     }
   }
 
-  const speak = (id: string, text: string) => {
-    const synth = window.speechSynthesis
-    if (!synth) return
+  const speak = async (id: string, text: string) => {
     if (speakingId === id) {
-      synth.cancel()
-      setSpeakingId(null)
+      stopSpeaking()
       return
     }
-    synth.cancel()
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = lang === 'en' ? 'en-NG' : lang
-    utterance.onend = () => setSpeakingId(null)
+    stopSpeaking()
+    const token = speechTokenRef.current
     setSpeakingId(id)
-    synth.speak(utterance)
+    try {
+      const blob = await audioApi(text, lang)
+      if (token !== speechTokenRef.current) return
+      const url = URL.createObjectURL(blob)
+      audioUrlRef.current = url
+      const audio = new Audio(url)
+      audioRef.current = audio
+      audio.onended = stopSpeaking
+      await audio.play()
+    } catch {
+      if (token !== speechTokenRef.current) return
+      const synth = window.speechSynthesis
+      if (!synth) {
+        setSpeakingId(null)
+        return
+      }
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = lang === 'en' ? 'en-NG' : lang
+      utterance.onend = () => setSpeakingId(null)
+      synth.speak(utterance)
+    }
   }
 
   return (
@@ -108,7 +136,7 @@ export default function AskImole() {
               {msg.role === 'assistant' && (
                 <button
                   type="button"
-                  onClick={() => speak(`${i}`, msg.content)}
+                  onClick={() => void speak(`${i}`, msg.content)}
                   aria-label={speakingId === `${i}` ? t('ask.stop') : t('ask.listen')}
                   className="absolute -right-1 top-1/2 hidden -translate-y-1/2 translate-x-full cursor-pointer rounded-full bg-bg-surface p-1.5 text-text-muted group-hover:block hover:text-accent"
                 >
