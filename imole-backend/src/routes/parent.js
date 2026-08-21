@@ -34,7 +34,8 @@ router.get('/children', async (req, res) => {
       })),
     )
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -54,7 +55,8 @@ router.post('/link', async (req, res) => {
     )
     res.status(201).json({ ok: true })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -66,7 +68,8 @@ router.delete('/children/:id', async (req, res) => {
     )
     res.json({ ok: true })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
@@ -124,16 +127,56 @@ router.get('/dashboard/:childId', async (req, res) => {
     }
 
     const mem = memory.rows[0]
+
+    const weekRows = await pool.query(
+      `SELECT to_char(to_timestamp(completed_at / 1000.0), 'Dy') AS day, COUNT(*)::int AS count
+       FROM responses WHERE profile_id = $1 AND completed_at > $2
+       GROUP BY day`,
+      [childId, Date.now() - 7 * 86400000],
+    )
+    const DAY_KEYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    const weekMap = new Map(weekRows.rows.map((w) => [w.day.trim(), w.count]))
+    const weeklyActivity = Object.fromEntries(DAY_KEYS.map((d) => [d.toLowerCase(), weekMap.get(d) ?? 0]))
+
+    const trendRows = await pool.query(
+      `SELECT to_char(to_timestamp(completed_at / 1000.0) - (EXTRACT(DOW FROM to_timestamp(completed_at / 1000.0)) || ' days')::interval, 'YYYY-MM-DD') AS week,
+              AVG(score)::float AS avg
+       FROM responses WHERE profile_id = $1 AND completed_at > $2
+       GROUP BY week ORDER BY week ASC`,
+      [childId, Date.now() - 28 * 86400000],
+    )
+    const trend = trendRows.rows.map((t) => ({
+      week: t.week,
+      averageScore: Math.round(t.avg * 10) / 10,
+    }))
+
+    const sessionRows = await pool.query(
+      `SELECT c.title, c.skill, r.score, r.completed_at
+       FROM responses r JOIN challenges c ON c.id = r.challenge_id
+       WHERE r.profile_id = $1 ORDER BY r.completed_at DESC LIMIT 5`,
+      [childId],
+    )
+    const recentSessions = sessionRows.rows.map((s) => ({
+      title: s.title,
+      skill: s.skill,
+      score: s.score,
+      date: new Date(Number(s.completed_at)).toISOString(),
+    }))
+
     res.json({
       totalChallenges: totals.rows[0].total,
       averageScore: Math.round(totals.rows[0].avg * 10) / 10,
       skillBreakdown: Object.fromEntries(skills.rows.map((s) => [s.skill, Math.round(s.avg * 10) / 10])),
       streak: { current: mem?.streak_current ?? 0, longest: mem?.streak_longest ?? 0 },
       weeklyActive: weekly.rows[0].active,
+      weeklyActivity,
+      trend,
+      recentSessions,
       dailyProgress,
     })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' })
   }
 })
 
