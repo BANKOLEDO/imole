@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { LayoutDashboard, LineChart, Settings, LogOut, Sun } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useT } from '../i18n/I18nContext'
+import LangToggle from '../components/shared/LangToggle'
 
 const TABS = [
   { to: '/parent', icon: LayoutDashboard, key: 'parent.dashboard.dashboard', end: true },
@@ -30,7 +31,7 @@ export default function ParentLayout() {
             Imole
           </span>
 
-          <nav className="ml-auto hidden items-center gap-1 sm:flex">
+          <nav className="ml-auto hidden items-center gap-1 lg:flex">
             {TABS.map(({ to, icon: Icon, key, end }) => (
               <NavLink
                 key={to}
@@ -48,15 +49,18 @@ export default function ParentLayout() {
             ))}
           </nav>
 
-          {parentToken && (
-            <button
-              onClick={logout}
-              aria-label="Log out"
-              className="cursor-pointer rounded-full p-2 text-text-muted transition-colors hover:bg-error/10 hover:text-error"
-            >
-              <LogOut className="size-4" />
-            </button>
-          )}
+          <div className="ml-auto flex items-center gap-1 lg:ml-3">
+            <LangToggle />
+            {parentToken && (
+              <button
+                onClick={logout}
+                aria-label="Log out"
+                className="cursor-pointer rounded-full p-2 text-text-muted transition-colors hover:bg-error/10 hover:text-error"
+              >
+                <LogOut className="size-4" />
+              </button>
+            )}
+          </div>
         </div>
 
         <nav className="flex border-t border-border px-2 py-1 sm:hidden">

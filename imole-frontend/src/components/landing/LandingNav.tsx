@@ -2,7 +2,9 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LayoutGrid, Target, Info, Eye, ArrowRight, Menu, X } from 'lucide-react'
 import { useApp } from '../../context/AppContext'
+import { openGetStarted } from './GetStartedModal'
 import { useTCompat } from '../../i18n/useTCompat'
+import LangToggle from '../shared/LangToggle'
 
 const sections = [
   { id: 'gap', icon: Target, labelKey: 'landing.nav.impact' },
@@ -13,12 +15,11 @@ const sections = [
 
 const NAVY = '#002444'
 const LIME = '#ff8a00'
-const navLanguages = ['en', 'yo', 'ig', 'ha', 'fr', 'pcm'] as const
 
 export function LandingNav() {
   const navigate = useNavigate()
   const { currentProfile } = useApp()
-  const { t, setLang: setLanguage, language } = useTCompat()
+  const { t } = useTCompat()
   const [active, setActive] = useState('')
   const ratios = useRef<Record<string, number>>({})
   const [scrolled, setScrolled] = useState(false)
@@ -30,7 +31,7 @@ export function LandingNav() {
 
   const handleGetStarted = useCallback(() => {
     if (currentProfile) navigate('/app/challenge')
-    else navigate('/app/profile')
+    else openGetStarted()
   }, [currentProfile, navigate])
 
   const handleSection = useCallback(
@@ -117,19 +118,7 @@ export function LandingNav() {
           </div>
 
           <div className="ml-auto flex items-center gap-3">
-            <div className="flex items-center gap-0.5 rounded-lg border border-white/20 p-0.5">
-              {navLanguages.map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  className={`cursor-pointer rounded-md px-2 py-1 text-xs font-semibold uppercase transition-colors ${
-                    language === lang ? 'bg-white text-[#002444]' : 'text-white/65 hover:text-white'
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
+            <LangToggle />
 
             <button
               onClick={handleGetStarted}
@@ -193,18 +182,8 @@ export function LandingNav() {
             </div>
 
             <div className="border-t border-white/10 px-3 py-3">
-              <div className="flex items-center gap-1 rounded-lg border border-white/20 p-1">
-                {navLanguages.map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={() => setLanguage(lang)}
-                    className={`flex-1 cursor-pointer rounded-md py-1.5 text-[11px] font-semibold uppercase transition-colors ${
-                      language === lang ? 'bg-white text-[#002444]' : 'text-white/65 hover:text-white'
-                    }`}
-                  >
-                    {lang}
-                  </button>
-                ))}
+              <div className="flex justify-end">
+                <LangToggle />
               </div>
               <button
                 onClick={handleGetStarted}
