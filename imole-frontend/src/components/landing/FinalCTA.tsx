@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
+import { openGetStarted } from './GetStartedModal'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { LottieView } from '../shared/LottieView'
@@ -53,7 +54,7 @@ export function FinalCTA() {
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <button
-                onClick={() => navigate('/app/profile')}
+                onClick={() => openGetStarted()}
                 className="cta-pill cursor-pointer"
                 style={{ background: NAVY }}
               >

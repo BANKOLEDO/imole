@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { ArrowRight, Trophy } from 'lucide-react'
 import { LandingNav } from '../components/landing/LandingNav'
+import { GetStartedModal, openGetStarted } from '../components/landing/GetStartedModal'
 import { OrangeStrip } from '../components/landing/OrangeStrip'
 import { GapSection } from '../components/landing/GapSection'
 import { QuoteSection } from '../components/landing/QuoteSection'
@@ -22,7 +23,8 @@ export default function LandingScene() {
   const { currentProfile } = useApp()
 
   const start = useCallback(() => {
-    navigate(currentProfile ? '/app/challenge' : '/app/profile')
+    if (currentProfile) navigate('/app/challenge')
+    else openGetStarted()
   }, [currentProfile, navigate])
 
   return (
@@ -98,6 +100,8 @@ export default function LandingScene() {
       <PreviewSection />
       <FinalCTA />
       <LandingFooter />
-    </main>
+
+      <GetStartedModal />
+</main>
   )
 }

@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { Zap, BookOpen, RotateCcw, WifiOff, PartyPopper } from 'lucide-react'
+import { Zap, RotateCcw, WifiOff, PartyPopper } from 'lucide-react'
 import Button from '../../../components/shared/Button'
 import Badge from '../../../components/shared/Badge'
 import PageHero from '../../../components/shared/PageHero'
 import { Spinner } from '../../../components/shared/Feedback'
 import QuizOptions from './QuizOptions'
 import AnswerInput from './AnswerInput'
+import VideoModal from './VideoModal'
 import { useApp, type SubmitResult } from '../../../context/AppContext'
 import { useT } from '../../../i18n/I18nContext'
 import { localizeNumber } from '../../../i18n/numbers'
@@ -48,10 +49,10 @@ export default function TodayChallenge() {
 
   if (!currentProfile) {
     return (
-      <div className="container-main space-y-4 py-10 text-center">
+      <div className="flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center gap-4 px-6 text-center">
         <h1 className="font-heading text-2xl font-bold text-text-primary">{t('challenge.noProfile')}</h1>
-        <p className="text-sm text-text-muted">{t('challenge.noProfileDesc')}</p>
-        <Link to="/profile">
+        <p className="max-w-xs text-sm text-text-muted">{t('challenge.noProfileDesc')}</p>
+        <Link to="/app/profile">
           <Button variant="orange">{t('nav.profile')}</Button>
         </Link>
       </div>
@@ -81,9 +82,8 @@ export default function TodayChallenge() {
   const answered = Boolean(result)
 
   return (
-    <div className="container-main space-y-5 pb-10">
+    <>
       <PageHero
-        className="-mx-4 md:-mx-8"
         eyebrow={t('challenge.title')}
         title={t(`skill.${challenge.skill}.title`)}
         subtitle={challenge.description}
@@ -95,6 +95,7 @@ export default function TodayChallenge() {
         }
       />
 
+      <div className="container-main space-y-5 pb-10">
       {offline && (
         <p className="flex items-center justify-center gap-2 rounded-xl bg-streak-soft px-4 py-2 text-xs font-semibold text-streak">
           <WifiOff className="size-3.5" />
@@ -116,12 +117,7 @@ export default function TodayChallenge() {
           </div>
           <StreakMini current={result.streak.current} />
           {challenge.resource?.url && (
-            <a href={challenge.resource.url} target="_blank" rel="noreferrer" className="block">
-              <Button variant="outline" className="w-full">
-                <BookOpen className="size-4" />
-                {challenge.resource.title ?? t('challenge.resourceLabel')}
-              </Button>
-            </a>
+            <VideoModal title={challenge.resource.title} url={challenge.resource.url} />
           )}
         </motion.div>
       ) : (
@@ -170,7 +166,8 @@ export default function TodayChallenge() {
           )}
         </>
       )}
-    </div>
+      </div>
+    </>
   )
 }
 
