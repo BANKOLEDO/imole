@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Be Di Light"
+  },
+  "nav": {
+    "home": "Home",
+    "challenge": "Challenge",
+    "streak": "Streak",
+    "leaderboard": "Leaderboard",
+    "ask": "Ask Imole",
+    "profile": "Profile"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "todaysChallenge": "Today Challenge",
+    "yourStreak": "Your Streak",
+    "yourStats": "Your Stats",
+    "challengesDone": "Challenges wey you finish",
+    "avgScore": "Average score",
+    "weeklyActive": "Weekly active",
+    "skillProgress": "Skill Progress",
+    "quickActions": "Quick Actions",
+    "startChallenge": "Start Challenge",
+    "askQuestion": "Ask Question",
+    "viewLeaderboard": "Check Leaderboard",
+    "noProfile": "You no get profile yet",
+    "motivation": [
+      "Small small steps every day go make you shine.",
+      "When you learn new thing, your brain go light up.",
+      "You fit do am. Make we glow today!",
+      "Every champion start from day one.",
+      "Practice go make you strong and bright."
+    ],
+    "day": "day"
+  },
+  "challenge": {
+    "title": "Today Challenge",
+    "loading": "We dey prepare your challenge...",
+    "error": "Something don happen.",
+    "submitError": "We no fit send your answer. Try am again.",
+    "retry": "Try again",
+    "empty": "Your daily challenge never ready.",
+    "getChallenge": "Give me my challenge",
+    "yourAnswer": "Your answer",
+    "placeholder": "Type your answer here...",
+    "submit": "Send",
+    "greatWork": "Well done!",
+    "correct": "Correct!",
+    "incorrect": "E no correct.",
+    "next": "Next challenge",
+    "noProfile": "Create profile first",
+    "noProfileDesc": "Set up your profile to open your daily challenge.",
+    "voiceInput": "Voice input",
+    "textInput": "Type am",
+    "recording": "We dey listen...",
+    "tapToRecord": "Press to talk",
+    "chooseAnswer": "Pick one answer",
+    "level": "Level {{level}}",
+    "years": "{{count}} years",
+    "doneTitle": "Challenge complete!",
+    "doneDesc": "Come back tomorrow for new challenge.",
+    "nextIn": "Next challenge in",
+    "resourceLabel": "Learn more",
+    "revise": "Check am again",
+    "backToResults": "Back to results",
+    "scoreLabel": "Score",
+    "offline": "You dey offline — na your last challenge we dey show you.",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "expert": "Ogbonge"
+    }
+  },
+  "streak": {
+    "title": "Your Streak",
+    "day": "day",
+    "longest": "Longest",
+    "freezes": "{{count}} freezes",
+    "empty": "Finish one challenge to start your streak!",
+    "keepGoing": "No stop!",
+    "milestone": {
+      "3": "3-day fire!",
+      "7": "One week of light!",
+      "14": "Two weeks strong!",
+      "21": "Habit don lock in!",
+      "30": "One month shine!",
+      "50": "Half-century glow!",
+      "100": "Century of light!"
+    }
+  },
+  "reminder": {
+    "title": "Daily Reminder",
+    "hint": "Make we remind you for the time wey you choose.",
+    "time": "Time",
+    "enabled": "E dey on"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Top learners this month",
+    "yourRank": "Your rank",
+    "rank": "Rank",
+    "points": "Points",
+    "empty": "Nobody dey here yet. Be the first!",
+    "emptyCta": "Start one challenge",
+    "loading": "We dey load champions..."
+  },
+  "profile": {
+    "title": "Profile",
+    "switch": "Change Profile",
+    "otherProfiles": "Other profiles",
+    "childCode": "Child Code",
+    "childCodeHint": "Give this code to your parent so dem go link your account.",
+    "copied": "E don copy!",
+    "copy": "Copy",
+    "age": "Age",
+    "years": "{{age}} years",
+    "pinProtected": "PIN dey protect am",
+    "createTitle": "Create Profile",
+    "createName": "Wetin be your name?",
+    "createAge": "How old you be?",
+    "createLanguage": "Choose your language",
+    "chooseAvatar": "Pick your avatar color",
+    "pin": "PIN",
+    "pinHint": "Write this PIN down — your parent go need am.",
+    "verify": "Verify",
+    "delete": "Delete profile",
+    "deleteConfirm": "Enter your PIN to delete this profile."
+  },
+  "ask": {
+    "title": "Ask Imole",
+    "subtitle": "Your safe AI padi. Ask anything!",
+    "placeholder": "Ask me anything...",
+    "send": "Send",
+    "thinking": "I dey think...",
+    "sessions": "Chats",
+    "newChat": "New chat",
+    "delete": "Delete chat",
+    "listen": "Listen",
+    "pause": "Pause",
+    "resume": "Continue",
+    "stop": "Stop",
+    "voiceUnsupported": "Voice no dey work for this device.",
+    "error": "Sorry, something don happen. Try am again."
+  },
+  "skill": {
+    "mental-math": { "title": "Number Ninja" },
+    "persuasive-speaking": { "title": "Confident Voice" },
+    "financial-literacy": { "title": "Money Sense" },
+    "creative-problem-solving": { "title": "Bright Ideas" },
+    "emotional-intelligence": { "title": "Kind Heart" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "settings": "Settings",
+      "linkChild": "Add Child",
+      "childLinked": "Don link the child!",
+      "childNotFound": "No child dey with that code.",
+      "unlink": "Remove child",
+      "unlinkConfirm": "You wan remove this child from your dashboard?",
+      "dailyProgress": "Progress over time",
+      "last30Days": "Last 30 days",
+      "noProgress": "Nothing dey here yet. When your pikin finish challenges, progress go show here."
+    }
+  },
+  "school": {
+    "login": "Log in",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "classes": "Classes",
+    "students": "Students",
+    "invite": "Invite",
+    "settings": "Settings"
+  },
+  "common": {
+    "copied": "E don copy!",
+    "copy": "Copy",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "loading": "E dey load...",
+    "error": "Error"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Jé ìmọ́lẹ̀"
+  },
+  "nav": {
+    "home": "Ilé",
+    "challenge": "Ìdíje",
+    "streak": "Àṣeyọrí",
+    "leaderboard": "Àwọn olúborí",
+    "ask": "Béèrè lọ́wọ́ Imole",
+    "profile": "Profaili"
+  },
+  "home": {
+    "welcome": "Ẹ káàbọ̀",
+    "todaysChallenge": "Ìdíje òní",
+    "yourStreak": "Àṣeyọrí rẹ",
+    "yourStats": "Ìwọ̀n ìlàná rẹ",
+    "challengesDone": "Àwọn ídíje tí ó ti parí",
+    "avgScore": "Àpapọ̀ amì",
+    "weeklyActive": "Ọ̀sẹ̀ ṣiṣẹ́",
+    "skillProgress": "Ìlọsókè Ẹ̀kọ́",
+    "quickActions": "Ìgbésẹ̀ Kíákíá",
+    "startChallenge": "Bẹ̀rẹ̀ Ìdíje",
+    "askQuestion": "Béèrè Ìbéèrè",
+    "viewLeaderboard": "Wo Àwọn Olúborí",
+    "noProfile": "Kò sí profaili sibẹ̀",
+    "motivation": [
+      "Ìgbésẹ̀ kékeré ní ojoojúmọ́ ń mu kí ó tán mọ́.",
+      "Kíkọ́ nkan tuntun ń tan imọ́lẹ̀ sí ọpọ́n rẹ.",
+      "O lè ṣe é. Jẹ́ ká tàn lónìí!",
+      "Gbogbo aṣájú ń bẹ̀rẹ̀ pẹ̀lụ́ ọjọ́ àkọ́kọ́.",
+      "Títabi ń mu kí o lágbára kí o si tàn mọ́."
+    ],
+    "day": "ọjọ́"
+  },
+  "challenge": {
+    "title": "Ìdíje Òní",
+    "loading": "Ń pèsè ídíje rẹ...",
+    "error": "Ìṣe kan ṣẹlẹ̀.",
+    "submitError": "Kò le fi èsì rẹ ránṣẹ́. Gbìyànjú lẹ́ẹ̀kansi.",
+    "retry": "Gbìyànjú lẹ́ẹ̀kansi",
+    "empty": "Ídíje ojoojúmọ́ rẹ kò tíì ṣetán.",
+    "getChallenge": "Gba ídíje mi",
+    "yourAnswer": "Èsì rẹ",
+    "placeholder": "Kọ èsì rẹ nibí...",
+    "submit": "Fi ránṣẹ́",
+    "greatWork": "Iṣẹ́ dáa!",
+    "correct": "Ó tọ́!",
+    "incorrect": "Kò bájẹ́ mu.",
+    "next": "Ídíje tí ó kàn",
+    "noProfile": "Ṣẹ̀dá profaili àkọ́kọ́",
+    "noProfileDesc": "Ṣètò profaili rẹ láti ṣí ídíje ojoojúmọ́ rẹ.",
+    "voiceInput": "Ohùn ìtẹ̀wọ́",
+    "textInput": "Ìtẹ̀ ọ̀rọ̀",
+    "recording": "Ń gbọ́...",
+    "tapToRecord": "Fọ̀n láti sọ̀rọ̀",
+    "chooseAnswer": "Yan èsì kan",
+    "level": "Ìpele {{level}}",
+    "years": "{{count}} ọdún",
+    "doneTitle": "Ídíje parí!",
+    "doneDesc": "Padà wá lọ́la fún ídíje tuntun.",
+    "nextIn": "Ídíje tí ó kàn ní",
+    "resourceLabel": "Kọ́ si",
+    "revise": "Túnbọ̀ ṣe àyẹ̀wò",
+    "backToResults": "Padà sí àbájáde",
+    "scoreLabel": "Amì",
+    "offline": "O wà ní offline — ń fi ídíje ìgbà tí ó kọjá hàn.",
+    "difficulty": {
+      "easy": "Rọrùn",
+      "medium": "Àárín",
+      "hard": "Lile",
+      "expert": "Amòye"
+    }
+  },
+  "streak": {
+    "title": "Àṣeyọrí Rẹ",
+    "day": "ọjọ́",
+    "longest": "Gígùn jùlọ",
+    "freezes": "{{count}} ìdúrónu",
+    "empty": "Parí ídíje kan láti bẹ̀rẹ̀ àṣeyọrí rẹ!",
+    "keepGoing": "Má fìyà jẹ́!",
+    "milestone": {
+      "3": "Iná ọjọ́ mẹ́ta!",
+      "7": "Ọ̀sẹ̀ kan tí imọ́lẹ̀!",
+      "14": "Ọ̀sẹ̀ méjì lágbára!",
+      "21": "Àṣà tí a ṣí!",
+      "30": "Osù kan tàn!",
+      "50": "Àdágbajì ọ̀kan-áádọ́ta!",
+      "100": "Ọgọ́rùn imọ́lẹ̀!"
+    }
+  },
+  "reminder": {
+    "title": "Ìfé̀rántì Ojoojúmọ́",
+    "hint": "Gba ìkìlọ̀ àfẹ́rì ní àkókò tí o yan.",
+    "time": "Àkókò",
+    "enabled": "Ti ṣí"
+  },
+  "leaderboard": {
+    "title": "Àwọn Olúborí",
+    "subtitle": "Àwọn akẹ́kọ̀ tó dára jùlọ ní osù yìí",
+    "yourRank": "Ipò rẹ",
+    "rank": "Ipò",
+    "points": "Amì",
+    "empty": "Kò sí aṣájú sibẹ̀. Jẹ́ àkọ́kọ́!",
+    "emptyCta": "Bẹ̀rẹ̀ ídíje kan",
+    "loading": "Ń gbé àwọn aṣájú lá..."
+  },
+  "profile": {
+    "title": "Profaili",
+    "switch": "Yí Profaili Padà",
+    "otherProfiles": "Àwọn profaili míràn",
+    "childCode": "Kódù Omọdé",
+    "childCodeHint": "Fún kódù yìí lẹ́nù oyinbó rẹ láti so accóuntì rẹ mọ́.",
+    "copied": "A ti ẹ̀dà!",
+    "copy": "Ẹ̀dà",
+    "age": "Ọjọ́ orí",
+    "years": "{{age}} ọdún",
+    "pinProtected": "PIN dáàbò bò",
+    "createTitle": "Ṣẹ̀dá Profaili",
+    "createName": "Kí ni orúkọ rẹ?",
+    "createAge": "Sé ọdún mélòó ni o?",
+    "createLanguage": "Yan èdè rẹ",
+    "chooseAvatar": "Yan àwọ̀ àwàárà rẹ",
+    "pin": "PIN",
+    "pinHint": "Kọ PIN yìí sílẹ̀ — oyinbó rẹ nílò ọ́.",
+    "verify": "Ìfọwọ́si",
+    "delete": "Pa profaili rẹ",
+    "deleteConfirm": "Tẹ PIN rẹ láti pa profaili yìí."
+  },
+  "ask": {
+    "title": "Béèrè lọ́wọ́ Imole",
+    "subtitle": "Ọrẹ́ AI rẹ tí ó dààbò bo. Béèrè ohunkohun!",
+    "placeholder": "Béèrè ohunkohun...",
+    "send": "Ránṣẹ́",
+    "thinking": "Ń ronú...",
+    "sessions": "Àwọn ìjíròrò",
+    "newChat": "Ìjíròrò tuntun",
+    "delete": "Pa ìjíròrò rẹ",
+    "listen": "Gbọ́",
+    "pause": "Dúró díẹ̀",
+    "resume": "Tẹ̀síwájú",
+    "stop": "Dúró",
+    "voiceUnsupported": "Ohùn kò gbilẹ̀ lórí ẹ̀rọ yìí.",
+    "error": "Mo dupẹ́, ìṣe kan ṣẹlẹ̀. Gbìyànjú lẹ́ẹ̀kansi."
+  },
+  "skill": {
+    "mental-math": { "title": "Onímọ̀ Iṣiro" },
+    "persuasive-speaking": { "title": "Ohùn Ìgbérání" },
+    "financial-literacy": { "title": "Ọgbọ́n Owó" },
+    "creative-problem-solving": { "title": "Èròńlá" },
+    "emotional-intelligence": { "title": "Ọkàn Ifẹ́" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Dáṣibóòdu",
+      "reports": "Àwọn ìjáblò",
+      "settings": "Ètò",
+      "linkChild": "Fi Omọdé Kun",
+      "childLinked": "A ti so omọdé náà mọ́!",
+      "childNotFound": "Kò sí omọdé pẹ̀lú kódù yẹn.",
+      "unlink": "Yà omọdé kúrò",
+      "unlinkConfirm": "Yó omọdé yìí kúrò ní dáṣibóòdu rẹ?",
+      "dailyProgress": "Ìlọsókè pẹ̀lú àkókò",
+      "last30Days": "Ọjọ́ 30 ìgbà tí ó kọjá",
+      "noProgress": "Kò sí iṣẹ́ sibẹ̀. Nígbà tí omọ rẹ bá parí ídíje, ìlọsókè yóò hàn nibí."
+    }
+  },
+  "school": {
+    "login": "Wọlé",
+    "register": "Forukọsilẹ̀",
+    "dashboard": "Dáṣibóòdu",
+    "classes": "Àwọn kilasi",
+    "students": "Àwọn akẹ́kọ̀",
+    "invite": "Pè",
+    "settings": "Ètò"
+  },
+  "common": {
+    "copied": "A ti ẹ̀dà!",
+    "copy": "Ẹ̀dà",
+    "save": "Fi pamọ́",
+    "cancel": "Fagilé",
+    "delete": "Pa rẹ",
+    "confirm": "Fọwọ́si",
+    "back": "Padà",
+    "loading": "Ń gbé lá...",
+    "error": "Àṣìṣe"
+  }
+}

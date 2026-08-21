@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Bụọ Ìhè"
+  },
+  "nav": {
+    "home": "Ụlọ",
+    "challenge": "Ịma aka",
+    "streak": "Usoro",
+    "leaderboard": "Ndị mmeri",
+    "ask": "Jụọ Imole",
+    "profile": "Profaịlụ"
+  },
+  "home": {
+    "welcome": "Nnọọ",
+    "todaysChallenge": "Ịma aka taa",
+    "yourStreak": "Usoro gị",
+    "yourStats": "Ndekọ gị",
+    "challengesDone": "Ịma aka emechaa",
+    "avgScore": "Nkezi akara",
+    "weeklyActive": "Arụmọrụ izu",
+    "skillProgress": "Ọganihu Ọmụmụ",
+    "quickActions": "Omume Ngwa ngwa",
+    "startChallenge": "Malite Ịma aka",
+    "askQuestion": "Juo Ajụjụ",
+    "viewLeaderboard": "Lelee Ndị Mmeri",
+    "noProfile": "Enweghị profaịlụ ma",
+    "motivation": [
+      "Obere nzọụkwụ kwa ụbọchị na-eme ka gị na-acha ọlaedo.",
+      "Ịmụ ihe ọhụrụ na-agbanye uche gị ọkụ.",
+      "Ị nwere ike ime ya. Ka anyị na-acha ọlaedo taa!",
+      "Onye mmeri ọ bụla na-amalite site na ụbọchị mbụ.",
+      "Omume na-eme ka gị sie ike ma naacha ọlaedo."
+    ],
+    "day": "ụbọchị"
+  },
+  "challenge": {
+    "title": "Ịma Aka Taa",
+    "loading": "Na-akwado ịma aka gị...",
+    "error": "Ọ bụ ihe mere.",
+    "submitError": "Enweghị ike izipu azịza gị. Nwa ọzọ.",
+    "retry": "Nwa ọzọ",
+    "empty": "Ịma aka kwa ụbọchị gị adịghị njikere ma.",
+    "getChallenge": "Nyere m ịma aka m",
+    "yourAnswer": "Azịza gị",
+    "placeholder": "Dee azịza gị ebe a...",
+    "submit": "Zipu",
+    "greatWork": "Ọrụ dị mma!",
+    "correct": "Ziri ezi!",
+    "incorrect": "Ọ nọghị n'ezie.",
+    "next": "Ịma aka ọzọ",
+    "noProfile": "Mepụta profaịlụ mbụ",
+    "noProfileDesc": "Hazie profaịlụ gị iji mepee ịma aka kwa ụbọchị gị.",
+    "voiceInput": "Olu ntinye",
+    "textInput": "Ederede",
+    "recording": "Na-anụ...",
+    "tapToRecord": "Pịa ikwu okwu",
+    "chooseAnswer": "Họrọ azịza otu",
+    "level": "Ọkwa {{level}}",
+    "years": "{{count}} afọ",
+    "doneTitle": "Emechaala ịma aka!",
+    "doneDesc": "Laghachi echi maka ịma aka ọhụrụ.",
+    "nextIn": "Ịma aka ọzọ na",
+    "resourceLabel": "Mụọkwuo",
+    "revise": "Nyochaa ọzọ",
+    "backToResults": "Laghachi na nsonaazụ",
+    "scoreLabel": "Akara",
+    "offline": "Ị nọ na offline — anyị na-egosi ịma aka gị gara aga.",
+    "difficulty": {
+      "easy": "Mfe",
+      "medium": "Etiti",
+      "hard": "Ike",
+      "expert": "Ọkachamara"
+    }
+  },
+  "streak": {
+    "title": "Usoro Gị",
+    "day": "ụbọchị",
+    "longest": "Kachasị ogologo",
+    "freezes": "{{count}} oyi",
+    "empty": "Mechaa ịma aka iji malite usoro gị!",
+    "keepGoing": "Agbajula mbọ!",
+    "milestone": {
+      "3": "Ọkụ ụbọchị atọ!",
+      "7": "Izu ọhụrụ nke ìhè!",
+      "14": "Izu abụọ ike!",
+      "21": "Emepele omume!",
+      "30": "Ọnwa ọlaedo!",
+      "50": "Ọkara narị ọlaedo!",
+      "100": "Narị ìhè!"
+    }
+  },
+  "reminder": {
+    "title": "Ncheta Kwa Ụbọchị",
+    "hint": "Nweta ncheta n'oge ị họrọ.",
+    "time": "Oge",
+    "enabled": "Agbanyere"
+  },
+  "leaderboard": {
+    "title": "Ndị Mmeri",
+    "subtitle": "Ndị na-amụ kacha mma n'ọnwa a",
+    "yourRank": "Ọnọdụ gị",
+    "rank": "Ọnọdụ",
+    "points": "Akara",
+    "empty": "Onye mmeri ọ bụla ma. Bụọ onye mbụ!",
+    "emptyCta": "Malite ịma aka",
+    "loading": "Na-ebufe ndị mmeri..."
+  },
+  "profile": {
+    "title": "Profaịlụ",
+    "switch": "Gbanwee Profaịlụ",
+    "otherProfiles": "Profaịlụ ndị ọzọ",
+    "childCode": "Koodu Nwa",
+    "childCodeHint": "Nyee nne na nna gị koodu a ka ha jikọọ akaụntụ gị.",
+    "copied": "Edeturu!",
+    "copy": "Detuo",
+    "age": "Afọ",
+    "years": "{{age}} afọ",
+    "pinProtected": "PIN na-echebe",
+    "createTitle": "Mepụta Profaịlụ",
+    "createName": "Kedu aha gị?",
+    "createAge": "Afọ oleị ị nwere?",
+    "createLanguage": "Họrọ asụsụ gị",
+    "chooseAvatar": "Họrọ agba avatar gị",
+    "pin": "PIN",
+    "pinHint": "Dee PIN a — nne na nna gị ga-achọ ya.",
+    "verify": "Nyochaa",
+    "delete": "Hichapụ profaịlụ",
+    "deleteConfirm": "Tinye PIN gị ka ị hichapụ profaịlụ a."
+  },
+  "ask": {
+    "title": "Jụọ Imole",
+    "subtitle": "Enyi AI gị nchebe. Jụọ ihe ọ bụla!",
+    "placeholder": "Jụọ m ihe ọ bụla...",
+    "send": "Zipu",
+    "thinking": "Na-eche...",
+    "sessions": "Okwu",
+    "newChat": "Okwu ọhụrụ",
+    "delete": "Hichapụ okwu",
+    "listen": "Nụ",
+    "pause": "Kwụsị nwa oge",
+    "resume": "Gaa n'ihu",
+    "stop": "Kwụsị",
+    "voiceUnsupported": "Olu anaghị arụ ọrụ na ngwaọrụ a.",
+    "error": "Ndo, ihe mere. Nwa ọzọ."
+  },
+  "skill": {
+    "mental-math": { "title": "Onye Agha Ọgụgụ Ọnụ" },
+    "persuasive-speaking": { "title": "Olu Obi Ike" },
+    "financial-literacy": { "title": "Akpamọ Ife" },
+    "creative-problem-solving": { "title": "Echiche Ọhụrụ" },
+    "emotional-intelligence": { "title": "Obi Ịcha" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Dashbọọdụ",
+      "reports": "Akụkọ",
+      "settings": "Ntọala",
+      "linkChild": "Tinye Nwa",
+      "childLinked": "Ejikotala nwa ahụ!",
+      "childNotFound": "Ọ nweghị nwa nwere koodu ahụ.",
+      "unlink": "Wepu nwa",
+      "unlinkConfirm": "Ị chọrọ iwepu nwa a na dashbọọdụ gị?",
+      "dailyProgress": "Ọganihu n'oge",
+      "last30Days": "Ụbọchị 30 gara aga",
+      "noProgress": "Ọ nweghị ọrụ ma. Mgbe nwa gị mechara ịma aka, ọganihu ga-apụta ebe a."
+    }
+  },
+  "school": {
+    "login": "Banye",
+    "register": "Dee aha",
+    "dashboard": "Dashbọọdụ",
+    "classes": "Òmùmù́",
+    "students": "Ụmụ akwụkwọ",
+    "invite": "Kpọọ",
+    "settings": "Ntọala"
+  },
+  "common": {
+    "copied": "Edeturu!",
+    "copy": "Detuo",
+    "save": "Dobe",
+    "cancel": "Kagbuo",
+    "delete": "Hichapụ",
+    "confirm": "Kwenye",
+    "back": "Azụ",
+    "loading": "Na-abufe...",
+    "error": "Njehie"
+  }
+}

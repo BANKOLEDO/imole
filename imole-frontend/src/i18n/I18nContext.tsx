@@ -8,6 +8,11 @@ import {
   type ReactNode,
 } from 'react'
 import en from './en.json'
+import yo from './yo.json'
+import ha from './ha.json'
+import ig from './ig.json'
+import fr from './fr.json'
+import pcm from './pcm.json'
 
 export const LANGUAGES = [
   { code: 'en', label: 'English' },
@@ -22,7 +27,14 @@ export type LanguageCode = (typeof LANGUAGES)[number]['code']
 
 type Dictionary = Record<string, unknown>
 
-const dictionaries: Partial<Record<LanguageCode, Dictionary>> = { en }
+const dictionaries: Partial<Record<LanguageCode, Dictionary>> = {
+  en,
+  yo,
+  ha,
+  ig,
+  fr,
+  pcm,
+}
 
 function lookup(dict: Dictionary | undefined, key: string): unknown {
   return key

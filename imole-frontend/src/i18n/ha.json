@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Kashe Haske"
+  },
+  "nav": {
+    "home": "Gida",
+    "challenge": "Kalubale",
+    "streak": "Zango",
+    "leaderboard": "Masu nasara",
+    "ask": "Tambaye Imole",
+    "profile": "Bayani"
+  },
+  "home": {
+    "welcome": "Barka da zuwa",
+    "todaysChallenge": "Kalubalen yau",
+    "yourStreak": "Zangonka",
+    "yourStats": "Kididdigarka",
+    "challengesDone": "Kalubale da aka kammala",
+    "avgScore": "Matsakaicin maki",
+    "weeklyActive": "Aiki na mako",
+    "skillProgress": "Ci gaban Koyi",
+    "quickActions": "Sauran Ayyuka",
+    "startChallenge": "Fara Kalubale",
+    "askQuestion": "Yi Tambaya",
+    "viewLeaderboard": "Duba Masu Nasara",
+    "noProfile": "Babu bayani tukuna",
+    "motivation": [
+      "Kananan mataki kowace rana na haskaka ka.",
+      "Koyon sabon abu yana haskaken kwakwalwa.",
+      "Kana da ikon yi. Mu haskaka yau!",
+      "Dukan zakara ya fara da rana daya.",
+      "Yin aiki yana karfafa ka ka haskaka."
+    ],
+    "day": "rana"
+  },
+  "challenge": {
+    "title": "Kalubalen Yau",
+    "loading": "Ana shirya kalubalenka...",
+    "error": "Wani abu ya faru.",
+    "submitError": "Ba a iya amsa ka. Sake gwadawa.",
+    "retry": "Sake gwadawa",
+    "empty": "Kalubalenka na yau ba a shirya ba tukuna.",
+    "getChallenge": "Ba ni kalubalena",
+    "yourAnswer": "Amsarka",
+    "placeholder": "Rubuta amsarka nan...",
+    "submit": "Aika",
+    "greatWork": "Aikin kyau!",
+    "correct": "Daidai!",
+    "incorrect": "Ba dai dai ba.",
+    "next": "Kalubale na gaba",
+    "noProfile": "Kirkiiri bayani farko",
+    "noProfileDesc": "Sanya bayaninka don buɗe kalubalenka na yau da kullum.",
+    "voiceInput": "Muryar shiga",
+    "textInput": "Rubutu",
+    "recording": "Ana saurare...",
+    "tapToRecord": "Danna don magana",
+    "chooseAnswer": "Zabi amsa daya",
+    "level": "Matakin {{level}}",
+    "years": "{{count}} shekaru",
+    "doneTitle": "An kammala kalubale!",
+    "doneDesc": "Dawo gobe don sabon kalubale.",
+    "nextIn": "Kalubale na gaba cikin",
+    "resourceLabel": "Kara koyo",
+    "revise": "Sake dubawa",
+    "backToResults": "Komawa sakamako",
+    "scoreLabel": "Maki",
+    "offline": "Kana offline — muna nuna kalubalenka na baya.",
+    "difficulty": {
+      "easy": "Saukake",
+      "medium": "Matsakaici",
+      "hard": "Wahala",
+      "expert": "Kwararre"
+    }
+  },
+  "streak": {
+    "title": "Zangonka",
+    "day": "rana",
+    "longest": "Mafi tsayi",
+    "freezes": "{{count}} daskarewa",
+    "empty": "Kammala kalubale don fara zangonka!",
+    "keepGoing": "Kar ka dakata!",
+    "milestone": {
+      "3": "Wutar kwanaki 3!",
+      "7": "Makon haske!",
+      "14": "Makonnu biyu tsayayye!",
+      "21": "An buɗe al'ada!",
+      "30": "Watan haske!",
+      "50": "Hamsin haske!",
+      "100": "Darajar haske!"
+    }
+  },
+  "reminder": {
+    "title": "Tunatarwa ta Yau",
+    "hint": "Ka sami tunatarwa lokacin da ka zaba.",
+    "time": "Lokaci",
+    "enabled": "An kunna"
+  },
+  "leaderboard": {
+    "title": "Masu Nasara",
+    "subtitle": "Masu koyi masu fiye a watan nan",
+    "yourRank": "Matsayinka",
+    "rank": "Matsayi",
+    "points": "Maki",
+    "empty": "Babun zakara tukuna. Ka zama na farko!",
+    "emptyCta": "Fara kalubale",
+    "loading": "Ana loda masu nasara..."
+  },
+  "profile": {
+    "title": "Bayani",
+    "switch": "Canja Bayani",
+    "otherProfiles": "Sauran bayani",
+    "childCode": "Lambar Yaro",
+    "childCodeHint": "Ba da wannan lambar ga iyayenka don su hada asusunka.",
+    "copied": "An kwafi!",
+    "copy": "Kwafi",
+    "age": "Shekaru",
+    "years": "{{age}} shekaru",
+    "pinProtected": "PIN ke karewa",
+    "createTitle": "Kirkiiri Bayani",
+    "createName": "Mene ne sunanka?",
+    "createAge": "Shekarunka nawa ne?",
+    "createLanguage": "Zabi harshenka",
+    "chooseAvatar": "Zabi launin avatar",
+    "pin": "PIN",
+    "pinHint": "Rubuta wannan PIN — iyayenka za su bukata.",
+    "verify": "Tabbatarwa",
+    "delete": "Goge bayani",
+    "deleteConfirm": "Shigar da PIN don goge wannan bayani."
+  },
+  "ask": {
+    "title": "Tambaye Imole",
+    "subtitle": "Abokin AI mai aminci. Tambaya ko me!",
+    "placeholder": "Tambaye ni ko me...",
+    "send": "Aika",
+    "thinking": "Ina tunani...",
+    "sessions": "Hira",
+    "newChat": "Sabuwar hira",
+    "delete": "Goge hira",
+    "listen": "Saurara",
+    "pause": "Tsaya",
+    "resume": "Ci gaba",
+    "stop": "Tsayarwa",
+    "voiceUnsupported": "Murya ba ta aiki a wannan na'ura.",
+    "error": "Yi hakuri, wani abu ya faru. Sake gwadawa."
+  },
+  "skill": {
+    "mental-math": { "title": "Warrior Lissafi" },
+    "persuasive-speaking": { "title": "Muryar Kwarin gwiwa" },
+    "financial-literacy": { "title": "Wayon Kudi" },
+    "creative-problem-solving": { "title": "Babban Tunani" },
+    "emotional-intelligence": { "title": "Zuciyar Tausayi" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Dashboard",
+      "reports": "Rahotanni",
+      "settings": "Saituna",
+      "linkChild": "kara Yaro",
+      "childLinked": "An hada da yaron!",
+      "childNotFound": "Babu yaro da wannan lambar.",
+      "unlink": "Cire yaro",
+      "unlinkConfirm": "Ka cire wannan yaro daga dashboard?",
+      "dailyProgress": "Ci gaba da lokaci",
+      "last30Days": "Kwanaki 30 na baya",
+      "noProgress": "Babu aiki tukuna. Lokacin da jarinka ya kammala kalubale, ci gaba zai bayyana nan."
+    }
+  },
+  "school": {
+    "login": "Shiga",
+    "register": "Yi rajista",
+    "dashboard": "Dashboard",
+    "classes": "Darussa",
+    "students": "Dalibai",
+    "invite": "Gayyata",
+    "settings": "Saituna"
+  },
+  "common": {
+    "copied": "An kwafi!",
+    "copy": "Kwafi",
+    "save": "Ajiye",
+    "cancel": "Soke",
+    "delete": "Goge",
+    "confirm": "Tabbatar",
+    "back": "Baya",
+    "loading": "Ana loda...",
+    "error": "Kuskure"
+  }
+}

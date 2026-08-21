@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Sois la Lumière"
+  },
+  "nav": {
+    "home": "Accueil",
+    "challenge": "Défi",
+    "streak": "Série",
+    "leaderboard": "Classement",
+    "ask": "Demande à Imole",
+    "profile": "Profil"
+  },
+  "home": {
+    "welcome": "Bienvenue",
+    "todaysChallenge": "Défi du jour",
+    "yourStreak": "Ta série",
+    "yourStats": "Tes statistiques",
+    "challengesDone": "Défis terminés",
+    "avgScore": "Score moyen",
+    "weeklyActive": "Actif cette semaine",
+    "skillProgress": "Progrès des compétences",
+    "quickActions": "Actions rapides",
+    "startChallenge": "Commencer un défi",
+    "askQuestion": "Poser une question",
+    "viewLeaderboard": "Voir le classement",
+    "noProfile": "Pas encore de profil",
+    "motivation": [
+      "Les petits pas chaque jour te font briller.",
+      "Apprendre quelque chose de nouveau illumine ton cerveau.",
+      "Tu peux le faire. Brillissons aujourd'hui !",
+      "Chaque champion commence par un premier jour.",
+      "La pratique te rend plus fort et plus brillant."
+    ],
+    "day": "jour"
+  },
+  "challenge": {
+    "title": "Défi du Jour",
+    "loading": "Préparation de ton défi...",
+    "error": "Une erreur s'est produite.",
+    "submitError": "Impossible d'envoyer ta réponse. Réessaie.",
+    "retry": "Réessayer",
+    "empty": "Ton défi quotidien n'est pas encore prêt.",
+    "getChallenge": "Donne-moi mon défi",
+    "yourAnswer": "Ta réponse",
+    "placeholder": "Écris ta réponse ici...",
+    "submit": "Envoyer",
+    "greatWork": "Beau travail !",
+    "correct": "Correct !",
+    "incorrect": "Pas tout à fait.",
+    "next": "Défi suivant",
+    "noProfile": "Crée d'abord un profil",
+    "noProfileDesc": "Configure ton profil pour débloquer ton défi quotidien.",
+    "voiceInput": "Saisie vocale",
+    "textInput": "Texte",
+    "recording": "Écoute en cours...",
+    "tapToRecord": "Appuie pour parler",
+    "chooseAnswer": "Choisis une réponse",
+    "level": "Niveau {{level}}",
+    "years": "{{count}} ans",
+    "doneTitle": "Défi terminé !",
+    "doneDesc": "Reviens demain pour un nouveau défi.",
+    "nextIn": "Prochain défi dans",
+    "resourceLabel": "En savoir plus",
+    "revise": "Réviser",
+    "backToResults": "Retour aux résultats",
+    "scoreLabel": "Score",
+    "offline": "Tu es hors ligne — affichage de ton dernier défi.",
+    "difficulty": {
+      "easy": "Facile",
+      "medium": "Moyen",
+      "hard": "Difficile",
+      "expert": "Expert"
+    }
+  },
+  "streak": {
+    "title": "Ta Série",
+    "day": "jour",
+    "longest": "Record",
+    "freezes": "{{count}} gelures",
+    "empty": "Termine un défi pour commencer ta série !",
+    "keepGoing": "Continue !",
+    "milestone": {
+      "3": "Étincelle de 3 jours !",
+      "7": "Une semaine de lumière !",
+      "14": "Deux semaines fortes !",
+      "21": "Habitude débloquée !",
+      "30": "Un mois éclatant !",
+      "50": "Un demi-siècle de brillance !",
+      "100": "Un siècle de lumière !"
+    }
+  },
+  "reminder": {
+    "title": "Rappel quotidien",
+    "hint": "Reçois un petit rappel à l'heure choisie.",
+    "time": "Heure",
+    "enabled": "Activé"
+  },
+  "leaderboard": {
+    "title": "Classement",
+    "subtitle": "Meilleurs apprenants du mois",
+    "yourRank": "Ton rang",
+    "rank": "Rang",
+    "points": "Points",
+    "empty": "Pas encore de champions. Sois le premier !",
+    "emptyCta": "Commencer un défi",
+    "loading": "Chargement des champions..."
+  },
+  "profile": {
+    "title": "Profil",
+    "switch": "Changer de profil",
+    "otherProfiles": "Autres profils",
+    "childCode": "Code enfant",
+    "childCodeHint": "Donne ce code à tes parents pour lier ton compte.",
+    "copied": "Copié !",
+    "copy": "Copier",
+    "age": "Âge",
+    "years": "{{age}} ans",
+    "pinProtected": "Protégé par code PIN",
+    "createTitle": "Créer un profil",
+    "createName": "Comment t'appelles-tu ?",
+    "createAge": "Quel âge as-tu ?",
+    "createLanguage": "Choisis ta langue",
+    "chooseAvatar": "Choisis ta couleur d'avatar",
+    "pin": "PIN",
+    "pinHint": "Note ce code PIN — tes parents en auront besoin.",
+    "verify": "Vérifier",
+    "delete": "Supprimer le profil",
+    "deleteConfirm": "Entre ton PIN pour supprimer ce profil."
+  },
+  "ask": {
+    "title": "Demande à Imole",
+    "subtitle": "Ton ami IA en toute sécurité. Demande tout !",
+    "placeholder": "Demande-moi anything...",
+    "send": "Envoyer",
+    "thinking": "Réflexion...",
+    "sessions": "Discussions",
+    "newChat": "Nouvelle discussion",
+    "delete": "Supprimer la discussion",
+    "listen": "Écouter",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "stop": "Arrêter",
+    "voiceUnsupported": "La voix n'est pas prise en charge sur cet appareil.",
+    "error": "Désolé, une erreur s'est produite. Réessaie."
+  },
+  "skill": {
+    "mental-math": { "title": "Ninja des Nombres" },
+    "persuasive-speaking": { "title": "Voix Assurée" },
+    "financial-literacy": { "title": "Malin avec l'Argent" },
+    "creative-problem-solving": { "title": "Idées Lumineuses" },
+    "emotional-intelligence": { "title": "Cœur Tendre" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Tableau de bord",
+      "reports": "Rapports",
+      "settings": "Paramètres",
+      "linkChild": "Ajouter un enfant",
+      "childLinked": "Enfant lié avec succès !",
+      "childNotFound": "Aucun enfant avec ce code.",
+      "unlink": "Délier l'enfant",
+      "unlinkConfirm": "Retirer cet enfant de votre tableau de bord ?",
+      "dailyProgress": "Progrès dans le temps",
+      "last30Days": "30 derniers jours",
+      "noProgress": "Pas encore d'activité. Lorsque votre enfant terminera des défis, les progrès apparaîtront ici."
+    }
+  },
+  "school": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "dashboard": "Tableau de bord",
+    "classes": "Classes",
+    "students": "Élèves",
+    "invite": "Inviter",
+    "settings": "Paramètres"
+  },
+  "common": {
+    "copied": "Copié !",
+    "copy": "Copier",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "loading": "Chargement...",
+    "error": "Erreur"
+  }
+}
