@@ -70,7 +70,8 @@
       "easy": "Rọrùn",
       "medium": "Àárín",
       "hard": "Lile",
-      "expert": "Amòye"
+      "expert": "Amòye",
+      "tricky": "Arekereke"
     }
   },
   "streak": {
@@ -104,7 +105,8 @@
     "points": "Amì",
     "empty": "Kò sí aṣájú sibẹ̀. Jẹ́ àkọ́kọ́!",
     "emptyCta": "Bẹ̀rẹ̀ ídíje kan",
-    "loading": "Ń gbé àwọn aṣájú lá..."
+    "loading": "Ń gbé àwọn aṣájú lá...",
+    "scholar": "Aṣoju"
   },
   "profile": {
     "title": "Profaili",
@@ -126,7 +128,19 @@
     "pinHint": "Kọ PIN yìí sílẹ̀ — oyinbó rẹ nílò ọ́.",
     "verify": "Ìfọwọ́si",
     "delete": "Pa profaili rẹ",
-    "deleteConfirm": "Tẹ PIN rẹ láti pa profaili yìí."
+    "deleteConfirm": "Tẹ PIN rẹ láti pa profaili yìí.",
+    "name": "Orukọ",
+    "namePlaceholder": "Tẹ orukọ rẹ sii",
+    "cancel": "Fagilee",
+    "create": "Ṣẹda",
+    "choose": "Yan Profaili",
+    "enterPin": "Tẹ PIN sii",
+    "login": "Wọle",
+    "newProfile": "Ṣẹda Profaili Tuntun",
+    "incorrectPin": "PIN ko tọ",
+    "loginTitle": "Wọle",
+    "returnLogin": "O ti ni akọọlẹ tẹlẹ? Wọle",
+    "deleteTitle": "Pa Profaili Rẹ"
   },
   "ask": {
     "title": "Béèrè lọ́wọ́ Imole",
@@ -142,14 +156,46 @@
     "resume": "Tẹ̀síwájú",
     "stop": "Dúró",
     "voiceUnsupported": "Ohùn kò gbilẹ̀ lórí ẹ̀rọ yìí.",
-    "error": "Mo dupẹ́, ìṣe kan ṣẹlẹ̀. Gbìyànjú lẹ́ẹ̀kansi."
+    "error": "Mo dupẹ́, ìṣe kan ṣẹlẹ̀. Gbìyànjú lẹ́ẹ̀kansi.",
+    "voice": "Sọ ibeere rẹ",
+    "recording": "Ngba igbasilẹ... tẹ lati da duro",
+    "suggested": {
+      "0": "Bawo ni mo ṣe le fi owo pamọ lati inu owo ile-iwe mi?",
+      "1": "Kí ni mo máa sọ tí ẹnìkan bá ń fipá bá mi?",
+      "2": "Bawo ni mo ṣe le dara ni iṣiro ni kiakia?",
+      "3": "Bawo ni mo ṣe le ni ọrẹ ni irọrun?"
+    },
+    "newQuestion": "Ibeere Tuntun",
+    "yourQuestion": "Ibeere rẹ",
+    "answer": "Idahun",
+    "noProfile": "Beere Imole",
+    "noProfileDesc": "Jọwọ yan profaili lati bẹrẹ",
+    "input": "Beere mi nipa awọn ọgbọn igbesi aye",
+    "history": "Ìtàn",
+    "historyEmpty": "Kò sí ìbánisọrọ tẹ́lẹ̀",
+    "newChatHint": "Bẹ̀rẹ̀ ìbánisọrọ tuntun"
   },
   "skill": {
-    "mental-math": { "title": "Onímọ̀ Iṣiro" },
-    "persuasive-speaking": { "title": "Ohùn Ìgbérání" },
-    "financial-literacy": { "title": "Ọgbọ́n Owó" },
-    "creative-problem-solving": { "title": "Èròńlá" },
-    "emotional-intelligence": { "title": "Ọkàn Ifẹ́" }
+    "mental-math": {
+      "title": "Onímọ̀ Iṣiro",
+      "desc": "Ṣe iṣiro ni kiakia, ri awọn ilana, ronu kedere"
+    },
+    "persuasive-speaking": {
+      "title": "Ohùn Ìgbérání",
+      "desc": "Baraẹnisọrọ pẹlu igboya, jiyan pẹlu ọwọ"
+    },
+    "financial-literacy": {
+      "title": "Ọgbọ́n Owó",
+      "desc": "Fi owo pamọ, ṣe isuna, ki o si gbero ni Naira"
+    },
+    "creative-problem-solving": {
+      "title": "Èròńlá",
+      "desc": "Ronu laini apoti nigbati awọn orisun ba lopin"
+    },
+    "emotional-intelligence": {
+      "title": "Ọkàn Ifẹ́",
+      "desc": "Loye awọn ẹdun ki o dahun pẹlu ọgbọn"
+    }
   },
   "parent": {
     "dashboard": {
@@ -163,17 +209,270 @@
       "unlinkConfirm": "Yó omọdé yìí kúrò ní dáṣibóòdu rẹ?",
       "dailyProgress": "Ìlọsókè pẹ̀lú àkókò",
       "last30Days": "Ọjọ́ 30 ìgbà tí ó kọjá",
-      "noProgress": "Kò sí iṣẹ́ sibẹ̀. Nígbà tí omọ rẹ bá parí ídíje, ìlọsókè yóò hàn nibí."
+      "noProgress": "Kò sí iṣẹ́ sibẹ̀. Nígbà tí omọ rẹ bá parí ídíje, ìlọsókè yóò hàn nibí.",
+      "title": "Dasibodu obi",
+      "description": "Atunwo ilosiwaju awọn ọmọ rẹ ni kiakia.",
+      "selectChild": "Yan ọmọ",
+      "currentStreak": "Ìtẹsiwaju loni",
+      "longestStreak": "Ìtẹsiwaju to gunjulo",
+      "skillAverages": "Apapọ ọgbọn",
+      "recentSessions": "Awọn igba to ṣẹṣẹ",
+      "score": "Ibamu",
+      "chooseChild": "Yan ọmọ kan lati fihan awọn alaye dasibodu.",
+      "noChildren": "Ko si ọmọ ti a ti so mọ́",
+      "noChildrenDesc": "Ko tíì sí ọmọ ti a ti so mọ́ àkà-ìwé rẹ. Fi ọmọ kun lati bẹrẹ abojuto ilọsiwaju rẹ.",
+      "weekChallenges": "Awọn ipenija ni ọsẹ yìí",
+      "weeklyActivity": "Iṣẹ-ṣiṣe ọsẹ-ọsẹ",
+      "thisWeek": "awọn ipenija ni ọsẹ yìí",
+      "noActivity": "Ko tíì sí iṣẹ-ṣiṣe ti a kọ silẹ ni ọsẹ yìí.",
+      "trend": "Ìtọsọ́nà ibamu",
+      "avgScoreTrend": "Apapọ ibamu ni awọn ọsẹ to ṣẹṣẹ kọjá",
+      "noTrend": "Kò tíì tó itan-akọọlẹ lati fi hàn ìtọsọ́nà.",
+      "viewReports": "Wo awọn iroyin",
+      "openSettings": "Ṣí eto sílẹ",
+      "loadChildrenError": "Ko le gbe awọn ọmọ wọle",
+      "loadDashboardError": "Ko le gbe maapu dasibodu wọle",
+      "addChild": "Fi omo kun",
+      "addChildDesc": "So omo kan po si akooko re nipa lilo koodi idile won",
+      "childCodeLabel": "Koodi omo",
+      "childCodePlaceholder": "bi apeere CH-AB12CD34",
+      "childCodeHint": "Iwo yoo ri koodi yii lori iboju profaili omo re.",
+      "unlinked": "A ti yo omo kuro",
+      "manageChildren": "Sakoso awon omo"
+    },
+    "nav": {
+      "dashboard": "Dasibodu",
+      "reports": "Awọn iroyin",
+      "settings": "Eto"
+    },
+    "login": {
+      "title": "Wọlé Òbí",
+      "subtitle": "Wo ìtẹ̀síjú àti àwọn ìjábọ́ ọmọ rẹ.",
+      "email": "Ìméèlì",
+      "password": "Ọ̀rọ̀ aṣínà",
+      "submit": "Wọlé",
+      "loading": "Ó ń wọlé…",
+      "error": "Ìméèlì tàbí ọ̀rọ̀ aṣínà kò tọ́",
+      "noAccount": "Kò sí àkọọ́lẹ̀?",
+      "register": "Dá ọ̀kan"
+    },
+    "register": {
+      "title": "Dá àkọọ́lẹ̀ òbí",
+      "subtitle": "Forúkọ sílẹ̀ kí o lè ṣàkóso àwọn ọmọ, ìjábọ́, àti àwọn ààyò.",
+      "name": "Orúkọ kíkún",
+      "email": "Ìméèlì",
+      "password": "Ọ̀rọ̀ aṣínà",
+      "submit": "Forúkọ sílẹ̀",
+      "loading": "Ó ń dá àkọọ́lẹ̀…",
+      "error": "Kò lè dá àkọọ́lẹ̀",
+      "hasAccount": "O ti forúkọ sílẹ̀ tẹ́lẹ̀?",
+      "login": "Wọlé"
+    },
+    "layout": {
+      "account": "Àkọọlẹ obi",
+      "parent": "Obi",
+      "signOut": "Jade"
+    },
+    "reports": {
+      "title": "Awọn iroyin obi",
+      "description": "Itan itan ilọsiwaju ọsẹ.",
+      "downloadPdf": "Gba PDF",
+      "downloadExcel": "Gba Excel",
+      "noHistory": "Ko si itan iroyin fun ọmọ yii.",
+      "weekStarting": "Ọsẹ ti n bẹrẹ",
+      "challenge": "idije",
+      "challenges": "awọn idije",
+      "streak": "Ìtẹsiwaju",
+      "averageSkillScore": "Iwọn oju-ẹgbọn apapọ"
+    },
+    "settings": {
+      "title": "Eto obi",
+      "description": "Ṣakoso awọn iwifunni ati awọn ayanfẹ ede.",
+      "notifications": "Ayanfẹ awọn iwifunni",
+      "notificationOptions": {
+        "all": "Gbogbo",
+        "email": "Imeeli",
+        "none": "Ko si"
+      },
+      "language": "Ede",
+      "saved": "A ti fipamọ awọn eto ni aṣeyọri.",
+      "saveError": "Ko le fipamọ awọn eto"
     }
   },
   "school": {
-    "login": "Wọlé",
-    "register": "Forukọsilẹ̀",
-    "dashboard": "Dáṣibóòdu",
+    "login": {
+      "title": "Titọsi Olukọ",
+      "email": "Imeeli",
+      "emailPlaceholder": "oluko@ile-iwe.edu.ng",
+      "password": "Ọrọigbaniwọle",
+      "submit": "Wọle",
+      "noAccount": "Ko ni akọọlẹ?",
+      "register": "Forukọsilẹ",
+      "error": "Imeeli tabi ọrọigbaniwọle ko tọ",
+      "subtitle": "Wọle si dasibodu ile-iwe rẹ"
+    },
+    "register": {
+      "title": "Forukọsilẹ Olukọ",
+      "name": "Orukọ Kikun",
+      "namePlaceholder": "Ọgbẹni Adebayo",
+      "email": "Imeeli",
+      "emailPlaceholder": "oluko@ile-iwe.edu.ng",
+      "password": "Ọrọigbaniwọle",
+      "schoolCode": "Koodu Ile-iwe",
+      "schoolCodePlaceholder": "SCH001",
+      "submit": "Ṣẹda Akọọlẹ",
+      "hasAccount": "O ti ni akọọlẹ tẹlẹ?",
+      "login": "Wọle",
+      "error": "Forukọsilẹ kuna",
+      "subtitle": "Ṣẹda akọọlẹ olukọ rẹ"
+    },
+    "dashboard": {
+      "title": "Awọn Kilasi Mi",
+      "subtitle": "Ṣakoso awọn ọmọ ile-iwe rẹ ki o tọpa ilọsiwaju",
+      "noClasses": "Ko si awọn kilasi ti a yàn sibẹsibẹ",
+      "students": "akẹkọ",
+      "inviteTeacher": "Pe Olukọ",
+      "settings": "Awọn eto",
+      "totalStudents": "Awọn Akẹkọ Lapapọ",
+      "activeClasses": "Awọn Kilasi Ti Nṣiṣẹ",
+      "avgPerClass": "Apapọ Akẹkọ/Kilasi",
+      "welcome": "Kaabo",
+      "welcomeDesc": "O n ṣe apẹrẹ awọn ọkan ọdọ {{students}} kọja awọn kilasi {{classes}} loni",
+      "badge": "Dasibodu Ile-iwe",
+      "viewClasses": "Wo Awọn Kilasi",
+      "yourClasses": "Awọn Kilasi Rẹ",
+      "viewAll": "Wo gbogbo rẹ",
+      "todayGlance": "Loni Ni Kiakia",
+      "activeStudents": "Awọn Akẹkọ Ti Nṣiṣẹ",
+      "runningClasses": "Awọn Kilasi Ti Nṣiṣẹ",
+      "avgClassSize": "Apapọ Iwọn Kilasi",
+      "quickActions": "Awọn Iṣe Kiakia",
+      "browseClasses": "Ṣawari Awọn Kilasi",
+      "overview": "Akopọ",
+      "totalStudentsLabel": "Lapapọ Awọn Akẹkọ",
+      "totalClassesLabel": "Lapapọ Awọn Kilasi",
+      "noData": "Ko si data sibẹ. Ṣẹda kilasi akọkọ rẹ lati bẹrẹ.",
+      "studentsCount": "{{count}} akẹkọ",
+      "dayStreak": "{{count}} ọjọ itẹlera",
+      "avgScore": "Apapọ Dimegilio",
+      "currentAverage": "Apapọ lọwọlọwọ",
+      "streakLabel": "Itẹlera:",
+      "scoreLabel": "Dimegilio:"
+    },
     "classes": "Àwọn kilasi",
     "students": "Àwọn akẹ́kọ̀",
-    "invite": "Pè",
-    "settings": "Ètò"
+    "invite": {
+      "title": "Pe Olukọ",
+      "email": "Imeeli Olukọ",
+      "emailPlaceholder": "oluko.tuntun@ile-iwe.edu.ng",
+      "submit": "Fi Ifiwepe Ranṣẹ",
+      "sent": "Ifiwepe ti ranṣẹ ni aṣeyọri",
+      "error": "Kuna lati fi ifiwepe ranṣẹ",
+      "subtitle": "Fi ifiwepe ranṣẹ si olukọ miiran",
+      "heading": "Pe olubaṣepọ kan",
+      "desc": "Fi ifiwepe imeeli ranṣẹ lati darapọ mọ ile-iwe rẹ",
+      "sentDesc": "A ti fi ifiwepe ranṣẹ ni aṣeyọri",
+      "badge": "Pe Olukọ",
+      "badgeLabel": "Ẹgbẹ ile-iwe",
+      "benefits": "Kí ló dé tí wọ́n fi máa pe olùbáṣepọ̀?",
+      "perk1": "Pin awọn kíláàsì kí o sì kọ́ pọ̀ lọ́nà rọrùn",
+      "perk2": "Tọpa ilọsiwaju ọmọ ile-iwe kọọkan papọ",
+      "perk3": "Jẹ ki dasibodu ile-iwe rẹ wa ni amuṣiṣẹpọ",
+      "tip": "Pe ni bayi, dagba nigbamii",
+      "tipDesc": "Olùbáṣepọ̀ rẹ yóò gba imeeli pẹ̀lú ọ̀nà láti darapọ̀ mọ́ ẹgbẹ́ ile-iwe rẹ.",
+      "sendAnother": "Fi ifiwepe miiran ranṣẹ"
+    },
+    "settings": {
+      "title": "Awọn Eto Ile-iwe",
+      "profile": "Profaili",
+      "name": "Orukọ Ile-iwe",
+      "code": "Koodu Ile-iwe",
+      "language": "Ede",
+      "save": "Fi Awọn Eto pamọ",
+      "saved": "Awọn eto ti o fi pamọ ni aṣeyọri",
+      "codeDesc": "Koodu ile-iwe ti ṣeto ati pe ko le yipada",
+      "subtitle": "Ṣakoso profaili ile-iwe rẹ ati awọn ayanfẹ",
+      "appLanguage": "Ede ohun elo",
+      "actions": "Awọn iṣe iyara",
+      "ready": "Ṣe ohun gbogbo ti ṣetan?",
+      "readyDesc": "Ṣayẹwo awọn alaye ile-iwe rẹ ki o ṣafipamọ awọn iyipada ti o ṣe.",
+      "namePlaceholder": "fun ap. Bright Future Academy"
+    },
+    "class": {
+      "title": "Kilasi",
+      "student": "Akẹkọ",
+      "streak": "Itẹlera",
+      "avgScore": "Apapọ Dimegilio",
+      "lastActive": "Ikẹhin",
+      "classAvg": "Apapọ Kilasi",
+      "topPerformers": "Awọn Oludari",
+      "atRisk": "Awọn Akẹkọ Ewu",
+      "exportPdf": "Gbejade PDF",
+      "exportCsv": "Gbejade CSV",
+      "noStudents": "Ko si awọn akẹkọ ninu kilasi yii",
+      "enrolled": "Ti Forukọsilẹ",
+      "enrolledCount": "{{count}} akẹkọ ti forukọsilẹ",
+      "avg": "Apapọ Kilasi",
+      "totalStreak": "Lapapọ Awọn Ọjọ Itẹlera",
+      "overview": "Gbogbo Awọn Kilasi",
+      "export": "Gbejade",
+      "create": "Ṣẹda Kilasi",
+      "createTitle": "Kilasi Tuntun",
+      "createDesc": "Tẹ orukọ fun kilasi tuntun rẹ",
+      "createPlaceholder": "fun ap. Iṣiro Ipele 5",
+      "creating": "N ṣẹda...",
+      "created": "Ti ṣẹda kilasi ni aṣeyọri",
+      "active": "Ti Nṣiṣẹ",
+      "students": "akẹkọ",
+      "tabOverview": "Akopọ",
+      "tabStudents": "Gbogbo Awọn Akẹkọ",
+      "tabReports": "Awọn Ijabọ",
+      "reportTitle": "Gbejade Awọn Ijabọ",
+      "reportDesc": "Ṣe igbasilẹ data iṣẹ ṣiṣe kilasi",
+      "name": "Orúkọ",
+      "totalStudents": "Lápapọ̀ Àwọn Akẹ́kọ̀ọ́",
+      "generatedBy": "Ti Imole School Dashboard ṣe",
+      "addStudents": "Fi awon omo ile-iwe kun",
+      "addStudentsTitle": "Fi awon omo ile-iwe kun si kilasi yii",
+      "addStudentsDesc": "Te omo ile-iwe kan soro fun ila kan bi Oruko, Ojo-ori (ojo-ori ko dandan)",
+      "studentsPlaceholder": "Aisha Bello, 10\nChidi Okeke, 11\nTunde Bakare",
+      "addingStudents": "Nfi awon omo ile-iwe kun...",
+      "studentsAdded": "{{count}} omo ile-iwe titun ti a fi kun — awon koodi ati PIN ni isalẹ",
+      "studentsLinked": "{{count}} omo ile-iwe ti forukosile tẹlẹ ti a si so po",
+      "newStudentPins": "Awon koodi ati PIN omo ile-iwe titun",
+      "pinCopied": "A ti daako si akojo lẹta!"
+    },
+    "student": {
+      "title": "Awọn Alaye Akẹkọ",
+      "skillBreakdown": "Ipinya Ọgbọn",
+      "challengeHistory": "Itan Ipenja",
+      "teacherNotes": "Awọn Akọsilẹ Olukọ",
+      "notesPlaceholder": "Fi awọn akọsilẹ kun nipa akẹkọ yii...",
+      "saveNotes": "Fi Awọn Akọsilẹ pamọ",
+      "noHistory": "Ko si itan ipenja sibẹsibẹ",
+      "dayStreak": "ọjọ itẹlera",
+      "avgLabel": "apapọ dimegilio",
+      "bestStreak": "Itẹlera tó dára jù: {{count}}",
+      "saving": "N fipamọ...",
+      "back": "Pada"
+    },
+    "nav": {
+      "dashboard": "Dasibodu",
+      "classes": "Awọn Kilasi",
+      "invite": "Pe Olukọ",
+      "settings": "Awọn Eto",
+      "logout": "Jade",
+      "darkMode": "Ipo Dudu",
+      "lightMode": "Ipo Imọlẹ"
+    },
+    "sidebar": {
+      "brand": "Ile-iwe",
+      "expand": "Faagun",
+      "collapse": "Bi i"
+    },
+    "topbar": {
+      "brand": "Ìmólè Ile-iwe"
+    }
   },
   "common": {
     "copied": "A ti ẹ̀dà!",
@@ -184,6 +483,115 @@
     "confirm": "Fọwọ́si",
     "back": "Padà",
     "loading": "Ń gbé lá...",
-    "error": "Àṣìṣe"
+    "error": "Àṣìṣe",
+    "retry": "Tun gbiyanju",
+    "submit": "Fi silẹ",
+    "search": "Wa",
+    "noData": "Ko si data to wa",
+    "toggleMenu": "Tẹ akojọ",
+    "toggleTheme": "Yiyipada akori"
+  },
+  "onboarding": {
+    "title": "Jẹ́ kí a múra fún ọ!",
+    "subtitle": "Àwọn ìgbésẹ̀ díẹ̀ láti jẹ́ kí ìrírí rẹ dára",
+    "step": "Ìgbésẹ̀ {{n}} ti {{total}}",
+    "stepName": "Orúkọ rẹ",
+    "subName": "Sọ fún Imole ohun tí wọ́n kò lè pè ọ́",
+    "nameLabel": "Orúkọ rẹ",
+    "namePlaceholder": "Kí ni kí a pè ọ́?",
+    "stepAge": "Ọjọ́ orí rẹ",
+    "subAge": "Ọjọ́ orí mélòó ni ọ́?",
+    "ageLabel": "Ọjọ́ orí rẹ",
+    "years": "ọdún",
+    "ageHint": "A máa ń lo ọjọ́ orí rẹ láti yan àwọn ìpèníjà tó bá ọ mu.",
+    "stepPin": "PIN àṣírí rẹ",
+    "subPin": "Kó pa profile rẹ mọ́",
+    "pinLabel": "Yan PIN àṣírí",
+    "pinHint": "Nọ́mbà 4 sí 6. Lo ó láti ṣíi profile rẹ.",
+    "next": "Tẹ̀ síwájú",
+    "back": "Pàdà",
+    "create": "Jẹ́ kí a bẹ̀rẹ̀!"
+  },
+  "error": {
+    "creationFailed": "A ko le pari ṣiṣẹda yẹn. Jọwọ tun gbiyanju.",
+    "invalidDetails": "Awọn alaye wọnyẹn ko dabi ẹni pe o tọ. Jọwọ ṣayẹwo ki o tun gbiyanju.",
+    "network": "Ibaṣepọ ti ṣẹ. Jọwọ ṣayẹwo intanẹẹti rẹ.",
+    "server": "Imole n sinmi kuku. Tun gbiyanju lẹyin igba diẹ.",
+    "notFound": "A ko ri iyẹn. Jọwọ tun gbiyanju."
+  },
+  "landing": {
+    "nav": {
+      "skills": "Awọn Ọgbọn",
+      "impact": "Ipa",
+      "about": "Nipa",
+      "preview": "Apejuwe"
+    },
+    "getStarted": "Bẹrẹ",
+    "beginJourney": "Bẹrẹ Irin-ajo Rẹ",
+    "exploreSkills": "Ṣawari Awọn Ọgbọn",
+    "hero": {
+      "tagline": "Jẹ́ Ìmólè Laarin Awọn Ẹgbẹ Rẹ.",
+      "description": "Olùkọ́̀ ọgbọn igbesi aye AI fun awọn ọmọ Naijiria ọjọ ori 8–16."
+    },
+    "gap": {
+      "stat": "96%",
+      "statDesc": "ti awọn ọmọ ile-iwe girama Naijiria ko ni awọn ọgbọn imọ-owo ipilẹ.",
+      "item1": {
+        "title": "Awọn ile-iwe n kọ́ ọ̀rọ̀ àkọ́kọ́",
+        "desc": "Kíkọ́ fún idanwo. Ko si awọn ọgbọn igbesi aye ti o wulo."
+      },
+      "item2": {
+        "title": "Awọn ọmọ ile-iwe ko le farada",
+        "desc": "Awọn ọmọ ile-iwe ti o wuyi ni iṣoro pẹlu owo, ibaraẹnisọrọ, ati awọn ipinnu."
+      },
+      "item3": {
+        "title": "Imole n ṣe afọwọyi aafo",
+        "desc": "Ipeni kan lojoojumọ. Awọn ọgbọn gidi. Igboyà gidi."
+      }
+    },
+    "quote": {
+      "text": "\"Awọn ọmọ Naijiria jẹ ọlọgbọn. Iṣoro naa kii ṣe ọgbọn o jẹ aaye si iru ikẹkọ ti o ṣe apẹrẹ gbogbo eniyan, kii ṣe awọn oludari idanwo nikan.\"",
+      "author": "Ẹgbẹ Imole"
+    },
+    "context": {
+      "title1": "Ti a kọ́ fun Naijiria.",
+      "title2": "Fun gbogbo ọmọ.",
+      "description": "Lati awọn agbegbe ti ko ni anfani si awọn ile-iwe ikọkọ — gbogbo ọmọ Naijiria ni ẹtọ si ikẹkọ ti o kọ́ ọmọ eniyan ni kikun, kii ṣe awọn oludari idanwo nikan.",
+      "tag1": "Ọjọ́ orí 8–16",
+      "tag2": "Gẹ̀ẹ́sì + Yorùbá + Igbo + Hausa + Faransé + Pidgin",
+      "tag3": "Ọ̀fẹ́ fún gbogbo"
+    },
+    "preview": {
+      "title1": "Ipeni kan lojoojumọ.",
+      "title2": "Idagbasoke gidi.",
+      "description": "Imole n pese ipeni ti ara ẹni ti o da lori ipele rẹ. Dahun, gba Dimegilio, gba esi iwuri. Aṣoju naa ranti ilọsiwaju rẹ o si ṣe atunṣe laifọwọyi.",
+      "tryChallenge": "Gbiyanju Ipeni",
+      "challengeLabel": "Ipeni Oni",
+      "skillLabel": "Imọ Owo",
+      "levelLabel": "Ipele 2",
+      "challengeExample": "O n gba ₦2,000 owo atokun ni ọsẹ. Gbero bi o ṣe le fi ₦15,000 pamọ ni ọsẹ 8.",
+      "placeholder": "Tẹ idahun rẹ sihin..."
+    },
+    "final": {
+      "ready": "Ṣetan lati tàn?",
+      "description": "Ẹgbẹ̀rún ìmólè bẹ̀rẹ̀ pẹ̀lú ọ̀kan. Bẹ̀rẹ̀ irin-àjò rẹ lónìí.",
+      "startJourney": "Bẹrẹ Irin-ajo Rẹ",
+      "seeLeaderboard": "Wo Apejọ"
+    },
+    "footer": {
+      "description": "Olùkọ́ ọgbọn igbesi aye AI fun awọn ọmọ Naijiria.",
+      "quickLinks": "Awọn Ọna Asopọ",
+      "settings": "Eto",
+      "copyright": "Ẹgbẹ Imole. Ti a kọ fun awọn ọmọ Naijiria."
+    },
+    "showcase": {
+      "curriculum": "Eto Ẹkọ",
+      "title1": "Awọn ọgbọn marun.",
+      "title2": "Idi kan.",
+      "description": "Ipeni kọọkan n kọ ọkan ninu awọn ọgbọn igbesi aye pataki marun —",
+      "description2": "awọn ti ile-iwe ko kọ.",
+      "skill": "Ọgbọn",
+      "swipe": "Ra lati ṣawari"
+    }
   }
 }

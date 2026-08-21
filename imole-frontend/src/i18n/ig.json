@@ -70,7 +70,8 @@
       "easy": "Mfe",
       "medium": "Etiti",
       "hard": "Ike",
-      "expert": "Ọkachamara"
+      "expert": "Ọkachamara",
+      "tricky": "Aghụghọ"
     }
   },
   "streak": {
@@ -104,7 +105,8 @@
     "points": "Akara",
     "empty": "Onye mmeri ọ bụla ma. Bụọ onye mbụ!",
     "emptyCta": "Malite ịma aka",
-    "loading": "Na-ebufe ndị mmeri..."
+    "loading": "Na-ebufe ndị mmeri...",
+    "scholar": "Ọkà mmụta"
   },
   "profile": {
     "title": "Profaịlụ",
@@ -126,7 +128,19 @@
     "pinHint": "Dee PIN a — nne na nna gị ga-achọ ya.",
     "verify": "Nyochaa",
     "delete": "Hichapụ profaịlụ",
-    "deleteConfirm": "Tinye PIN gị ka ị hichapụ profaịlụ a."
+    "deleteConfirm": "Tinye PIN gị ka ị hichapụ profaịlụ a.",
+    "name": "Aha",
+    "namePlaceholder": "Tinye aha gị",
+    "cancel": "Kagbuo",
+    "create": "Mepụta",
+    "choose": "Họrọ Profaịlụ",
+    "enterPin": "Tinye PIN",
+    "login": "Banye",
+    "newProfile": "Profaịlụ Ọhụrụ",
+    "incorrectPin": "PIN ezighi ezi",
+    "loginTitle": "Banye",
+    "returnLogin": "Ị nwere profaịlụ? Banye",
+    "deleteTitle": "Hichapụ Profaịlụ"
   },
   "ask": {
     "title": "Jụọ Imole",
@@ -142,14 +156,46 @@
     "resume": "Gaa n'ihu",
     "stop": "Kwụsị",
     "voiceUnsupported": "Olu anaghị arụ ọrụ na ngwaọrụ a.",
-    "error": "Ndo, ihe mere. Nwa ọzọ."
+    "error": "Ndo, ihe mere. Nwa ọzọ.",
+    "voice": "Kwuo ajụjụ gị",
+    "recording": "Na-edekọ... pịa ka ọ kwụsị",
+    "suggested": {
+      "0": "Olee otu m si eji ego n'akpa m?",
+      "1": "Gịnị ka m ga-ekwu mgbe mmadụ na-emegbu m?",
+      "2": "Olee otu m ga-esi nwee ike na mgbakọ ngwa ngwa?",
+      "3": "Olee otu m ga-esi enwee ndị enyi ngwa?"
+    },
+    "newQuestion": "Ajụjụ Ọhụrụ",
+    "yourQuestion": "Ajụjụ gị",
+    "answer": "Azịza",
+    "noProfile": "Jụọ Imole",
+    "noProfileDesc": "Biko họrọ profaịlụ iji malite",
+    "input": "Jụọ m ihe ọ bụla gbasara nkà ndụ",
+    "history": "Akụkọ",
+    "historyEmpty": "Enweghị mkparịta ụka gara aga",
+    "newChatHint": "Malite mkparịta ụka ọhụrụ"
   },
   "skill": {
-    "mental-math": { "title": "Onye Agha Ọgụgụ Ọnụ" },
-    "persuasive-speaking": { "title": "Olu Obi Ike" },
-    "financial-literacy": { "title": "Akpamọ Ife" },
-    "creative-problem-solving": { "title": "Echiche Ọhụrụ" },
-    "emotional-intelligence": { "title": "Obi Ịcha" }
+    "mental-math": {
+      "title": "Onye Agha Ọgụgụ Ọnụ",
+      "desc": "Gbakọọ ọsọ, chọpụta ụkpụrụ, chee echiche doro anya"
+    },
+    "persuasive-speaking": {
+      "title": "Olu Obi Ike",
+      "desc": "Kparịta ụka n'atụghị egwu, rụrịta ụka n'akwụghị ọtọ"
+    },
+    "financial-literacy": {
+      "title": "Akpamọ Ife",
+      "desc": "Chekwaa, mee atụmatụ, na mee atụmatụ na Naira"
+    },
+    "creative-problem-solving": {
+      "title": "Echiche Ọhụrụ",
+      "desc": "Chee echiche n'èzí igbe mgbe akụrụngwa pere mpe"
+    },
+    "emotional-intelligence": {
+      "title": "Obi Ịcha",
+      "desc": "Ghọta mmetụta ma zaghachi n'amamihe"
+    }
   },
   "parent": {
     "dashboard": {
@@ -163,17 +209,270 @@
       "unlinkConfirm": "Ị chọrọ iwepu nwa a na dashbọọdụ gị?",
       "dailyProgress": "Ọganihu n'oge",
       "last30Days": "Ụbọchị 30 gara aga",
-      "noProgress": "Ọ nweghị ọrụ ma. Mgbe nwa gị mechara ịma aka, ọganihu ga-apụta ebe a."
+      "noProgress": "Ọ nweghị ọrụ ma. Mgbe nwa gị mechara ịma aka, ọganihu ga-apụta ebe a.",
+      "title": "Dashboard nne/nna",
+      "description": "Lelee mmepe ụmụ gị ngwa ngwa.",
+      "selectChild": "Họrọ nwa",
+      "currentStreak": "Ntughari ugbu a",
+      "longestStreak": "Ntughari kacha ogologo",
+      "skillAverages": "Ntụgharị nkà",
+      "recentSessions": "Oge nso",
+      "score": "Nkọwa",
+      "chooseChild": "Họrọ nwa ka e gosi nkọwa dashboard.",
+      "noChildren": "Enweghị ụmụ ejikọrọ",
+      "noChildrenDesc": "Ị nwebeghị nwa ejikọrọ na akaụntụ gị. Tinye nwa ka ịmalite iso ọganihu ya.",
+      "weekChallenges": "Ọmaịlị n'izu a",
+      "weeklyActivity": "Ọrụ kwa izu",
+      "thisWeek": "ọmaịlị n'izu a",
+      "noActivity": "Enwebeghị ọrụ edere n'izu a.",
+      "trend": "Ọnọdụ akara",
+      "avgScoreTrend": "Akara dị ọnụọgụgụ n'izu ndị gara aga",
+      "noTrend": "Akụkọ ezughị ezu igosi ọnọdụ.",
+      "viewReports": "Lee akụkọ",
+      "openSettings": "Meghe ntọala",
+      "loadChildrenError": "Enweghị ike ibubata ụmụ",
+      "loadDashboardError": "Enweghị ike ibubata dashboard",
+      "addChild": "Tinye nwa",
+      "addChildDesc": "Jikoo nwa na akaụntụ gi site n'iji koodi ezinulo ha",
+      "childCodeLabel": "Koodi nwa",
+      "childCodePlaceholder": "dịka CH-AB12CD34",
+      "childCodeHint": "Ị ga-ahụ koodi a na ihuenyo profaịlụ nwa gi.",
+      "unlinked": "Kpọpụrụla nwa",
+      "manageChildren": "Jikwaa ụmụaka"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "reports": "Akụkọ",
+      "settings": "Ntọala"
+    },
+    "login": {
+      "title": "Nbanye Ndị Nne na Nna",
+      "subtitle": "Lelee ọganihu ụmụ gị na akụkọ.",
+      "email": "Email",
+      "password": "Paswọọdụ",
+      "submit": "Banye",
+      "loading": "Ọ na-abanye…",
+      "error": "Email ma ọ bụ paswọọdụ ezighi ezi",
+      "noAccount": "Enweghị akaụntụ?",
+      "register": "Mepụta otu"
+    },
+    "register": {
+      "title": "Mepụta akaụntụ ndị nne na nna",
+      "subtitle": "Deba aha ka ijikwa ụmụ jikọtara, akụkọ, na mmasị.",
+      "name": "Aha zuru ezu",
+      "email": "Email",
+      "password": "Paswọọdụ",
+      "submit": "Deba aha",
+      "loading": "Ọ na-emepụta akaụntụ…",
+      "error": "Enweghị ike imepụta akaụntụ",
+      "hasAccount": "Edebanyelarị aha?",
+      "login": "Banye"
+    },
+    "layout": {
+      "account": "Akụntụ nne/nna",
+      "parent": "Nne/nna",
+      "signOut": "Wepụ"
+    },
+    "reports": {
+      "title": "Akụkọ nne/nna",
+      "description": "Akụkọ mmepe nke izu.",
+      "downloadPdf": "Budata PDF",
+      "downloadExcel": "Budata Excel",
+      "noHistory": "Enweghị akụkọ maka nwa a.",
+      "weekStarting": "Izu malitere",
+      "challenge": "ịgba ajụjụ",
+      "challenges": "ịgba ajụjụ",
+      "streak": "Ntughari",
+      "averageSkillScore": "Nkọwa nkàzi nkezi"
+    },
+    "settings": {
+      "title": "Ntọala nne/nna",
+      "description": "Jikwaa nkwupụta na mmasị asụsụ.",
+      "notifications": "Ayanfẹ nkwupụta",
+      "notificationOptions": {
+        "all": "Ihe niile",
+        "email": "Email",
+        "none": "Ọ dịghị"
+      },
+      "language": "Asụsụ",
+      "saved": "Echekwara ntọala nke ọma.",
+      "saveError": "Enweghị ike ichekwa ntọala"
     }
   },
   "school": {
-    "login": "Banye",
-    "register": "Dee aha",
-    "dashboard": "Dashbọọdụ",
+    "login": {
+      "title": "Nbanye Onye nkụzi",
+      "email": "Ozi ịntanetị",
+      "emailPlaceholder": "onye.nkuzi@uloakwukwo.edu.ng",
+      "password": "Okwuntughe",
+      "submit": "Banye",
+      "noAccount": "Enweghị akaụntụ?",
+      "register": "Deba aha",
+      "error": "Ozi ịntanetị ma ọ bụ okwuntughe ezighi ezi",
+      "subtitle": "Banye na dashboard ụlọ akwụkwọ gị"
+    },
+    "register": {
+      "title": "Ndebanye Aha Onye nkụzi",
+      "name": "Aha Zuru",
+      "namePlaceholder": "Mazi Adebayo",
+      "email": "Ozi ịntanetị",
+      "emailPlaceholder": "onye.nkuzi@uloakwukwo.edu.ng",
+      "password": "Okwuntughe",
+      "schoolCode": "Koodu Ụlọ Akwụkwọ",
+      "schoolCodePlaceholder": "SCH001",
+      "submit": "Mepụta Akaụntụ",
+      "hasAccount": "Enwere akaụntụ?",
+      "login": "Banye",
+      "error": "Ndebanye aha dara",
+      "subtitle": "Mepụta akaụntụ onye nkụzi gị"
+    },
+    "dashboard": {
+      "title": "Klasị M",
+      "subtitle": "Jikwaa ụmụ akwụkwọ gị wee soro ọganihu",
+      "noClasses": "Enwebeghị klasị e kenye",
+      "students": "ụmụ akwụkwọ",
+      "inviteTeacher": "Kpọọ Onye nkụzi",
+      "settings": "Ntọala",
+      "totalStudents": "Ngụkọta Ụmụ akwụkwọ",
+      "activeClasses": "Klasị Na-arụ Ọrụ",
+      "avgPerClass": "Nkezi Ụmụ akwụkwọ/Klasị",
+      "welcome": "Nnọọ",
+      "welcomeDesc": "Ị na-akpụzi uche {{students}} na-agafe klasị {{classes}} taa",
+      "badge": "Dashboard Ụlọ Akwụkwọ",
+      "viewClasses": "Hụ Klasị",
+      "yourClasses": "Klasị Gị",
+      "viewAll": "Hụ ha niile",
+      "todayGlance": "Taa na Nlele",
+      "activeStudents": "Ụmụ akwụkwọ Na-arụ Ọrụ",
+      "runningClasses": "Klasị Na-agba",
+      "avgClassSize": "Nkezi Ogo Klasị",
+      "quickActions": "Omume Ngwa",
+      "browseClasses": "Chọgharịa Klasị",
+      "overview": "Nchịkọta",
+      "totalStudentsLabel": "Ngụkọta Ụmụ akwụkwọ",
+      "totalClassesLabel": "Ngụkọta Klasị",
+      "noData": "Enweghị data. Mepụta klasị mbụ gị iji malite.",
+      "studentsCount": "{{count}} ụmụ akwụkwọ",
+      "dayStreak": "{{count}} ụbọchị usoro",
+      "avgScore": "Nkezi Akara",
+      "currentAverage": "Nkezi ugbu a",
+      "streakLabel": "Usoro:",
+      "scoreLabel": "Akara:"
+    },
     "classes": "Òmùmù́",
     "students": "Ụmụ akwụkwọ",
-    "invite": "Kpọọ",
-    "settings": "Ntọala"
+    "invite": {
+      "title": "Kpọọ Onye nkụzi",
+      "email": "Ozi ịntanetị Onye nkụzi",
+      "emailPlaceholder": "onye.nkuzi.ohuru@uloakwukwo.edu.ng",
+      "submit": "Ziga Ịkpọ Òkù",
+      "sent": "Ezigala ịkpọ òkù nke ọma",
+      "error": "Enweghị ike iziga ịkpọ òkù",
+      "subtitle": "Ziga ịkpọ òkù nye onye nkụzi ọzọ",
+      "heading": "Kpọọ onye ọrụ ibe",
+      "desc": "Ziga ịkpọ òkù email iji sonye n'ụlọ akwụkwọ gị",
+      "sentDesc": "Ezigala ịkpọ òkù nke ọma",
+      "badge": "Kpọọ onye nkụzi",
+      "badgeLabel": "Ndị otu ụlọ akwụkwọ",
+      "benefits": "Gịnị mere ị ga-eji kpọọ onye ọrụ ibe?",
+      "perk1": "Kekọrịta klaasị ma zụọ ọnụ n'ụzọ dị mfe",
+      "perk2": "Soro ọganihu nke nwa akwụkwọ ọ bụla ọnụ",
+      "perk3": "Debe dashboard ụlọ akwụkwọ gị na-emekọrịta ihe",
+      "tip": "Kpọọ ugbu a, too ma emechaa",
+      "tipDesc": "Onye ọrụ ibe gị ga-enweta email nwere njikọ ịbanye n'òtù ụlọ akwụkwọ gị.",
+      "sendAnother": "Ziga ịkpọ òkù ọzọ"
+    },
+    "settings": {
+      "title": "Ntọala Ụlọ Akwụkwọ",
+      "profile": "Profaịlụ",
+      "name": "Aha Ụlọ Akwụkwọ",
+      "code": "Koodu Ụlọ Akwụkwọ",
+      "language": "Asụsụ",
+      "save": "Chekwaa Ntọala",
+      "saved": "Echekwaala ntọala nke ọma",
+      "codeDesc": "Ekenyela koodu ụlọ akwụkwọ ma enweghị ike ịgbanwe ya",
+      "subtitle": "Jikwaa profaịlụ ụlọ akwụkwọ gị na mmasị",
+      "appLanguage": "Asụsụ ngwa",
+      "actions": "Omume ngwa ngwa",
+      "ready": "Ihe niile dị njikere?",
+      "readyDesc": "Nyochaa nkọwa ụlọ akwụkwọ gị ma chekwaa mgbanwe ndị ị mere.",
+      "namePlaceholder": "dịka Bright Future Academy"
+    },
+    "class": {
+      "title": "Klasị",
+      "student": "Nwa akwụkwọ",
+      "streak": "Usoro",
+      "avgScore": "Nkezi Akara",
+      "lastActive": "Ikpeazụ",
+      "classAvg": "Nkezi Klasị",
+      "topPerformers": "Ndị Kasị Mma",
+      "atRisk": "Ụmụ Akwụkwọ Nọ N'ihe Ize",
+      "exportPdf": "Mbufe PDF",
+      "exportCsv": "Mbufe CSV",
+      "noStudents": "Enweghị ụmụ akwụkwọ na klasị a",
+      "enrolled": "Debanyere",
+      "enrolledCount": "{{count}} ụmụ akwụkwọ debanyere",
+      "avg": "Nkezi Klasị",
+      "totalStreak": "Ngụkọta Ụbọchị Usoro",
+      "overview": "Klasị Niile",
+      "export": "Mbufe",
+      "create": "Mepụta Klasị",
+      "createTitle": "Klasị Ọhụrụ",
+      "createDesc": "Tinye aha maka klasị ọhụrụ gị",
+      "createPlaceholder": "dịka Mgbakọ Ọkwa 5",
+      "creating": "Na-emepụta...",
+      "created": "Emepụtala klasị nke ọma",
+      "active": "Na-arụ Ọrụ",
+      "students": "ụmụ akwụkwọ",
+      "tabOverview": "Nchịkọta",
+      "tabStudents": "Ụmụ akwụkwọ Niile",
+      "tabReports": "Akụkọ",
+      "reportTitle": "Mbufe Akụkọ",
+      "reportDesc": "Budata data arụmọrụ klasị",
+      "name": "Aha",
+      "totalStudents": "Mkpokọta Ụmụ Akwụkwọ",
+      "generatedBy": "Imole School Dashboard mepụtara ya",
+      "addStudents": "Tinye ụmụ akwụkwọ",
+      "addStudentsTitle": "Tinye ụmụ akwụkwọ na klaasị a",
+      "addStudentsDesc": "Deetụ nwa akwụkwọ ọ bụla n'ahịrị dị ka Aha, Afọ (afọ abụghị iwu)",
+      "studentsPlaceholder": "Aisha Bello, 10\nChidi Okeke, 11\nTunde Bakare",
+      "addingStudents": "Na-agbakwunye ụmụ akwụkwọ...",
+      "studentsAdded": "{{count}} ụmụ akwụkwọ ọhụrụ agbakwunyere — koodi na PIN n'okpuru",
+      "studentsLinked": "{{count}} ụmụ akwụkwọ debanyere aha ma jikọọ",
+      "newStudentPins": "Koodi na PIN ụmụ akwụkwọ ọhụrụ",
+      "pinCopied": "Detụrụla na clipboard!"
+    },
+    "student": {
+      "title": "Nkọwa Nwa Akwụkwọ",
+      "skillBreakdown": "Nkewa Nkà",
+      "challengeHistory": "Akụkọ Ihe Ịmaaka",
+      "teacherNotes": "Ihe Ndetu Onye nkụzi",
+      "notesPlaceholder": "Tinye ihe ndetu banyere nwa akwụkwọ a...",
+      "saveNotes": "Chekwaa Ihe Ndetu",
+      "noHistory": "Enwebeghị akụkọ ihe ịma aka",
+      "dayStreak": "ụbọchị usoro",
+      "avgLabel": "nkezi akara",
+      "bestStreak": "Usoro kacha mma: {{count}}",
+      "saving": "Na-echekwa...",
+      "back": "Azụ"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "classes": "Klasị",
+      "invite": "Kpọọ Onye nkụzi",
+      "settings": "Ntọala",
+      "logout": "Wepụ",
+      "darkMode": "Ọchịchịrị",
+      "lightMode": "Ìhè"
+    },
+    "sidebar": {
+      "brand": "Ụlọ akwụkwọ",
+      "expand": "Gbasaa",
+      "collapse": "Kwakọ"
+    },
+    "topbar": {
+      "brand": "Ìmólè Ụlọ Akwụkwọ"
+    }
   },
   "common": {
     "copied": "Edeturu!",
@@ -184,6 +483,115 @@
     "confirm": "Kwenye",
     "back": "Azụ",
     "loading": "Na-abufe...",
-    "error": "Njehie"
+    "error": "Njehie",
+    "retry": "Gbalịa ọzọ",
+    "submit": "Nyefee",
+    "search": "Chọọ",
+    "noData": "Enweghị data dị",
+    "toggleMenu": "Gbanwee menu",
+    "toggleTheme": "Gbanwee isiokwu"
+  },
+  "onboarding": {
+    "title": "Ka anyị mee gị nkwado!",
+    "subtitle": "Nzọụkwụ ole na ole iji mee ka ahụmịhe gị kacha mma",
+    "step": "Nzọụkwụ {{n}} nke {{total}}",
+    "stepName": "Aha gị",
+    "subName": "Gwa Imole ka ha kpọọ gị",
+    "nameLabel": "Aha gị",
+    "namePlaceholder": "Kedu ihe anyị ga-akpọ gị?",
+    "stepAge": "Afọ gị",
+    "subAge": "Afọ ole ka ị dị?",
+    "ageLabel": "Afọ gị",
+    "years": "afọ",
+    "ageHint": "Anyị na-eji afọ gị họrọ ihe ịma aka dabara adabara gị.",
+    "stepPin": "PIN nzuzo gị",
+    "subPin": "Chekwa profaịlụ gị",
+    "pinLabel": "Họrọ PIN nzuzo",
+    "pinHint": "Ọnụọgụ 4 ruo 6. Jiri ya mepee profaịlụ gị.",
+    "next": "Gaa n'ihu",
+    "back": "Laa azụ",
+    "create": "Ka anyị gawa!"
+  },
+  "error": {
+    "creationFailed": "Anyị enweghị ike imecha nke a. Biko nwaa ọzọ.",
+    "invalidDetails": "Nkọwa ndị ahụ adịghị mma. Biko lelee ma nwaa ọzọ.",
+    "network": "Njikọ efufu. Biko lelee ịntanetị gị.",
+    "server": "Imole na-anọ ọdụ nwa oge. Nwaa ọzọ.",
+    "notFound": "Anyị ahụtụghị nke ahụ. Biko nwaa ọzọ."
+  },
+  "landing": {
+    "nav": {
+      "skills": "Nkà",
+      "impact": "Mmetụta",
+      "about": "Banyere",
+      "preview": "Nlele"
+    },
+    "getStarted": "Bido",
+    "beginJourney": "Bido Njem Gị",
+    "exploreSkills": "Nyocha Nkà",
+    "hero": {
+      "tagline": "Bụrụ Ìhè N'etiti Ndị Ozu Gị.",
+      "description": "Onye nkuzi nkà ndụ AI maka ụmụaka Naijiria dị afọ 8–16."
+    },
+    "gap": {
+      "stat": "96%",
+      "statDesc": "nke ụmụ akwụkwọ sekọndrị Naijiria gụsịrị akwụkwọ enweghị nkà mmụta ego bụ isi.",
+      "item1": {
+        "title": "Ụlọ akwụkwọ na-akụzi iburu n'isi",
+        "desc": "Ịmụ ihe n'isi maka ule. Enweghị nkà ndụ bara uru."
+      },
+      "item2": {
+        "title": "Ndị gụsịrị akwụkwọ enweghị ike ịnagide",
+        "desc": "Ụmụ akwụkwọ mara mma na-alụso ego, nkwurịta okwu, na mkpebi ọgụ."
+      },
+      "item3": {
+        "title": "Imole na-ejikọ ọdịiche",
+        "desc": "Otu ihe ịma aka kwa ụbọchị. Ezigbo nkà. Ezigbo obi ike."
+      }
+    },
+    "quote": {
+      "text": "\"Ụmụaka Naijiria maara ihe. Nsogbu abụghị ọgụgụ isi kama ọ bụ ohere ịnweta ụdị nkuzi na-akpụzi mmadụ zuru oke, ọ bụghị naanị ndị na-eme ule.\"",
+      "author": "Òtù Imole"
+    },
+    "context": {
+      "title1": "E wuru maka Naijiria.",
+      "title2": "Maka nwa ọ bụla.",
+      "description": "Site n'ọgbakọ ndị a na-eleghara anya ruo n'ụlọ akwụkwọ onwe — nwa ọ bụla nke Naijiria kwesịrị ịnweta nkuzi nke na-ewu mmadụ zuru oke, ọ bụghị naanị ndị na-eme ule.",
+      "tag1": "Afọ 8–16",
+      "tag2": "Bekee + Yoruba + Igbo + Hausa + French + Pidgin",
+      "tag3": "N'efu maka mmadụ niile"
+    },
+    "preview": {
+      "title1": "Otu ihe ịma aka kwa ụbọchị.",
+      "title2": "Ezigbo uto.",
+      "description": "Imole na-enye ihe ịma aka ahaziri onwe ya dabere na ọkwa gị. Zaa, nweta akara, nweta nzaghachi agbamume. Onye ọrụ ahụ na-echeta ọganihu gị ma na-emekọrịta onwe ya.",
+      "tryChallenge": "Nwalee Ihe Ịmaaka",
+      "challengeLabel": "Ihe Ịma aka Taa",
+      "skillLabel": "Ọmụma Ego",
+      "levelLabel": "Ọkwa 2",
+      "challengeExample": "Ị na-enweta ₦2,000 ego akpa kwa izu. Hazie otu ị ga-esi chekwaa ₦15,000 n'izu 8.",
+      "placeholder": "Dee azịza gị ebe a..."
+    },
+    "final": {
+      "ready": "Ị dị njikere ịkwanye?",
+      "description": "Puku ntụpọ ìhè na-amalite na otu. Malite njem gị taa.",
+      "startJourney": "Bido Njem Gị",
+      "seeLeaderboard": "Hụ Bọọdụ Ndị Isi"
+    },
+    "footer": {
+      "description": "Onye nkuzi nkà ndụ AI maka ụmụaka Naijiria.",
+      "quickLinks": "Njikọ Ngwa",
+      "settings": "Ntọala",
+      "copyright": "Òtù Imole. E wuru maka ụmụaka Naijiria."
+    },
+    "showcase": {
+      "curriculum": "Usoro Ọmụmụ",
+      "title1": "Nkà ise.",
+      "title2": "Otu nzube.",
+      "description": "Ihe ịma aka ọ bụla na-ewu otu n'ime nkà ndụ ise dị mkpa —",
+      "description2": "nke ụlọ akwụkwọ anaghị akụzi.",
+      "skill": "Nkà",
+      "swipe": "Pịa iji nyocha"
+    }
   }
 }

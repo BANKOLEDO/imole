@@ -70,7 +70,8 @@
       "easy": "Easy",
       "medium": "Medium",
       "hard": "Hard",
-      "expert": "Ogbonge"
+      "expert": "Ogbonge",
+      "tricky": "Tricky"
     }
   },
   "streak": {
@@ -104,7 +105,8 @@
     "points": "Points",
     "empty": "Nobody dey here yet. Be the first!",
     "emptyCta": "Start one challenge",
-    "loading": "We dey load champions..."
+    "loading": "We dey load champions...",
+    "scholar": "Scholar"
   },
   "profile": {
     "title": "Profile",
@@ -126,7 +128,19 @@
     "pinHint": "Write this PIN down — your parent go need am.",
     "verify": "Verify",
     "delete": "Delete profile",
-    "deleteConfirm": "Enter your PIN to delete this profile."
+    "deleteConfirm": "Enter your PIN to delete this profile.",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "cancel": "Cancel",
+    "create": "Create",
+    "choose": "Choose Profile",
+    "enterPin": "Enter PIN",
+    "login": "Login",
+    "newProfile": "New Profile",
+    "incorrectPin": "PIN no correct",
+    "loginTitle": "Login",
+    "returnLogin": "You don get profile? Login",
+    "deleteTitle": "Delete Profile"
   },
   "ask": {
     "title": "Ask Imole",
@@ -142,14 +156,46 @@
     "resume": "Continue",
     "stop": "Stop",
     "voiceUnsupported": "Voice no dey work for this device.",
-    "error": "Sorry, something don happen. Try am again."
+    "error": "Sorry, something don happen. Try am again.",
+    "voice": "Talk your question",
+    "recording": "Dey record... tap make e stop",
+    "suggested": {
+      "0": "How I go save money from my pocket money?",
+      "1": "Wetin I go say if person dey bully me?",
+      "2": "How I go quick quick get better for maths?",
+      "3": "How I go make friends easy easy?"
+    },
+    "newQuestion": "New Question",
+    "yourQuestion": "Your question",
+    "answer": "Answer",
+    "noProfile": "Ask Imole",
+    "noProfileDesc": "Abeg select profile make we start",
+    "input": "Ask me anything about life skills",
+    "history": "History",
+    "historyEmpty": "No past chat yet",
+    "newChatHint": "Start a new conversation"
   },
   "skill": {
-    "mental-math": { "title": "Number Ninja" },
-    "persuasive-speaking": { "title": "Confident Voice" },
-    "financial-literacy": { "title": "Money Sense" },
-    "creative-problem-solving": { "title": "Bright Ideas" },
-    "emotional-intelligence": { "title": "Kind Heart" }
+    "mental-math": {
+      "title": "Number Ninja",
+      "desc": "Calculate fast, spot patterns, reason clearly"
+    },
+    "persuasive-speaking": {
+      "title": "Confident Voice",
+      "desc": "Communicate well, argue with respect"
+    },
+    "financial-literacy": {
+      "title": "Money Sense",
+      "desc": "Save, budget, and plan for your future"
+    },
+    "creative-problem-solving": {
+      "title": "Bright Ideas",
+      "desc": "Think outside the box when resources dey small"
+    },
+    "emotional-intelligence": {
+      "title": "Kind Heart",
+      "desc": "Understand your feelings and respond wisely"
+    }
   },
   "parent": {
     "dashboard": {
@@ -163,17 +209,270 @@
       "unlinkConfirm": "You wan remove this child from your dashboard?",
       "dailyProgress": "Progress over time",
       "last30Days": "Last 30 days",
-      "noProgress": "Nothing dey here yet. When your pikin finish challenges, progress go show here."
+      "noProgress": "Nothing dey here yet. When your pikin finish challenges, progress go show here.",
+      "title": "Parent dashboard",
+      "description": "Check your pikin progress quick quick.",
+      "selectChild": "Choose pikin",
+      "currentStreak": "Current streak",
+      "longestStreak": "Longest streak",
+      "skillAverages": "Skill averages",
+      "recentSessions": "Recent sessions",
+      "score": "Score",
+      "chooseChild": "Choose one pikin to show dashboard details.",
+      "noChildren": "No pikin don link",
+      "noChildrenDesc": "You no get any pikin wey don link to your account yet. Add pikin to start following progress.",
+      "weekChallenges": "Challenges for this week",
+      "weeklyActivity": "Week activity",
+      "thisWeek": "challenges for this week",
+      "noActivity": "No activity wey we record for this week yet.",
+      "trend": "Score trend",
+      "avgScoreTrend": "Average score across recent weeks",
+      "noTrend": "No plenty history to show trend yet.",
+      "viewReports": "See reports",
+      "openSettings": "Open settings",
+      "loadChildrenError": "No fit load children",
+      "loadDashboardError": "No fit load dashboard",
+      "addChild": "Add child",
+      "addChildDesc": "Link a child to your account with their family code",
+      "childCodeLabel": "Child code",
+      "childCodePlaceholder": "e.g. CH-AB12CD34",
+      "childCodeHint": "You go find this code on your child profile screen.",
+      "unlinked": "Child don unlink",
+      "manageChildren": "Manage children"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "login": {
+      "title": "Parent Sign in",
+      "subtitle": "See your pikin progress and reports.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "loading": "We dey sign in…",
+      "error": "Email or password no correct",
+      "noAccount": "You no get account?",
+      "register": "Make one"
+    },
+    "register": {
+      "title": "Create parent account",
+      "subtitle": "Register and manage your pikin dem, reports, and preference.",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Register",
+      "loading": "We dey create account…",
+      "error": "We no fit create account",
+      "hasAccount": "You don register before?",
+      "login": "Sign in"
+    },
+    "layout": {
+      "account": "Parent account",
+      "parent": "Parent",
+      "signOut": "Sign out"
+    },
+    "reports": {
+      "title": "Parent reports",
+      "description": "Weekly progress history.",
+      "downloadPdf": "Download PDF",
+      "downloadExcel": "Download Excel",
+      "noHistory": "No report history for dis pikin.",
+      "weekStarting": "Week starting",
+      "challenge": "challenge",
+      "challenges": "challenges",
+      "streak": "Streak",
+      "averageSkillScore": "Average skill score"
+    },
+    "settings": {
+      "title": "Parent settings",
+      "description": "Control notification and language preference.",
+      "notifications": "Notification preferences",
+      "notificationOptions": {
+        "all": "All",
+        "email": "Email",
+        "none": "None"
+      },
+      "language": "Language",
+      "saved": "Settings saved successfully.",
+      "saveError": "Unable to save settings"
     }
   },
   "school": {
-    "login": "Log in",
-    "register": "Register",
-    "dashboard": "Dashboard",
+    "login": {
+      "title": "Teacher Login",
+      "email": "Email",
+      "emailPlaceholder": "teacher@school.edu.ng",
+      "password": "Password",
+      "submit": "Login",
+      "noAccount": "You no get account?",
+      "register": "Register",
+      "error": "Email or password no correct",
+      "subtitle": "Sign in to your school dashboard"
+    },
+    "register": {
+      "title": "Teacher Registration",
+      "name": "Full Name",
+      "namePlaceholder": "Mr. Adebayo",
+      "email": "Email",
+      "emailPlaceholder": "teacher@school.edu.ng",
+      "password": "Password",
+      "schoolCode": "School Code",
+      "schoolCodePlaceholder": "SCH001",
+      "submit": "Create Account",
+      "hasAccount": "You get account already?",
+      "login": "Login",
+      "error": "Registration no work",
+      "subtitle": "Create your teacher account"
+    },
+    "dashboard": {
+      "title": "My Classes",
+      "subtitle": "Manage your students and track progress",
+      "noClasses": "No class wey dem give you yet",
+      "students": "students",
+      "inviteTeacher": "Invite Teacher",
+      "settings": "Settings",
+      "totalStudents": "Total Students",
+      "activeClasses": "Active Classes",
+      "avgPerClass": "Average Students per Class",
+      "welcome": "Welcome back o",
+      "welcomeDesc": "You dey shape {{students}} young minds across {{classes}} classes today",
+      "badge": "School Dashboard",
+      "viewClasses": "See Classes",
+      "yourClasses": "Your Classes",
+      "viewAll": "See all",
+      "todayGlance": "Today at a Glance",
+      "activeStudents": "Active Students",
+      "runningClasses": "Classes wey Dey Run",
+      "avgClassSize": "Average Class Size",
+      "quickActions": "Quick Actions",
+      "browseClasses": "Browse Classes",
+      "overview": "Overview",
+      "totalStudentsLabel": "Total Students",
+      "totalClassesLabel": "Total Classes",
+      "noData": "No data yet. Create your first class make we start.",
+      "studentsCount": "{{count}} students",
+      "dayStreak": "{{count}} day streak",
+      "avgScore": "Average Score",
+      "currentAverage": "Current average",
+      "streakLabel": "Streak:",
+      "scoreLabel": "Score:"
+    },
     "classes": "Classes",
     "students": "Students",
-    "invite": "Invite",
-    "settings": "Settings"
+    "invite": {
+      "title": "Invite Teacher",
+      "email": "Teacher Email",
+      "emailPlaceholder": "new.teacher@school.edu.ng",
+      "submit": "Send Invitation",
+      "sent": "We don send invitation",
+      "error": "We no fit send invitation",
+      "subtitle": "Send invitation to another teacher",
+      "heading": "Invite your colleague",
+      "desc": "Send email invitation make dem join your school",
+      "sentDesc": "Invitation don send well well",
+      "badge": "Invite Teacher",
+      "badgeLabel": "School Team",
+      "benefits": "Why you go invite your colleague?",
+      "perk1": "Share classes and teach together easy easy",
+      "perk2": "Follow every student progress together",
+      "perk3": "Keep your school dashboard in sync",
+      "tip": "Invite now, grow later",
+      "tipDesc": "Your colleague go receive email with link to join your school team.",
+      "sendAnother": "Send another invitation"
+    },
+    "settings": {
+      "title": "School Settings",
+      "profile": "Profile",
+      "name": "School Name",
+      "code": "School Code",
+      "language": "Language",
+      "save": "Save Settings",
+      "saved": "Settings don save well well",
+      "codeDesc": "School code don assign and e no fit change",
+      "subtitle": "Manage your school profile and preferences",
+      "appLanguage": "App language",
+      "actions": "Quick actions",
+      "ready": "Everything don ready?",
+      "readyDesc": "Check your school details and save the changes wey you make.",
+      "namePlaceholder": "e.g. Bright Future Academy"
+    },
+    "class": {
+      "title": "Class",
+      "student": "Student",
+      "streak": "Streak",
+      "avgScore": "Average Score",
+      "lastActive": "Last Time",
+      "classAvg": "Class Average",
+      "topPerformers": "Best Students",
+      "atRisk": "Students wey get problem",
+      "exportPdf": "Export as PDF",
+      "exportCsv": "Export as CSV",
+      "noStudents": "No student for this class",
+      "enrolled": "Enrolled",
+      "enrolledCount": "{{count}} students wey enroll",
+      "avg": "Class Average",
+      "totalStreak": "Total Streak Days",
+      "overview": "All Classes",
+      "export": "Export",
+      "create": "Create Class",
+      "createTitle": "New Class",
+      "createDesc": "Enter name for your new class",
+      "createPlaceholder": "e.g. Maths Level 5",
+      "creating": "Dey create...",
+      "created": "Class don create finish",
+      "active": "Active",
+      "students": "students",
+      "tabOverview": "Overview",
+      "tabStudents": "All Students",
+      "tabReports": "Reports",
+      "reportTitle": "Export Reports",
+      "reportDesc": "Download class performance data",
+      "name": "Name",
+      "totalStudents": "Total Students",
+      "generatedBy": "Imole School Dashboard make am",
+      "addStudents": "Add students",
+      "addStudentsTitle": "Add students to this class",
+      "addStudentsDesc": "Paste one student per line as Name, Age (age no need)",
+      "studentsPlaceholder": "Aisha Bello, 10\nChidi Okeke, 11\nTunde Bakare",
+      "addingStudents": "Adding students...",
+      "studentsAdded": "{{count}} new students add — codes and PINs below",
+      "studentsLinked": "{{count}} students already registered and link",
+      "newStudentPins": "New student codes and PINs",
+      "pinCopied": "Don copy to clipboard!"
+    },
+    "student": {
+      "title": "Student Details",
+      "skillBreakdown": "How Skill Take Be",
+      "challengeHistory": "Challenge History",
+      "teacherNotes": "Teacher Notes",
+      "notesPlaceholder": "Add notes about this student...",
+      "saveNotes": "Save Notes",
+      "noHistory": "No challenge history yet",
+      "dayStreak": "day streak",
+      "avgLabel": "average score",
+      "bestStreak": "Best streak: {{count}}",
+      "saving": "Dey save...",
+      "back": "Go back"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "classes": "Classes",
+      "invite": "Invite Teacher",
+      "settings": "Settings",
+      "logout": "Logout",
+      "darkMode": "Dark Mode",
+      "lightMode": "Light Mode"
+    },
+    "sidebar": {
+      "brand": "School",
+      "expand": "Open am",
+      "collapse": "Close am"
+    },
+    "topbar": {
+      "brand": "Ìmólè School"
+    }
   },
   "common": {
     "copied": "E don copy!",
@@ -184,6 +483,115 @@
     "confirm": "Confirm",
     "back": "Back",
     "loading": "E dey load...",
-    "error": "Error"
+    "error": "Error",
+    "retry": "Try again",
+    "submit": "Submit",
+    "search": "Search",
+    "noData": "No data dey",
+    "toggleMenu": "Open menu",
+    "toggleTheme": "Change theme"
+  },
+  "onboarding": {
+    "title": "Let make we dey set you up!",
+    "subtitle": "Small steps to make am fit you well",
+    "step": "Step {{n}} of {{total}}",
+    "stepName": "Your name",
+    "subName": "Tell Imole wetin make we call you",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Wetin we go call you?",
+    "stepAge": "Your age",
+    "subAge": "How old you be?",
+    "ageLabel": "Your age",
+    "years": "years",
+    "ageHint": "We use your age to pick challenges wey dey correct for you.",
+    "stepPin": "Your secret PIN",
+    "subPin": "Keep your profile safe",
+    "pinLabel": "Choose a secret PIN",
+    "pinHint": "4 to 6 numbers. Use am to open your profile.",
+    "next": "Abeg continue",
+    "back": "Go back",
+    "create": "Deh go!"
+  },
+  "error": {
+    "creationFailed": "We no fit finish create that one. Try again.",
+    "invalidDetails": "That one no correct. Check am and try again.",
+    "network": "Connection don break. Check your network and try again.",
+    "server": "Imole dey rest small. Try again soon.",
+    "notFound": "We no fit find that one. Try again."
+  },
+  "landing": {
+    "nav": {
+      "skills": "Skills",
+      "impact": "Impact",
+      "about": "About",
+      "preview": "Preview"
+    },
+    "getStarted": "Make We Start",
+    "beginJourney": "Begin Your Journey",
+    "exploreSkills": "See Skills Wey Dey",
+    "hero": {
+      "tagline": "Be the Light Among Your Peers.",
+      "description": "An AI life skills coach for Nigerian pikin wey dey 8–16 years old."
+    },
+    "gap": {
+      "stat": "96%",
+      "statDesc": "of Nigerian secondary school graduates no get basic financial literacy skills.",
+      "item1": {
+        "title": "School dey teach memorization",
+        "desc": "Dey cram for exam. No practical life skills."
+      },
+      "item2": {
+        "title": "Graduates no fit cope",
+        "desc": "Bright students dey struggle with money, communication, and decisions."
+      },
+      "item3": {
+        "title": "Imole don cover the gap",
+        "desc": "One challenge everyday. Real skills. Real confidence."
+      }
+    },
+    "quote": {
+      "text": "\"Nigerian pikin dem dey bright. The problem no be intelligence, na access to the kind of coaching wey dey shape whole human being, not just exam performer.\"",
+      "author": "Team Imole"
+    },
+    "context": {
+      "title1": "We build am for Nigeria.",
+      "title2": "For every pikin.",
+      "description": "From community wey dem neglect to private school — every Nigerian pikin deserve coaching wey dey build whole human being, not just exam performer.",
+      "tag1": "Age 8–16",
+      "tag2": "English + Yoruba + Igbo + Hausa + French + Pidgin",
+      "tag3": "Free for everybody"
+    },
+    "preview": {
+      "title1": "One challenge a day.",
+      "title2": "Real growth.",
+      "description": "Imole go give you challenge wey match your level. Answer, get score, get feedback wey go encourage you. The agent go remember your progress and adjust by itself.",
+      "tryChallenge": "Try Challenge",
+      "challengeLabel": "Today's Challenge",
+      "skillLabel": "Money Matter",
+      "levelLabel": "Level 2",
+      "challengeExample": "You dey get ₦2,000 pocket money every week. Plan how you go save ₦15,000 for 8 weeks.",
+      "placeholder": "Type your answer here..."
+    },
+    "final": {
+      "ready": "You ready to shine?",
+      "description": "Tousand points of light start with one. Begin your journey today.",
+      "startJourney": "Start Your Journey",
+      "seeLeaderboard": "See Leaderboard"
+    },
+    "footer": {
+      "description": "An AI life skills coach for Nigerian pikin.",
+      "quickLinks": "Quick Links",
+      "settings": "Settings",
+      "copyright": "Team Imole. We build am for Nigerian pikin."
+    },
+    "showcase": {
+      "curriculum": "The Curriculum",
+      "title1": "Five skills.",
+      "title2": "One purpose.",
+      "description": "Every challenge dey build one of five important life skills —",
+      "description2": "the ones school no dey teach.",
+      "skill": "Skill",
+      "swipe": "Swipe make you see"
+    }
   }
 }

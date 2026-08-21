@@ -70,7 +70,8 @@
       "easy": "Saukake",
       "medium": "Matsakaici",
       "hard": "Wahala",
-      "expert": "Kwararre"
+      "expert": "Kwararre",
+      "tricky": "Mai wayo"
     }
   },
   "streak": {
@@ -104,7 +105,8 @@
     "points": "Maki",
     "empty": "Babun zakara tukuna. Ka zama na farko!",
     "emptyCta": "Fara kalubale",
-    "loading": "Ana loda masu nasara..."
+    "loading": "Ana loda masu nasara...",
+    "scholar": "Malami"
   },
   "profile": {
     "title": "Bayani",
@@ -126,7 +128,19 @@
     "pinHint": "Rubuta wannan PIN — iyayenka za su bukata.",
     "verify": "Tabbatarwa",
     "delete": "Goge bayani",
-    "deleteConfirm": "Shigar da PIN don goge wannan bayani."
+    "deleteConfirm": "Shigar da PIN don goge wannan bayani.",
+    "name": "Suna",
+    "namePlaceholder": "Shigar da sunan ku",
+    "cancel": "Soke",
+    "create": "Ƙirƙiri",
+    "choose": "Zaɓi Bayani",
+    "enterPin": "Shigar da PIN",
+    "login": "Shiga",
+    "newProfile": "Sabon Bayani",
+    "incorrectPin": "PIN ba daidai ba",
+    "loginTitle": "Shiga",
+    "returnLogin": "Kuna da bayani? Shiga",
+    "deleteTitle": "Share Bayani"
   },
   "ask": {
     "title": "Tambaye Imole",
@@ -142,14 +156,46 @@
     "resume": "Ci gaba",
     "stop": "Tsayarwa",
     "voiceUnsupported": "Murya ba ta aiki a wannan na'ura.",
-    "error": "Yi hakuri, wani abu ya faru. Sake gwadawa."
+    "error": "Yi hakuri, wani abu ya faru. Sake gwadawa.",
+    "voice": "Faɗa tambayarku da murya",
+    "recording": "Ana rikodi... danna don tsayawa",
+    "suggested": {
+      "0": "Yaya zan ajiye kuɗi daga aljihuna?",
+      "1": "Me zan faɗa idan wani ya zalunce ni?",
+      "2": "Yaya zan iya inganta lissafi da sauri?",
+      "3": "Yaya zan sami abokai cikin sauki?"
+    },
+    "newQuestion": "Sabuwar Tambaya",
+    "yourQuestion": "Tambayar ku",
+    "answer": "Amsa",
+    "noProfile": "Tambayi Imole",
+    "noProfileDesc": "Don Allah zaɓi bayani don farawa",
+    "input": "Tambaye ni komai game da fasahar rayuwa",
+    "history": "Tarihi",
+    "historyEmpty": "Babu hirar da ta gabata",
+    "newChatHint": "Fara sabon tattaunawa"
   },
   "skill": {
-    "mental-math": { "title": "Warrior Lissafi" },
-    "persuasive-speaking": { "title": "Muryar Kwarin gwiwa" },
-    "financial-literacy": { "title": "Wayon Kudi" },
-    "creative-problem-solving": { "title": "Babban Tunani" },
-    "emotional-intelligence": { "title": "Zuciyar Tausayi" }
+    "mental-math": {
+      "title": "Warrior Lissafi",
+      "desc": "Yi lissafi da sauri, gano alamu, yi tunani a sarari"
+    },
+    "persuasive-speaking": {
+      "title": "Muryar Kwarin gwiwa",
+      "desc": "Sadarwa da ƙarfin gwiwa, yi gardama cikin mutunci"
+    },
+    "financial-literacy": {
+      "title": "Wayon Kudi",
+      "desc": "Ajiye, tsara kasafin kuɗi, kuma shirya cikin Naira"
+    },
+    "creative-problem-solving": {
+      "title": "Babban Tunani",
+      "desc": "Yi tunani a waje da akwatin lokacin da albarkatu ke da iyaka"
+    },
+    "emotional-intelligence": {
+      "title": "Zuciyar Tausayi",
+      "desc": "Fahimci motsin rai kuma amsa da hikima"
+    }
   },
   "parent": {
     "dashboard": {
@@ -163,17 +209,270 @@
       "unlinkConfirm": "Ka cire wannan yaro daga dashboard?",
       "dailyProgress": "Ci gaba da lokaci",
       "last30Days": "Kwanaki 30 na baya",
-      "noProgress": "Babu aiki tukuna. Lokacin da jarinka ya kammala kalubale, ci gaba zai bayyana nan."
+      "noProgress": "Babu aiki tukuna. Lokacin da jarinka ya kammala kalubale, ci gaba zai bayyana nan.",
+      "title": "Dashboard na iyaye",
+      "description": "Duba ci gaban 'ya'yanku cikin sauki.",
+      "selectChild": "Zaɓi yaro",
+      "currentStreak": "Ci gaba na yanzu",
+      "longestStreak": "Mafi tsawon ci gaba",
+      "skillAverages": "Matsakaicin ƙwarewa",
+      "recentSessions": "Zaman baya",
+      "score": "Makirci",
+      "chooseChild": "Zaɓi yaro don nuna cikakken bayanin dashboard.",
+      "noChildren": "Babu ƴaƴan da aka haɗa",
+      "noChildrenDesc": "Babu yaro da aka haɗa da asusunka tukuna. Ƙara yaro don fara bin ci gabansa.",
+      "weekChallenges": "Kalubalen wannan mako",
+      "weeklyActivity": "Ayyukan mako-mako",
+      "thisWeek": "kalubale a wannan mako",
+      "noActivity": "Babu ayyukan da aka rubuta a wannan mako tukuna.",
+      "trend": "Hanyar makirci",
+      "avgScoreTrend": "Matsakaicin makirci a cikin makonni na baya-bayan nan",
+      "noTrend": "Babu isasshen tarihi don nuna hanya tukuna.",
+      "viewReports": "Duba rahotanni",
+      "openSettings": "Bude saituna",
+      "loadChildrenError": "Ba za a iya ɗora yara ba",
+      "loadDashboardError": "Ba za a iya ɗora dashboard ba",
+      "addChild": "Kara yaro",
+      "addChildDesc": "Hada yaro da asusunka ta amfani da lambar iyali",
+      "childCodeLabel": "Lambar yaro",
+      "childCodePlaceholder": "misali CH-AB12CD34",
+      "childCodeHint": "Za ka sami wannan lambar a shafin bayanan yaronka.",
+      "unlinked": "An cire yaro",
+      "manageChildren": "Sarrafa yara"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "reports": "Rahotanni",
+      "settings": "Saituna"
+    },
+    "login": {
+      "title": "Shigar da Iyaye",
+      "subtitle": "Duba ci gaban ɗanku da rahotanni.",
+      "email": "Imel",
+      "password": "Kalmar sirri",
+      "submit": "Shiga",
+      "loading": "Ana shiga…",
+      "error": "Imel ko kalmar sirri bai dace ba",
+      "noAccount": "Ba ku da asusu?",
+      "register": "Ƙirƙiri ɗaya"
+    },
+    "register": {
+      "title": "Ƙirƙiri asusun iyaye",
+      "subtitle": "Yi rijista don sarrafa ƴaƴan da aka haɗa, rahotanni, da zaɓuɓɓuka.",
+      "name": "Cikakken suna",
+      "email": "Imel",
+      "password": "Kalmar sirri",
+      "submit": "Yi rijista",
+      "loading": "Ana ƙirƙirar asusu…",
+      "error": "An kasa ƙirƙirar asusu",
+      "hasAccount": "An riga an yi rijista?",
+      "login": "Shiga"
+    },
+    "layout": {
+      "account": "Asusun iyaye",
+      "parent": "Iyaye",
+      "signOut": "Fita"
+    },
+    "reports": {
+      "title": "Rahotannin iyaye",
+      "description": "Tarihin ci gaban mako-mako.",
+      "downloadPdf": "Zazzage PDF",
+      "downloadExcel": "Zazzage Excel",
+      "noHistory": "Babu tarihin rahoto ga wannan yaro.",
+      "weekStarting": "Mako ya fara",
+      "challenge": "ƙalubale",
+      "challenges": "ƙalubale",
+      "streak": "Ci gaba",
+      "averageSkillScore": "Matsakaicin maki ƙwarewa"
+    },
+    "settings": {
+      "title": "Saitunan iyaye",
+      "description": "Sarrafa sanarwa da zaɓin harshe.",
+      "notifications": "Zaɓin sanarwa",
+      "notificationOptions": {
+        "all": "Duka",
+        "email": "Imel",
+        "none": "Babu"
+      },
+      "language": "Harshe",
+      "saved": "An adana saituna cikin nasara.",
+      "saveError": "Ba za a iya adana saituna ba"
     }
   },
   "school": {
-    "login": "Shiga",
-    "register": "Yi rajista",
-    "dashboard": "Dashboard",
+    "login": {
+      "title": "Shigar Malami",
+      "email": "Imel",
+      "emailPlaceholder": "malami@makaranta.edu.ng",
+      "password": "Kalmar Sirri",
+      "submit": "Shiga",
+      "noAccount": "Ba ku da asusu?",
+      "register": "Yi rijista",
+      "error": "Imel ko kalmar sirri ba daidai ba",
+      "subtitle": "Shiga dashboard makarantarku"
+    },
+    "register": {
+      "title": "Rijistar Malami",
+      "name": "Cikakken Suna",
+      "namePlaceholder": "Malam Adebayo",
+      "email": "Imel",
+      "emailPlaceholder": "malami@makaranta.edu.ng",
+      "password": "Kalmar Sirri",
+      "schoolCode": "Lambar Makaranta",
+      "schoolCodePlaceholder": "SCH001",
+      "submit": "Ƙirƙiri Asusu",
+      "hasAccount": "Kuna da asusu?",
+      "login": "Shiga",
+      "error": "Rijista ta kasa",
+      "subtitle": "Ƙirƙiri asusun malaminku"
+    },
+    "dashboard": {
+      "title": "Ajina",
+      "subtitle": "Sarrafa ɗaliban ku da bin diddigin ci gaba",
+      "noClasses": "Babu aji da aka sanya har yanzu",
+      "students": "dalibai",
+      "inviteTeacher": "Gayyaci Malami",
+      "settings": "Saituna",
+      "totalStudents": "Jimillar Dalibai",
+      "activeClasses": "Aji Masu Aiki",
+      "avgPerClass": "Matsakaicin Dalibai/Aji",
+      "welcome": "Barka da dawowa",
+      "welcomeDesc": "Kuna tsara zukatan {{students}} a cikin aji {{classes}} a yau",
+      "badge": "Dashboard Makaranta",
+      "viewClasses": "Duba Aji",
+      "yourClasses": "Ajinku",
+      "viewAll": "Duba duka",
+      "todayGlance": "Yau a Kallo",
+      "activeStudents": "Dalibai Masu Aiki",
+      "runningClasses": "Aji Masu Gudana",
+      "avgClassSize": "Matsakaicin Girman Aji",
+      "quickActions": "Ayyuka Masu Sauri",
+      "browseClasses": "Bincika Aji",
+      "overview": "Taƙaitawa",
+      "totalStudentsLabel": "Jimillar Dalibai",
+      "totalClassesLabel": "Jimillar Aji",
+      "noData": "Babu bayanai tukuna. Ƙirƙiri ajin ku na farko don farawa.",
+      "studentsCount": "{{count}} dalibai",
+      "dayStreak": "{{count}} rana mai zuri",
+      "avgScore": "Matsakaicin Maki",
+      "currentAverage": "Matsakaici na yanzu",
+      "streakLabel": "Zuri:",
+      "scoreLabel": "Maki:"
+    },
     "classes": "Darussa",
     "students": "Dalibai",
-    "invite": "Gayyata",
-    "settings": "Saituna"
+    "invite": {
+      "title": "Gayyaci Malami",
+      "email": "Imel Malami",
+      "emailPlaceholder": "sabon.malami@makaranta.edu.ng",
+      "submit": "Aika Gayyata",
+      "sent": "An aika gayyata cikin nasara",
+      "error": "An kasa aika gayyata",
+      "subtitle": "Aika gayyata zuwa ga wani malami",
+      "heading": "Gayyaci abokin aiki",
+      "desc": "Aika gayyata ta imel don shiga makarantarku",
+      "sentDesc": "An aika gayyata cikin nasara",
+      "badge": "Gayyaci malami",
+      "badgeLabel": "Ƙungiyar makaranta",
+      "benefits": "Me ya sa ka gayyaci abokin aiki?",
+      "perk1": "Raba azuzuwa kuma ku yi koyarwa tare cikin sauƙi",
+      "perk2": "Ku bi ci gaban kowane ɗalibi tare",
+      "perk3": "Ka sa dashboard ɗin makarantarka ya daidaita",
+      "tip": "Ka gayyace yanzu, ka girma daga baya",
+      "tipDesc": "Abokin aikin ka zai sami imel mai hanyar shiga ƙungiyar makarantarku.",
+      "sendAnother": "Aika wata gayyata"
+    },
+    "settings": {
+      "title": "Saitunan Makaranta",
+      "profile": "Bayanan",
+      "name": "Sunan Makaranta",
+      "code": "Lambar Makaranta",
+      "language": "Harshe",
+      "save": "Ajiye Saituna",
+      "saved": "An ajiye saituna cikin nasara",
+      "codeDesc": "An sanya lambar makaranta kuma ba za a iya canza ta ba",
+      "subtitle": "Sarrafa bayanin makarantarku da zaɓuka",
+      "appLanguage": "Harshen aikace-aikacen",
+      "actions": "Ayyuka masu sauri",
+      "ready": "An shirya komai?",
+      "readyDesc": "Duba bayanan makarantarku kuma ka ajiye canje-canjen da ka yi.",
+      "namePlaceholder": "misali. Bright Future Academy"
+    },
+    "class": {
+      "title": "Aji",
+      "student": "Dalibi",
+      "streak": "Zuri",
+      "avgScore": "Matsakaicin Maki",
+      "lastActive": "Na Ƙarshe",
+      "classAvg": "Matsakaicin Aji",
+      "topPerformers": "Manyan Ɗalibai",
+      "atRisk": "Ɗalibai Masu Haɗari",
+      "exportPdf": "Fitar da PDF",
+      "exportCsv": "Fitar da CSV",
+      "noStudents": "Babu dalibai a wannan aji",
+      "enrolled": "Masu Rijista",
+      "enrolledCount": "{{count}} dalibai masu rijista",
+      "avg": "Matsakaicin Aji",
+      "totalStreak": "Jimillar Kwanakin Zuri",
+      "overview": "Dukan Aji",
+      "export": "Fitarwa",
+      "create": "Ƙirƙiri Aji",
+      "createTitle": "Sabon Aji",
+      "createDesc": "Shigar da suna don sabon ajin ku",
+      "createPlaceholder": "misali. Lissafi Mataki 5",
+      "creating": "Ana ƙirƙira...",
+      "created": "An ƙirƙiri aji cikin nasara",
+      "active": "Mai Aiki",
+      "students": "dalibai",
+      "tabOverview": "Taƙaitawa",
+      "tabStudents": "Dukan Dalibai",
+      "tabReports": "Rahotanni",
+      "reportTitle": "Fitar da Rahotanni",
+      "reportDesc": "Zazzage bayanan aikin aji",
+      "name": "Suna",
+      "totalStudents": "Jimillar Ɗalibai",
+      "generatedBy": "Imole School Dashboard ne ya samar",
+      "addStudents": "Kara dalibai",
+      "addStudentsTitle": "Kara dalibai a wannan aji",
+      "addStudentsDesc": "Saka dalibi daya a kowane layi kamar Suna, Shekaru (shekaru ba dole ba)",
+      "studentsPlaceholder": "Aisha Bello, 10\nChidi Okeke, 11\nTunde Bakare",
+      "addingStudents": "Ana kara dalibai...",
+      "studentsAdded": "{{count}} sabbin dalibai an kara — lambobi da PIN a kasa",
+      "studentsLinked": "{{count}} dalibai sun riga sun yi rijista kuma an hada",
+      "newStudentPins": "Sabbin lambobi da PIN na dalibai",
+      "pinCopied": "An kwafa zuwa clipboard!"
+    },
+    "student": {
+      "title": "Bayanan Dalibi",
+      "skillBreakdown": "Rarraba Fasaha",
+      "challengeHistory": "Tarihin Kalubale",
+      "teacherNotes": "Bayanan Malami",
+      "notesPlaceholder": "Ƙara bayanai game da wannan dalibi...",
+      "saveNotes": "Ajiye Bayanai",
+      "noHistory": "Babu tarihin kalubale har yanzu",
+      "dayStreak": "rana mai zuri",
+      "avgLabel": "matsakaicin maki",
+      "bestStreak": "Mafi kyawun zuri: {{count}}",
+      "saving": "Ana ajiyewa...",
+      "back": "Gaya"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "classes": "Aji",
+      "invite": "Gayyaci Malami",
+      "settings": "Saituna",
+      "logout": "Fita",
+      "darkMode": "Yanayin Duhu",
+      "lightMode": "Yanayin Haske"
+    },
+    "sidebar": {
+      "brand": "Makaranta",
+      "expand": "Faɗa",
+      "collapse": "Rushe"
+    },
+    "topbar": {
+      "brand": "Ìmólè Makaranta"
+    }
   },
   "common": {
     "copied": "An kwafi!",
@@ -184,6 +483,115 @@
     "confirm": "Tabbatar",
     "back": "Baya",
     "loading": "Ana loda...",
-    "error": "Kuskure"
+    "error": "Kuskure",
+    "retry": "Sake gwadawa",
+    "submit": "Ƙaddamar",
+    "search": "Bincika",
+    "noData": "Babu bayanai",
+    "toggleMenu": "Juya menu",
+    "toggleTheme": "Juya yanayin"
+  },
+  "onboarding": {
+    "title": "Bari mu shirya maka!",
+    "subtitle": "'Yan matakai don keɓance ƙwarewar ka",
+    "step": "Mataki {{n}} na {{total}}",
+    "stepName": "Sunanka",
+    "subName": "Fadawa Imole abin da za a kira ka",
+    "nameLabel": "Sunanka",
+    "namePlaceholder": "Me ya kamata mu kira ka?",
+    "stepAge": "Shekarunka",
+    "subAge": "Shekara nawa kake?",
+    "ageLabel": "Shekarunka",
+    "years": "shekaru",
+    "ageHint": "Muna amfani da shekarunka don zaɓar ƙalubalen da suka dace.",
+    "stepPin": "PIN ɗinka na sirri",
+    "subPin": "Kiyaye bayaninka",
+    "pinLabel": "Zaɓi PIN na sirri",
+    "pinHint": "Lambobi 4 zuwa 6. Yi amfani da shi don buɗe bayaninka.",
+    "next": "Ci gaba",
+    "back": "Baya",
+    "create": "Mu tashi!"
+  },
+  "error": {
+    "creationFailed": "Ba mu iya gama wannan ba. Da fatan za a sake gwadawa.",
+    "invalidDetails": "Waɗannan bayanan ba daidai ba. Bincika a sake gwadawa.",
+    "network": "Haɗin ya ɓace. Bincika intanet ka a sake gwadawa.",
+    "server": "Imole na ɗan huta. A sake gwadawa tsawon ɗan lokaci.",
+    "notFound": "Mun kasa samun wannan. A sake gwadawa."
+  },
+  "landing": {
+    "nav": {
+      "skills": "Fasaha",
+      "impact": "Tasiri",
+      "about": "Game da",
+      "preview": "Samfoti"
+    },
+    "getStarted": "Fara",
+    "beginJourney": "Fara Tafiyarku",
+    "exploreSkills": "Bincika Fasaha",
+    "hero": {
+      "tagline": "Ka zama Haske a Tsakanin Takwarorinka.",
+      "description": "Kocin fasahar rayuwa na AI ga yaran Najeriya masu shekaru 8–16."
+    },
+    "gap": {
+      "stat": "96%",
+      "statDesc": "na daliban makarantar sakandaren Najeriya da suka kammala ba su da basirar kudi ta asali.",
+      "item1": {
+        "title": "Makarantu suna koyar da haddar",
+        "desc": "Koyo don jarrabawa. Babu fasahar rayuwa mai amfani."
+      },
+      "item2": {
+        "title": "Wadanda suka kammala ba za su iya jurewa ba",
+        "desc": "Dalibai masu hazaka suna kokawa da kudi, sadarwa, da yanke shawara."
+      },
+      "item3": {
+        "title": "Imole ya dinke gibin",
+        "desc": "Kalubale guda daya a rana. Fasaha na gaske. Karfin gwiwa na gaske."
+      }
+    },
+    "quote": {
+      "text": "\"Yaran Najeriya suna da hazaka. Matsalar ba hankali ba ce, damar samun irin horon da ke tsara mutum gaba daya, ba wai masu jarrabawa kawai ba.\"",
+      "author": "Tawagar Imole"
+    },
+    "context": {
+      "title1": "An gina shi don Najeriya.",
+      "title2": "Ga kowane yaro.",
+      "description": "Daga al'ummomin da ba su da isasshen aiki zuwa makarantu masu zaman kansu — kowane yaro na Najeriya ya cancanci samun horon da ke gina mutum gaba daya, ba wai masu jarrabawa kawai ba.",
+      "tag1": "Shekaru 8–16",
+      "tag2": "Turanci + Yarbanci + Igbo + Hausa + Faransanci + Pidgin",
+      "tag3": "Kyauta ga kowa"
+    },
+    "preview": {
+      "title1": "Kalubale daya a rana.",
+      "title2": "Ci gaba na gaske.",
+      "description": "Imole yana ba da kalubale na musamman bisa matakin ku. Amsa, sami maki, sami amsa mai karfafa gwiwa. Wakilin yana tuna ci gaban ku kuma yana daidaitawa kai tsaye.",
+      "tryChallenge": "Gwada Kalubale",
+      "challengeLabel": "Kalubalen Yau",
+      "skillLabel": "Ilimin Kudi",
+      "levelLabel": "Mataki 2",
+      "challengeExample": "Kuna samun ₦2,000 aljihu a mako. Shirya yadda za ku ajiye ₦15,000 a cikin makonni 8.",
+      "placeholder": "Rubuta amsar ku anan..."
+    },
+    "final": {
+      "ready": "Kuna shirye don haskakawa?",
+      "description": "Dubbai na haske suna farawa da daya. Fara tafiyarku yau.",
+      "startJourney": "Fara Tafiyarku",
+      "seeLeaderboard": "Duba Jagoranci"
+    },
+    "footer": {
+      "description": "Kocin fasahar rayuwa na AI ga yaran Najeriya.",
+      "quickLinks": "Hanyoyin Haɗi",
+      "settings": "Saituna",
+      "copyright": "Tawagar Imole. An gina shi don yaran Najeriya."
+    },
+    "showcase": {
+      "curriculum": "Manhaja",
+      "title1": "Fasaha biyar.",
+      "title2": "Manufa daya.",
+      "description": "Kowane kalubale yana gina ɗaya daga cikin mahimman fasahohin rayuwa guda biyar —",
+      "description2": "wadanda makaranta ba ta koyarwa.",
+      "skill": "Fasaha",
+      "swipe": "Danna don bincika"
+    }
   }
 }

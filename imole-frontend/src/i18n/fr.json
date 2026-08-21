@@ -70,7 +70,8 @@
       "easy": "Facile",
       "medium": "Moyen",
       "hard": "Difficile",
-      "expert": "Expert"
+      "expert": "Expert",
+      "tricky": "Astucieux"
     }
   },
   "streak": {
@@ -104,7 +105,8 @@
     "points": "Points",
     "empty": "Pas encore de champions. Sois le premier !",
     "emptyCta": "Commencer un défi",
-    "loading": "Chargement des champions..."
+    "loading": "Chargement des champions...",
+    "scholar": "Élève"
   },
   "profile": {
     "title": "Profil",
@@ -126,7 +128,19 @@
     "pinHint": "Note ce code PIN — tes parents en auront besoin.",
     "verify": "Vérifier",
     "delete": "Supprimer le profil",
-    "deleteConfirm": "Entre ton PIN pour supprimer ce profil."
+    "deleteConfirm": "Entre ton PIN pour supprimer ce profil.",
+    "name": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "choose": "Choisir un Profil",
+    "enterPin": "Entrez le PIN",
+    "login": "Connexion",
+    "newProfile": "Nouveau Profil",
+    "incorrectPin": "PIN incorrect",
+    "loginTitle": "Connexion",
+    "returnLogin": "Vous avez déjà un profil? Connectez-vous",
+    "deleteTitle": "Supprimer le Profil"
   },
   "ask": {
     "title": "Demande à Imole",
@@ -142,14 +156,46 @@
     "resume": "Reprendre",
     "stop": "Arrêter",
     "voiceUnsupported": "La voix n'est pas prise en charge sur cet appareil.",
-    "error": "Désolé, une erreur s'est produite. Réessaie."
+    "error": "Désolé, une erreur s'est produite. Réessaie.",
+    "voice": "Posez votre question à voix haute",
+    "recording": "Enregistrement... appuyez pour arrêter",
+    "suggested": {
+      "0": "Comment économiser mon argent de poche ?",
+      "1": "Que dire quand quelqu'un me harcèle ?",
+      "2": "Comment puis-je m'améliorer rapidement en maths ?",
+      "3": "Comment me faire facilement des amis ?"
+    },
+    "newQuestion": "Nouvelle Question",
+    "yourQuestion": "Votre question",
+    "answer": "Réponse",
+    "noProfile": "Demander à Imole",
+    "noProfileDesc": "Veuillez sélectionner un profil pour commencer",
+    "input": "Demandez-moi tout sur les compétences de vie",
+    "history": "Historique",
+    "historyEmpty": "Aucune discussion passée",
+    "newChatHint": "Démarrer une nouvelle conversation"
   },
   "skill": {
-    "mental-math": { "title": "Ninja des Nombres" },
-    "persuasive-speaking": { "title": "Voix Assurée" },
-    "financial-literacy": { "title": "Malin avec l'Argent" },
-    "creative-problem-solving": { "title": "Idées Lumineuses" },
-    "emotional-intelligence": { "title": "Cœur Tendre" }
+    "mental-math": {
+      "title": "Ninja des Nombres",
+      "desc": "Calculez vite, repérez les motifs, raisonnez clairement"
+    },
+    "persuasive-speaking": {
+      "title": "Voix Assurée",
+      "desc": "Communiquez avec confiance, argumentez avec respect"
+    },
+    "financial-literacy": {
+      "title": "Malin avec l'Argent",
+      "desc": "Épargnez, budgetez et planifiez en Naira"
+    },
+    "creative-problem-solving": {
+      "title": "Idées Lumineuses",
+      "desc": "Pensez en dehors des sentiers battus quand les ressources sont limitées"
+    },
+    "emotional-intelligence": {
+      "title": "Cœur Tendre",
+      "desc": "Comprenez les émotions et répondez avec sagesse"
+    }
   },
   "parent": {
     "dashboard": {
@@ -163,17 +209,270 @@
       "unlinkConfirm": "Retirer cet enfant de votre tableau de bord ?",
       "dailyProgress": "Progrès dans le temps",
       "last30Days": "30 derniers jours",
-      "noProgress": "Pas encore d'activité. Lorsque votre enfant terminera des défis, les progrès apparaîtront ici."
+      "noProgress": "Pas encore d'activité. Lorsque votre enfant terminera des défis, les progrès apparaîtront ici.",
+      "title": "Tableau de bord parent",
+      "description": "Consultez rapidement les progrès de vos enfants.",
+      "selectChild": "Sélectionnez un enfant",
+      "currentStreak": "Série actuelle",
+      "longestStreak": "Série la plus longue",
+      "skillAverages": "Moyennes des compétences",
+      "recentSessions": "Sessions récentes",
+      "score": "Score",
+      "chooseChild": "Choisissez un enfant pour afficher les détails du tableau de bord.",
+      "noChildren": "Aucun enfant lié",
+      "noChildrenDesc": "Vous n'avez pas encore d'enfant lié à votre compte. Ajoutez un enfant pour commencer à suivre ses progrès.",
+      "weekChallenges": "Défis cette semaine",
+      "weeklyActivity": "Activité hebdomadaire",
+      "thisWeek": "défis cette semaine",
+      "noActivity": "Aucune activité enregistrée cette semaine.",
+      "trend": "Tendance des scores",
+      "avgScoreTrend": "Score moyen sur les semaines récentes",
+      "noTrend": "Pas assez d'historique pour afficher une tendance.",
+      "viewReports": "Voir les rapports",
+      "openSettings": "Ouvrir les paramètres",
+      "loadChildrenError": "Impossible de charger les enfants",
+      "loadDashboardError": "Impossible de charger le tableau de bord",
+      "addChild": "Ajouter un enfant",
+      "addChildDesc": "Reliez un enfant a votre compte avec son code familial",
+      "childCodeLabel": "Code de l'enfant",
+      "childCodePlaceholder": "ex. CH-AB12CD34",
+      "childCodeHint": "Vous trouverez ce code sur l'ecran de profil de votre enfant.",
+      "unlinked": "Enfant dissocie",
+      "manageChildren": "Gerer les enfants"
+    },
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "reports": "Rapports",
+      "settings": "Paramètres"
+    },
+    "login": {
+      "title": "Connexion parent",
+      "subtitle": "Suivez les progrès et rapports de votre enfant.",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "loading": "Connexion en cours…",
+      "error": "E-mail ou mot de passe invalide",
+      "noAccount": "Pas encore de compte ?",
+      "register": "En créer un"
+    },
+    "register": {
+      "title": "Créer un compte parent",
+      "subtitle": "Inscrivez-vous pour gérer les enfants liés, les rapports et les préférences.",
+      "name": "Nom complet",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "S'inscrire",
+      "loading": "Création du compte…",
+      "error": "Impossible de créer le compte",
+      "hasAccount": "Déjà inscrit ?",
+      "login": "Se connecter"
+    },
+    "layout": {
+      "account": "Compte parent",
+      "parent": "Parent",
+      "signOut": "Déconnexion"
+    },
+    "reports": {
+      "title": "Rapports parents",
+      "description": "Historique des instantanés de progression hebdomadaire.",
+      "downloadPdf": "Télécharger PDF",
+      "downloadExcel": "Télécharger Excel",
+      "noHistory": "Aucun historique de rapport pour cet enfant.",
+      "weekStarting": "Semaine commençant",
+      "challenge": "défi",
+      "challenges": "défis",
+      "streak": "Série",
+      "averageSkillScore": "Score moyen des compétences"
+    },
+    "settings": {
+      "title": "Paramètres parents",
+      "description": "Gérez les notifications et les préférences linguistiques.",
+      "notifications": "Préférences de notification",
+      "notificationOptions": {
+        "all": "Tous",
+        "email": "E-mail",
+        "none": "Aucun"
+      },
+      "language": "Langue",
+      "saved": "Paramètres enregistrés avec succès.",
+      "saveError": "Impossible d'enregistrer les paramètres"
     }
   },
   "school": {
-    "login": "Connexion",
-    "register": "S'inscrire",
-    "dashboard": "Tableau de bord",
+    "login": {
+      "title": "Connexion Enseignant",
+      "email": "Email",
+      "emailPlaceholder": "enseignant@ecole.edu.ng",
+      "password": "Mot de passe",
+      "submit": "Connexion",
+      "noAccount": "Pas encore de compte ?",
+      "register": "S'inscrire",
+      "error": "Email ou mot de passe invalide",
+      "subtitle": "Connectez-vous à votre tableau de bord scolaire"
+    },
+    "register": {
+      "title": "Inscription Enseignant",
+      "name": "Nom Complet",
+      "namePlaceholder": "M. Adebayo",
+      "email": "Email",
+      "emailPlaceholder": "enseignant@ecole.edu.ng",
+      "password": "Mot de passe",
+      "schoolCode": "Code École",
+      "schoolCodePlaceholder": "SCH001",
+      "submit": "Créer un Compte",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "login": "Connexion",
+      "error": "L'inscription a échoué",
+      "subtitle": "Créez votre compte enseignant"
+    },
+    "dashboard": {
+      "title": "Mes Classes",
+      "subtitle": "Gérez vos élèves et suivez les progrès",
+      "noClasses": "Aucune classe assignée pour le moment",
+      "students": "élèves",
+      "inviteTeacher": "Inviter un Enseignant",
+      "settings": "Paramètres",
+      "totalStudents": "Total Élèves",
+      "activeClasses": "Classes Actives",
+      "avgPerClass": "Moy. Élèves/Classe",
+      "welcome": "Bon retour",
+      "welcomeDesc": "Vous formez {{students}} jeunes esprits dans {{classes}} classes aujourd'hui",
+      "badge": "Tableau de Bord Scolaire",
+      "viewClasses": "Voir les Classes",
+      "yourClasses": "Vos Classes",
+      "viewAll": "Voir tout",
+      "todayGlance": "Aujourd'hui en un Coup d'Œil",
+      "activeStudents": "Élèves Actifs",
+      "runningClasses": "Classes en Cours",
+      "avgClassSize": "Taille Moyenne des Classes",
+      "quickActions": "Actions Rapides",
+      "browseClasses": "Parcourir les Classes",
+      "overview": "Aperçu",
+      "totalStudentsLabel": "Total des Élèves",
+      "totalClassesLabel": "Total des Classes",
+      "noData": "Pas encore de données. Créez votre première classe pour commencer.",
+      "studentsCount": "{{count}} élèves",
+      "dayStreak": "{{count}} jours de série",
+      "avgScore": "Score Moyen",
+      "currentAverage": "Moyenne actuelle",
+      "streakLabel": "Série :",
+      "scoreLabel": "Score :"
+    },
     "classes": "Classes",
     "students": "Élèves",
-    "invite": "Inviter",
-    "settings": "Paramètres"
+    "invite": {
+      "title": "Inviter un Enseignant",
+      "email": "Email de l'Enseignant",
+      "emailPlaceholder": "nouvel.enseignant@ecole.edu.ng",
+      "submit": "Envoyer l'Invitation",
+      "sent": "Invitation envoyée avec succès",
+      "error": "Échec de l'envoi de l'invitation",
+      "subtitle": "Envoyer une invitation à un autre enseignant",
+      "heading": "Inviter un collègue",
+      "desc": "Envoyer une invitation par email pour rejoindre votre école",
+      "sentDesc": "Invitation envoyée avec succès",
+      "badge": "Inviter un enseignant",
+      "badgeLabel": "Équipe scolaire",
+      "benefits": "Pourquoi inviter un collègue ?",
+      "perk1": "Partagez les classes et co-enseignez facilement",
+      "perk2": "Suivez ensemble la progression de chaque élève",
+      "perk3": "Gardez votre tableau de bord scolaire synchronisé",
+      "tip": "Invitez maintenant, grandissez plus tard",
+      "tipDesc": "Votre collègue recevra un email avec un lien pour rejoindre votre équipe scolaire.",
+      "sendAnother": "Envoyer une autre invitation"
+    },
+    "settings": {
+      "title": "Paramètres de l'École",
+      "profile": "Profil",
+      "name": "Nom de l'École",
+      "code": "Code de l'École",
+      "language": "Langue",
+      "save": "Enregistrer les Paramètres",
+      "saved": "Paramètres enregistrés avec succès",
+      "codeDesc": "Le code de l'école est attribué et ne peut pas être modifié",
+      "subtitle": "Gérez votre profil scolaire et vos préférences",
+      "appLanguage": "Langue de l'application",
+      "actions": "Actions rapides",
+      "ready": "Tout est prêt ?",
+      "readyDesc": "Vérifiez les détails de votre école et enregistrez les modifications apportées.",
+      "namePlaceholder": "p. ex. Bright Future Academy"
+    },
+    "class": {
+      "title": "Classe",
+      "student": "Élève",
+      "streak": "Série",
+      "avgScore": "Score Moyen",
+      "lastActive": "Dernière Activité",
+      "classAvg": "Moyennes de la Classe",
+      "topPerformers": "Meilleurs Élèves",
+      "atRisk": "Élèves à Risque",
+      "exportPdf": "Exporter PDF",
+      "exportCsv": "Exporter CSV",
+      "noStudents": "Aucun élève dans cette classe",
+      "enrolled": "Inscrits",
+      "enrolledCount": "{{count}} élèves inscrits",
+      "avg": "Moyenne de la Classe",
+      "totalStreak": "Total Jours de Série",
+      "overview": "Toutes les Classes",
+      "export": "Exporter",
+      "create": "Créer une Classe",
+      "createTitle": "Nouvelle Classe",
+      "createDesc": "Entrez un nom pour votre nouvelle classe",
+      "createPlaceholder": "p. ex. Mathématiques Niveau 5",
+      "creating": "Création...",
+      "created": "Classe créée avec succès",
+      "active": "Actif",
+      "students": "élèves",
+      "tabOverview": "Aperçu",
+      "tabStudents": "Tous les Élèves",
+      "tabReports": "Rapports",
+      "reportTitle": "Exporter les Rapports",
+      "reportDesc": "Télécharger les données de performance de la classe",
+      "name": "Nom",
+      "totalStudents": "Total Étudiants",
+      "generatedBy": "Généré par Imole School Dashboard",
+      "addStudents": "Ajouter des eleves",
+      "addStudentsTitle": "Ajouter des eleves a cette classe",
+      "addStudentsDesc": "Collez un eleve par ligne comme Nom, Age (age facultatif)",
+      "studentsPlaceholder": "Aisha Bello, 10\nChidi Okeke, 11\nTunde Bakare",
+      "addingStudents": "Ajout des eleves...",
+      "studentsAdded": "{{count}} nouveaux eleves ajoutes — codes et PIN ci-dessous",
+      "studentsLinked": "{{count}} eleves deja inscrits et relies",
+      "newStudentPins": "Codes et PIN des nouveaux eleves",
+      "pinCopied": "Copie dans le presse-papiers !"
+    },
+    "student": {
+      "title": "Détails de l'Élève",
+      "skillBreakdown": "Répartition des Compétences",
+      "challengeHistory": "Historique des Défis",
+      "teacherNotes": "Notes de l'Enseignant",
+      "notesPlaceholder": "Ajoutez des notes sur cet élève...",
+      "saveNotes": "Enregistrer les Notes",
+      "noHistory": "Pas encore d'historique de défis",
+      "dayStreak": "jours de série",
+      "avgLabel": "score moyen",
+      "bestStreak": "Meilleure série : {{count}}",
+      "saving": "Enregistrement...",
+      "back": "Retour"
+    },
+    "nav": {
+      "dashboard": "Tableau de Bord",
+      "classes": "Classes",
+      "invite": "Inviter Enseignant",
+      "settings": "Paramètres",
+      "logout": "Déconnexion",
+      "darkMode": "Mode Sombre",
+      "lightMode": "Mode Clair"
+    },
+    "sidebar": {
+      "brand": "École",
+      "expand": "Développer",
+      "collapse": "Réduire"
+    },
+    "topbar": {
+      "brand": "Ìmólè École"
+    }
   },
   "common": {
     "copied": "Copié !",
@@ -184,6 +483,115 @@
     "confirm": "Confirmer",
     "back": "Retour",
     "loading": "Chargement...",
-    "error": "Erreur"
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "noData": "Aucune donnée disponible",
+    "toggleMenu": "Basculer le menu",
+    "toggleTheme": "Basculer le thème"
+  },
+  "onboarding": {
+    "title": "Préparons ton profil !",
+    "subtitle": "Quelques étapes rapides pour personnaliser ton expérience",
+    "step": "Étape {{n}} sur {{total}}",
+    "stepName": "Ton prénom",
+    "subName": "Dis à Imole comment t'appeler",
+    "nameLabel": "Ton prénom",
+    "namePlaceholder": "Comment devrions-nous t'appeler ?",
+    "stepAge": "Ton âge",
+    "subAge": "Quel âge as-tu ?",
+    "ageLabel": "Ton âge",
+    "years": "ans",
+    "ageHint": "Nous utilisons ton âge pour choisir des défis adaptés.",
+    "stepPin": "Ton code secret",
+    "subPin": "Garde ton profil en sécurité",
+    "pinLabel": "Choisis un code secret",
+    "pinHint": "4 à 6 chiffres. Utilise-le pour déverrouiller ton profil.",
+    "next": "Continuer",
+    "back": "Retour",
+    "create": "C'est parti !"
+  },
+  "error": {
+    "creationFailed": "Impossible de terminer cette création. Veuillez réessayer.",
+    "invalidDetails": "Ces informations semblent incorrectes. Vérifiez et réessayez.",
+    "network": "Connexion perdue. Vérifiez votre connexion et réessayez.",
+    "server": "Imole prend une petite pause. Réessayez dans un instant.",
+    "notFound": "Nous n'avons pas trouvé cela. Veuillez réessayer."
+  },
+  "landing": {
+    "nav": {
+      "skills": "Compétences",
+      "impact": "Impact",
+      "about": "À propos",
+      "preview": "Aperçu"
+    },
+    "getStarted": "Commencer",
+    "beginJourney": "Commencez Votre Voyage",
+    "exploreSkills": "Explorer les Compétences",
+    "hero": {
+      "tagline": "Sois la Lumière Parmi Tes Pairs.",
+      "description": "Un coach de compétences de vie IA pour les enfants nigérians de 8 à 16 ans."
+    },
+    "gap": {
+      "stat": "96%",
+      "statDesc": "des diplômés du secondaire nigérians manquent de compétences de base en littératie financière.",
+      "item1": {
+        "title": "Les écoles enseignent la mémorisation",
+        "desc": "Apprentissage par cœur pour les examens. Pas de compétences pratiques."
+      },
+      "item2": {
+        "title": "Les diplômés ne peuvent pas faire face",
+        "desc": "Des élèves brillants luttent avec l'argent, la communication et les décisions."
+      },
+      "item3": {
+        "title": "Imole comble le fossé",
+        "desc": "Un défi par jour. De vraies compétences. Une vraie confiance."
+      }
+    },
+    "quote": {
+      "text": "\"Les enfants nigérians sont brillants. Le problème n'est pas l'intelligence mais l'accès au type de coaching qui forme des êtres humains complets, pas seulement des performeurs aux examens.\"",
+      "author": "Équipe Imole"
+    },
+    "context": {
+      "title1": "Construit pour le Nigeria.",
+      "title2": "Pour chaque enfant.",
+      "description": "Des communautés mal desservies aux écoles privées — chaque enfant nigérian mérite un coaching qui forme des êtres humains complets, pas seulement des performeurs aux examens.",
+      "tag1": "Âges 8–16",
+      "tag2": "Anglais + Yoruba + Igbo + Haoussa + Français + Pidgin",
+      "tag3": "Gratuit pour tous"
+    },
+    "preview": {
+      "title1": "Un défi par jour.",
+      "title2": "Une vraie croissance.",
+      "description": "Imole délivre un défi personnalisé basé sur votre niveau. Répondez, obtenez un score, recevez des encouragements. L'agent se souvient de vos progrès et s'adapte automatiquement.",
+      "tryChallenge": "Essayez un Défi",
+      "challengeLabel": "Défi du Jour",
+      "skillLabel": "Littératie Financière",
+      "levelLabel": "Niveau 2",
+      "challengeExample": "Vous gagnez 2 000 ₦ d'argent de poche par semaine. Planifiez comment économiser 15 000 ₦ en 8 semaines.",
+      "placeholder": "Tapez votre réponse ici..."
+    },
+    "final": {
+      "ready": "Prêt à briller ?",
+      "description": "Mille points de lumière commencent par un. Commencez votre voyage aujourd'hui.",
+      "startJourney": "Commencez Votre Voyage",
+      "seeLeaderboard": "Voir le Classement"
+    },
+    "footer": {
+      "description": "Un coach de compétences de vie IA pour les enfants nigérians.",
+      "quickLinks": "Liens Rapides",
+      "settings": "Paramètres",
+      "copyright": "Équipe Imole. Construit pour les enfants nigérians."
+    },
+    "showcase": {
+      "curriculum": "Le Programme",
+      "title1": "Cinq compétences.",
+      "title2": "Un seul but.",
+      "description": "Chaque défi développe une des cinq compétences essentielles —",
+      "description2": "celles que l'école n'enseigne pas.",
+      "skill": "Compétence",
+      "swipe": "Balayez pour explorer"
+    }
   }
 }
