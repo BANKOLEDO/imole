@@ -147,6 +147,7 @@
     background-color: rgb(var(--rgb-bg-base));
     color: rgb(var(--rgb-text-primary));
     font-family: var(--font-sans);
+    font-size: 17px;
   }
 
   h1, h2, h3, h4, h5, h6 {
