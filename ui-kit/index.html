@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imole UI Kit — Be the Light</title>
+  <meta name="description" content="The complete Imole-ai design system UI kit: buttons, cards, badges, inputs, avatars, stat cards, streak badges and more." />
+  <link rel="icon" href="../public/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="ui-kit.css" />
+  <style>
+    .g-head {
+      background: linear-gradient(180deg, #002d54, #03162a);
+      color: #fff;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .g-head__brand { display: flex; align-items: center; gap: 0.75rem; }
+    .g-head__brand img { width: 36px; height: 36px; }
+    .g-head__title { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; color: #fff; font-size: 1.1rem; }
+    .g-head__links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .g-head__links a {
+      color: rgb(var(--orange)); font-size: 0.8rem; font-weight: 600;
+      text-decoration: none; padding: 0.35rem 0.75rem;
+      border: 1px solid rgb(255 255 255 / 0.25); border-radius: var(--radius-pill);
+    }
+    .g-head__links a:hover { background: rgb(255 255 255 / 0.1); }
+    .g-main { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 6rem; display: flex; flex-direction: column; gap: 2.5rem; }
+    .g-section { display: flex; flex-direction: column; gap: 1rem; }
+    .g-h2 { font-size: 1.25rem; font-weight: 700; color: rgb(var(--text-primary)); display: flex; align-items: center; gap: 0.5rem; }
+    .g-h2::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: rgb(var(--orange)); border: 2px solid rgb(var(--navy)); }
+    .g-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+    .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .g-caption { font-size: 0.72rem; color: rgb(var(--text-muted)); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; width: 100%; }
+    .g-swatch { display: flex; flex-direction: column; gap: 0.3rem; }
+    .g-swatch__chip { height: 44px; border-radius: var(--radius-md); border: 1px solid rgb(var(--border)); }
+    .g-swatch__name { font-size: 0.78rem; font-weight: 700; color: rgb(var(--text-primary)); }
+    .g-swatch__rgb { font-size: 0.72rem; color: rgb(var(--text-muted)); }
+    .g-type-block h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .g-type-display { font-size: clamp(2.5rem, 8vw, 4.5rem); color: rgb(var(--text-primary)); }
+    .g-type-h1 { font-size: 2rem; }
+    .g-type-h2 { font-size: 1.6rem; }
+    .g-type-h3 { font-size: 1.3rem; }
+    .g-type-h4 { font-size: 1.1rem; }
+    .g-tag { display: inline-block; background: rgb(var(--accent-soft)); color: rgb(var(--accent)); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: var(--radius-pill); margin-bottom: 0.4rem; }
+    .g-card-demo { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .g-footer { text-align: center; color: rgb(var(--text-muted)); font-size: 0.85rem; padding: 2rem 1rem 4rem; }
+    .sprite-icon { width: 1.5rem; height: 1.5rem; color: rgb(var(--accent)); }
+    .g-brand { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+    .g-brand__card { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 1px solid rgb(var(--border)); border-radius: var(--radius-xl); background: rgb(var(--bg-card)); }
+    .g-brand__logo { width: 96px; height: 96px; }
+    .g-brand__icon { width: 56px; height: 56px; }
+    .g-brand__art { margin: 0; }
+    .g-brand__art img { width: 100%; max-width: 460px; border-radius: var(--radius-xl); border: 1px solid rgb(var(--border)); }
+  </style>
+</head>
+<body>
+
+  <header class="g-head">
+    <div class="g-head__brand">
+      <img src="../public/logo.svg" alt="Imole logo" />
+      <span class="g-head__title">Imole — UI Kit</span>
+    </div>
+    <nav class="g-head__links">
+      <a href="../README.md">README</a>
+      <a href="../docs/design-system.md">Design System</a>
+      <a href="#brand">Brand</a>
+      <a href="#colors">Colors</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#hero">Hero</a>
+    </nav>
+  </header>
+
+  <main class="g-main">
+
+    <section class="g-section" aria-labelledby="brand">
+      <h2 class="g-h2" id="brand">Brand — the light</h2>
+      <span class="g-caption">Imole = "light". Every mark glows: halo, radiating rays, white-hot core.</span>
+      <div class="g-brand">
+        <div class="g-brand__card">
+          <img class="g-brand__logo" src="../public/logo.svg" alt="Imole glowing sunburst mark" />
+          <span class="g-caption">logo.svg</span>
+        </div>
+        <div class="g-brand__card">
+          <img class="g-brand__icon" src="../public/favicon.svg" alt="Imole favicon" />
+          <span class="g-caption">favicon.svg</span>
+        </div>
+        <div class="g-brand__card">
+          <img class="g-brand__icon" src="../public/icon-192.svg" alt="Imole 192px app icon" />
+          <span class="g-caption">icon-192.svg</span>
+        </div>
+        <div class="g-brand__card">
+          <img class="g-brand__icon" src="../public/icon-512.svg" alt="Imole 512px app icon" />
+          <span class="g-caption">icon-512.svg</span>
+        </div>
+      </div>
+      <figure class="g-brand__art">
+        <img src="../public/hero-illustration.svg" alt="A glowing orb of light over savanna hills" />
+        <figcaption class="g-caption">hero-illustration.svg — a glowing orb of light pours a soft beam over savanna hills, acacia trees and birds</figcaption>
+      </figure>
+      <figure class="g-brand__art">
+        <img src="../public/empty-state.svg" alt="Unlit lantern holding a white-hot spark" />
+        <figcaption class="g-caption">empty-state.svg — an unlit lantern with one spark, waiting to be lit</figcaption>
+      </figure>
+    </section>
+
+    <section class="g-section" aria-labelledby="typography">
+      <h2 class="g-h2" id="typography">Typography</h2>
+      <div class="g-type-block">
+        <span class="g-tag">display · Baloo 2 800 · uppercase · -0.02em · lh .9</span>
+        <div class="display-mega g-type-display">Be the light</div>
+      </div>
+      <div class="g-type-block"><span class="g-tag">h1 · Baloo 2 600</span><h1 class="g-type-h1">Today's challenge</h1></div>
+      <div class="g-type-block"><span class="g-tag">h2</span><h2 class="g-type-h2">Your stats</h2></div>
+      <div class="g-type-block"><span class="g-tag">h3</span><h3 class="g-type-h3">Skill progress</h3></div>
+      <div class="g-type-block"><span class="g-tag">h4</span><h4 class="g-type-h4">Quick actions</h4></div>
+      <div class="g-type-block">
+        <span class="g-tag">body · Quicksand</span>
+        <p>One fresh daily challenge, in your language and at your level — money, courage, kindness, clever thinking and calm.</p>
+      </div>
+      <div class="g-type-block">
+        <span class="g-tag">label · 11px 600 uppercase wide</span>
+        <p class="label">Daily challenge · Level 2 · English</p>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="colors">
+      <h2 class="g-h2" id="colors">Colors</h2>
+      <div class="g-grid" id="color-grid"></div>
+    </section>
+
+    <section class="g-section" aria-labelledby="buttons">
+      <h2 class="g-h2" id="buttons">Buttons</h2>
+      <div class="g-row">
+        <span class="g-caption">Variants</span>
+        <button class="btn btn-primary btn-lg">Get started</button>
+        <button class="btn btn-secondary btn-lg">Secondary</button>
+        <button class="btn btn-outline btn-lg">Outline</button>
+        <button class="btn btn-ghost btn-lg">Ghost</button>
+        <button class="btn btn-orange btn-lg">Today's challenge</button>
+        <button class="btn btn-danger btn-lg">Delete</button>
+      </div>
+      <div class="g-row">
+        <span class="g-caption">Sizes</span>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary btn-md">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        <button class="btn btn-primary btn-lg" disabled>Disabled</button>
+      </div>
+      <div class="g-row">
+        <span class="g-caption">With icon</span>
+        <button class="btn btn-orange btn-lg">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-bolt" /></svg>
+          Start challenge
+        </button>
+        <button class="btn btn-primary btn-lg">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-chat" /></svg>
+          Ask Imole
+        </button>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="badges">
+      <h2 class="g-h2" id="badges">Badges</h2>
+      <div class="g-row">
+        <span class="g-caption">Tones</span>
+        <span class="badge badge-accent">New</span>
+        <span class="badge badge-orange">Daily</span>
+        <span class="badge badge-streak"><svg class="icon-xs"><use href="../public/icons.svg#i-fire" /></svg>Streak 12</span>
+        <span class="badge badge-success">10/10</span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="cards">
+      <h2 class="g-h2" id="cards">Cards</h2>
+      <div class="g-grid">
+        <div class="card g-card-demo">
+          <span class="badge badge-orange">Daily challenge</span>
+          <h3 style="font-size:1.05rem;">Change for Naira</h3>
+          <p style="font-size:0.85rem;color:rgb(var(--text-muted));">You buy 3 biscuits at &#8358;150 each and pay &#8358;500 — what is your change?</p>
+          <button class="btn btn-primary btn-md" style="align-self:flex-start;">Answer</button>
+        </div>
+        <div class="card g-card-demo">
+          <span class="label">Card · rounded-2xl · shadow-sm</span>
+          <p style="font-size:0.9rem;">Cards are bg-card with a hairline border, rounded-2xl and a soft shadow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="inputs">
+      <h2 class="g-h2" id="inputs">Inputs</h2>
+      <div class="g-grid">
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <label class="label" for="demo-input">Child name</label>
+          <input class="input" id="demo-input" type="text" placeholder="e.g. Adaeze" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <label class="label" for="demo-textarea">Ask Imole anything…</label>
+          <textarea class="textarea" id="demo-textarea" placeholder="What should I do when I feel angry?"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="avatars">
+      <h2 class="g-h2" id="avatars">Avatars</h2>
+      <div class="g-row">
+        <span class="g-caption">Sizes 8–14 · color wheel · rounded-2xl</span>
+        <span class="avatar avatar-8 av-1">AO</span>
+        <span class="avatar avatar-10 av-2">CI</span>
+        <span class="avatar avatar-12 av-3">JO</span>
+        <span class="avatar avatar-14 av-4">SM</span>
+        <span class="avatar avatar-12 av-5">KE</span>
+        <span class="avatar avatar-12 av-6">EM</span>
+        <span class="avatar avatar-12 av-7">AD</span>
+        <span class="avatar avatar-12 av-8">BA</span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="skeletons">
+      <h2 class="g-h2" id="skeletons">Skeleton</h2>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;max-width:420px;">
+        <div class="skeleton" style="height:24px;width:55%;"></div>
+        <div class="skeleton" style="height:72px;"></div>
+        <div class="skeleton" style="height:18px;width:80%;"></div>
+        <div class="skeleton" style="height:18px;width:65%;"></div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="spinners">
+      <h2 class="g-h2" id="spinners">Spinner</h2>
+      <div class="g-row">
+        <span class="spinner"></span>
+        <span class="spinner" style="border-top-color:rgb(var(--streak));"></span>
+        <span class="spinner" style="border-top-color:rgb(var(--cyan));"></span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="section-headers">
+      <h2 class="g-h2" id="section-headers">SectionHeader</h2>
+      <div style="display:flex;flex-direction:column;gap:1rem;max-width:520px;">
+        <div class="section-header">
+          <div style="display:flex;align-items:center;gap:0.6rem;">
+            <span class="section-header__dot section-header__tone-orange"></span>
+            <div>
+              <p class="section-header__title">Your stats</p>
+              <p class="section-header__subtitle">Challenges, scores and activity</p>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm">View all</button>
+        </div>
+        <div class="section-header">
+          <div style="display:flex;align-items:center;gap:0.6rem;">
+            <span class="section-header__dot section-header__tone-cyan"></span>
+            <div>
+              <p class="section-header__title">Skill progress</p>
+              <p class="section-header__subtitle">How your skills are growing</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-header">
+          <div style="display:flex;align-items:center;gap:0.6rem;">
+            <span class="section-header__dot section-header__tone-navy"></span>
+            <div>
+              <p class="section-header__title">Leaderboard</p>
+              <p class="section-header__subtitle">Top 50 this month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="statcards">
+      <h2 class="g-h2" id="statcards">StatCard</h2>
+      <div class="g-grid">
+        <div class="stat-card stat-card--solid stat-orange">
+          <div class="stat-card__icon"><svg class="icon"><use href="../public/icons.svg#i-trophy" /></svg></div>
+          <p class="stat-card__label">Challenges done</p>
+          <p class="stat-card__value">24</p>
+        </div>
+        <div class="stat-card stat-card--solid stat-cyan">
+          <div class="stat-card__icon"><svg class="icon"><use href="../public/icons.svg#i-star" /></svg></div>
+          <p class="stat-card__label">Average score</p>
+          <p class="stat-card__value">8.5</p>
+        </div>
+        <div class="stat-card stat-card--solid stat-peach">
+          <div class="stat-card__icon"><svg class="icon"><use href="../public/icons.svg#i-chat" /></svg></div>
+          <p class="stat-card__label">Weekly active</p>
+          <p class="stat-card__value">7 days</p>
+        </div>
+        <div class="stat-card stat-card--solid stat-navy">
+          <div class="stat-card__icon"><svg class="icon"><use href="../public/icons.svg#i-bolt" /></svg></div>
+          <p class="stat-card__label">Best streak</p>
+          <p class="stat-card__value">12</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="streak">
+      <h2 class="g-h2" id="streak">StreakBadge</h2>
+      <div class="g-row">
+        <span class="streak-badge anim-streak-pop">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-fire" /></svg>12 days
+        </span>
+        <span class="streak-badge">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-fire" /></svg>3 days
+        </span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="lang">
+      <h2 class="g-h2" id="lang">LanguagePill</h2>
+      <div class="g-row">
+        <span class="lang-pill">English</span>
+        <span class="lang-pill">Yoruba</span>
+        <span class="lang-pill">Hausa</span>
+        <span class="lang-pill">Igbo</span>
+        <span class="lang-pill">Français</span>
+        <span class="lang-pill">Pidgin</span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="hero">
+      <h2 class="g-h2" id="hero">PageHero</h2>
+      <div class="page-hero" style="border-radius:var(--radius-xl);">
+        <div class="page-hero__decor">
+          <span class="streak-badge"><svg class="icon-sm"><use href="../public/icons.svg#i-fire" /></svg>7</span>
+          <span class="lang-pill" style="background:rgb(var(--orange));color:#00213f;">English</span>
+        </div>
+        <span class="page-hero__eyebrow">Home · Welcome back</span>
+        <h2 class="page-hero__title">Ayo, imole 👋</h2>
+        <p class="page-hero__subtitle">One fresh challenge today — money skills, your level, in your language.</p>
+        <div class="page-hero__actions">
+          <a class="btn btn-orange btn-lg" href="#challenge">Today's Challenge</a>
+          <a class="btn btn-outline--light btn-lg" href="#chat">Ask Imole</a>
+        </div>
+        <svg class="page-hero__wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 0 C 240 46 480 46 720 26 C 960 6 1200 10 1440 30 L 1440 48 L 0 48 Z" fill="#FF8A00" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="toast">
+      <h2 class="g-h2" id="toast">Toast</h2>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;">
+        <div class="toast toast-success" style="position:static;transform:none;animation:none;">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-star" /></svg>
+          Great work — 10/10!
+        </div>
+        <div class="toast toast-error" style="position:static;transform:none;animation:none;">
+          <svg class="icon-sm"><use href="../public/icons.svg#i-bolt" /></svg>
+          Something went wrong, try again.
+        </div>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="motion">
+      <h2 class="g-h2" id="motion">Motion</h2>
+      <div class="g-row">
+        <span class="g-caption">enter · slide-up · float · streak-pop · swing-in · twinkle</span>
+        <span class="spinner anim-enter" style="border-top-color:rgb(var(--orange));"></span>
+        <svg class="icon anim-float" style="color:rgb(var(--streak));"><use href="../public/icons.svg#i-fire" /></svg>
+        <svg class="icon anim-swing-in" style="color:rgb(var(--periwinkle));"><use href="../public/icons.svg#i-lightbulb" /></svg>
+        <svg class="icon anim-twinkle" style="color:rgb(var(--cyan));"><use href="../public/icons.svg#i-star" /></svg>
+        <svg class="icon anim-wobble" style="color:rgb(var(--success));"><use href="../public/icons.svg#i-money" /></svg>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="icons">
+      <h2 class="g-h2" id="icons">Icon sprite</h2>
+      <div class="g-row">
+        <span class="g-caption">icons.svg · 24x24 · currentColor</span>
+        <svg class="sprite-icon"><use href="../public/icons.svg#i-fire" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--streak));"><use href="../public/icons.svg#i-star" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--cyan));"><use href="../public/icons.svg#i-chat" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--periwinkle));"><use href="../public/icons.svg#i-brain" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--success));"><use href="../public/icons.svg#i-money" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--pink));"><use href="../public/icons.svg#i-hand-heart" /></svg>
+        <svg class="sprite-icon"><use href="../public/icons.svg#i-trophy" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--streak));"><use href="../public/icons.svg#i-lightbulb" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--cyan));"><use href="../public/icons.svg#i-mic" /></svg>
+        <svg class="sprite-icon"><use href="../public/icons.svg#i-speaker" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--success));"><use href="../public/icons.svg#i-play" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--error));"><use href="../public/icons.svg#i-pause" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--error));"><use href="../public/icons.svg#i-stop" /></svg>
+        <svg class="sprite-icon" style="color:rgb(var(--orange));"><use href="../public/icons.svg#i-bolt" /></svg>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="g-footer">
+    Imole-ai · Be the Light ⛅ · TiT 6.0 EdTech · token source: <a href="../docs/design-system.md">docs/design-system.md</a>
+  </footer>
+
+  <!-- live color grid -->
+  <script>
+    var COLORS = [
+      ["bg-base", "246 249 255"], ["bg-surface", "240 244 252"], ["bg-card", "255 255 255"],
+      ["bg-input", "248 250 253"], ["text-primary", "0 36 68"], ["text-secondary", "27 80 126"],
+      ["text-muted", "96 115 140"], ["accent", "0 36 68"], ["accent-soft", "231 235 248"],
+      ["accent-text", "255 255 255"], ["periwinkle", "117 128 239"], ["cyan", "0 206 222"],
+      ["orange", "255 138 0"], ["peach", "255 228 219"], ["navy", "0 36 68"], ["bodyblue", "27 80 126"],
+      ["border", "210 220 231"], ["success", "0 177 106"], ["error", "226 65 65"],
+      ["streak", "255 138 0"], ["streak-soft", "255 244 229"], ["surface-hover", "236 240 248"],
+      ["ring", "117 128 239"], ["navy-deep", "0 37 70"], ["navy-dark", "2 22 40"],
+      ["cream", "255 244 230"], ["pink", "255 0 133"]
+    ];
+    var grid = document.getElementById("color-grid");
+    COLORS.forEach(function (c) {
+      var el = document.createElement("div");
+      el.className = "g-swatch";
+      el.innerHTML =
+        '<div class="g-swatch__chip" style="background:rgb(' + c[1] + ');"></div>' +
+        '<span class="g-swatch__name">' + c[0] + '</span>' +
+        '<span class="g-swatch__rgb">' + c[1] + '</span>';
+      grid.appendChild(el);
+    });
+  </script>
+</body>
+</html>
