@@ -148,7 +148,10 @@ router.post('/:id/submit', async (req, res) => {
     const { answer, selectedAnswerId, profileId } = req.body
     if (!profileId) return res.status(400).json({ error: 'profileId is required' })
 
-    const { rows } = await pool.query('SELECT * FROM challenges WHERE id = $1', [req.params.id])
+    const { rows } = await pool.query(
+      'SELECT * FROM challenges WHERE id = $1 AND profile_id = $2',
+      [req.params.id, profileId],
+    )
     if (!rows.length) return res.status(404).json({ error: 'Challenge not found' })
     const challenge = rows[0]
 
@@ -162,8 +165,8 @@ router.post('/:id/submit', async (req, res) => {
     })
 
     await pool.query(
-      `INSERT INTO responses (id, challenge_id, profile_id, score, feedback, selected_answer, answer, correct, completed_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $6, $7, $8)`,
+      `INSERT INTO responses (id, challenge_id, profile_id, score, feedback, selected_answer, correct, completed_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
       [
         generateId('resp'),
         challenge.id,

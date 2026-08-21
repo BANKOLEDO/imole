@@ -95,7 +95,7 @@ export default function TodayChallenge() {
         }
       />
 
-      <div className="container-main space-y-5 pb-10">
+      <div className="container-main space-y-5 pb-10 pt-8 md:pt-10">
       {offline && (
         <p className="flex items-center justify-center gap-2 rounded-xl bg-streak-soft px-4 py-2 text-xs font-semibold text-streak">
           <WifiOff className="size-3.5" />
