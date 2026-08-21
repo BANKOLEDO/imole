@@ -161,8 +161,8 @@ router.post('/:id/submit', async (req, res) => {
     })
 
     await pool.query(
-      `INSERT INTO responses (id, challenge_id, profile_id, score, feedback, selected_answer, correct, completed_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+      `INSERT INTO responses (id, challenge_id, profile_id, score, feedback, selected_answer, answer, correct, completed_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $6, $7, $8)`,
       [
         generateId('resp'),
         challenge.id,

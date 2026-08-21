@@ -88,6 +88,15 @@ async function initSchema() {
     freezes INT DEFAULT 1,
     skill_scores JSONB DEFAULT '{}'
   )`)
+
+  await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS question TEXT')
+  await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS description TEXT')
+  await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS resource JSONB')
+  await pool.query('ALTER TABLE challenges ADD COLUMN IF NOT EXISTS difficulty INT DEFAULT 1')
+  await pool.query('ALTER TABLE responses ADD COLUMN IF NOT EXISTS selected_answer TEXT')
+  await pool.query('ALTER TABLE responses ADD COLUMN IF NOT EXISTS feedback TEXT')
+  await pool.query('ALTER TABLE responses ADD COLUMN IF NOT EXISTS correct BOOLEAN')
+  await pool.query('ALTER TABLE chat_sessions ADD COLUMN IF NOT EXISTS updated_at BIGINT')
 }
 
 module.exports = { pool, initSchema }
