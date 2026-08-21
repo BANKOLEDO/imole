@@ -1,11 +1,12 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Zap, Trophy, MessageCircle, UserRound } from 'lucide-react'
+import { useT } from '../i18n/I18nContext'
 
 const NAV = [
-  { to: '/challenge', label: 'Challenge', icon: Zap },
-  { to: '/leaderboard', label: 'Leaderboard', icon: Trophy },
-  { to: '/ask', label: 'Ask Imole', icon: MessageCircle },
-  { to: '/profile', label: 'Profile', icon: UserRound },
+  { to: '/challenge', key: 'nav.challenge', icon: Zap },
+  { to: '/leaderboard', key: 'nav.leaderboard', icon: Trophy },
+  { to: '/ask', key: 'nav.ask', icon: MessageCircle },
+  { to: '/profile', key: 'nav.profile', icon: UserRound },
 ]
 
 const itemClass = ({ isActive }: { isActive: boolean }) =>
@@ -14,6 +15,8 @@ const itemClass = ({ isActive }: { isActive: boolean }) =>
   }`
 
 export default function ChildLayout() {
+  const { t } = useT()
+
   return (
     <div className="flex min-h-screen">
       <aside className="hidden w-60 flex-col gap-1 border-r border-border bg-bg-card p-4 md:flex">
@@ -21,10 +24,10 @@ export default function ChildLayout() {
           <img src="/logo.svg" alt="Imole logo" className="size-9" />
           <span className="font-heading text-lg font-bold text-text-primary">Imole</span>
         </Link>
-        {NAV.map(({ to, label, icon: Icon }) => (
+        {NAV.map(({ to, key, icon: Icon }) => (
           <NavLink key={to} to={to} className={itemClass}>
             <Icon className="size-5" />
-            {label}
+            {t(key)}
           </NavLink>
         ))}
       </aside>
@@ -34,7 +37,7 @@ export default function ChildLayout() {
       </main>
 
       <nav className="fixed inset-x-0 bottom-0 z-10 flex border-t border-border bg-bg-card md:hidden">
-        {NAV.map(({ to, label, icon: Icon }) => (
+        {NAV.map(({ to, key, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
@@ -45,7 +48,7 @@ export default function ChildLayout() {
             }
           >
             <Icon className="size-5" />
-            {label}
+            {t(key)}
           </NavLink>
         ))}
       </nav>

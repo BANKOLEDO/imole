@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import StarField from './components/StarField'
 import LandingScene from './scenes/LandingScene'
 import ComingSoon from './scenes/ComingSoon'
@@ -7,7 +7,7 @@ import ChildDashboard from './scenes/child/ChildDashboard'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <StarField />
       <div className="min-h-screen bg-bg-base">
         <Routes>
@@ -21,6 +21,6 @@ export default function App() {
           </Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </>
   )
 }

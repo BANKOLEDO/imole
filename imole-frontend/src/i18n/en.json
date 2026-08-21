@@ -1,0 +1,189 @@
+{
+  "app": {
+    "name": "Imole",
+    "tagline": "Be the Light"
+  },
+  "nav": {
+    "home": "Home",
+    "challenge": "Challenge",
+    "streak": "Streak",
+    "leaderboard": "Leaderboard",
+    "ask": "Ask Imole",
+    "profile": "Profile"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "todaysChallenge": "Today's Challenge",
+    "yourStreak": "Your Streak",
+    "yourStats": "Your Stats",
+    "challengesDone": "Challenges done",
+    "avgScore": "Avg score",
+    "weeklyActive": "Weekly active",
+    "skillProgress": "Skill Progress",
+    "quickActions": "Quick Actions",
+    "startChallenge": "Start Challenge",
+    "askQuestion": "Ask a Question",
+    "viewLeaderboard": "View Leaderboard",
+    "noProfile": "No profile yet",
+    "motivation": [
+      "Small steps every day make you shine bright.",
+      "Learning something new lights up your brain.",
+      "You've got what it takes. Let's glow today!",
+      "Every champion starts with day one.",
+      "Practice makes you stronger and brighter."
+    ],
+    "day": "day"
+  },
+  "challenge": {
+    "title": "Today's Challenge",
+    "loading": "Preparing your challenge...",
+    "error": "Something went wrong.",
+    "submitError": "Could not submit your answer. Please try again.",
+    "retry": "Retry",
+    "empty": "Your daily challenge is not ready yet.",
+    "getChallenge": "Get my challenge",
+    "yourAnswer": "Your answer",
+    "placeholder": "Type your answer here...",
+    "submit": "Submit",
+    "greatWork": "Great work!",
+    "correct": "Correct!",
+    "incorrect": "Not quite.",
+    "next": "Next challenge",
+    "noProfile": "Create a profile first",
+    "noProfileDesc": "Set up your profile to unlock your daily challenge.",
+    "voiceInput": "Voice input",
+    "textInput": "Text input",
+    "recording": "Listening...",
+    "tapToRecord": "Tap to speak",
+    "chooseAnswer": "Choose an answer",
+    "level": "Level {{level}}",
+    "years": "{{count}} years",
+    "doneTitle": "Challenge complete!",
+    "doneDesc": "Come back tomorrow for a fresh challenge.",
+    "nextIn": "Next challenge in",
+    "resourceLabel": "Learn more",
+    "revise": "Revise",
+    "backToResults": "Back to results",
+    "scoreLabel": "Score",
+    "offline": "You're offline — showing your last challenge.",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "expert": "Expert"
+    }
+  },
+  "streak": {
+    "title": "Your Streak",
+    "day": "day",
+    "longest": "Longest",
+    "freezes": "{{count}} freezes",
+    "empty": "Complete a challenge to start your streak!",
+    "keepGoing": "Keep going!",
+    "milestone": {
+      "3": "3-day spark!",
+      "7": "One week of light!",
+      "14": "Two weeks strong!",
+      "21": "Habit unlocked!",
+      "30": "One month bright!",
+      "50": "Half-century shine!",
+      "100": "Century of light!"
+    }
+  },
+  "reminder": {
+    "title": "Daily Reminder",
+    "hint": "Get a gentle nudge at your chosen time.",
+    "time": "Time",
+    "enabled": "Enabled"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Top learners this month",
+    "yourRank": "Your rank",
+    "rank": "Rank",
+    "points": "Points",
+    "empty": "No champions yet. Be the first!",
+    "emptyCta": "Start a challenge",
+    "loading": "Loading champions..."
+  },
+  "profile": {
+    "title": "Profile",
+    "switch": "Switch Profile",
+    "otherProfiles": "Other profiles",
+    "childCode": "Child Code",
+    "childCodeHint": "Give this code to your parent to link your account.",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "age": "Age",
+    "years": "{{age}} years",
+    "pinProtected": "PIN protected",
+    "createTitle": "Create Profile",
+    "createName": "What's your name?",
+    "createAge": "How old are you?",
+    "createLanguage": "Choose your language",
+    "chooseAvatar": "Pick your avatar color",
+    "pin": "PIN",
+    "pinHint": "Write down this PIN — your parent needs it.",
+    "verify": "Verify",
+    "delete": "Delete profile",
+    "deleteConfirm": "Enter your PIN to delete this profile."
+  },
+  "ask": {
+    "title": "Ask Imole",
+    "subtitle": "Your safe AI friend. Ask anything!",
+    "placeholder": "Ask me anything...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "sessions": "Chats",
+    "newChat": "New chat",
+    "delete": "Delete chat",
+    "listen": "Listen",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "voiceUnsupported": "Voice is not supported on this device.",
+    "error": "Sorry, something went wrong. Please try again."
+  },
+  "skill": {
+    "mental-math": { "title": "Number Ninja" },
+    "persuasive-speaking": { "title": "Confident Voice" },
+    "financial-literacy": { "title": "Money Smart" },
+    "creative-problem-solving": { "title": "Bright Ideas" },
+    "emotional-intelligence": { "title": "Kind Heart" }
+  },
+  "parent": {
+    "dashboard": {
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "settings": "Settings",
+      "linkChild": "Add Child",
+      "childLinked": "Child linked successfully!",
+      "childNotFound": "No child found with that code.",
+      "unlink": "Unlink child",
+      "unlinkConfirm": "Remove this child from your dashboard?",
+      "dailyProgress": "Progress over time",
+      "last30Days": "Last 30 days",
+      "noProgress": "No activity yet. Once your child completes challenges, progress appears here."
+    }
+  },
+  "school": {
+    "login": "Log in",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "classes": "Classes",
+    "students": "Students",
+    "invite": "Invite",
+    "settings": "Settings"
+  },
+  "common": {
+    "copied": "Copied!",
+    "copy": "Copy",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}
