@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { SendHorizonal, Plus, Trash2, Volume2, Square, MessageCircleHeart } from 'lucide-react'
 import Button from '../../components/shared/Button'
@@ -27,8 +28,12 @@ export default function AskImole() {
 
   if (!currentProfile) {
     return (
-      <div className="container-main py-10 text-center">
+      <div className="flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center gap-4 px-6 text-center">
         <h1 className="font-heading text-xl font-bold text-text-primary">{t('challenge.noProfile')}</h1>
+        <p className="max-w-xs text-sm text-text-muted">{t('challenge.noProfileDesc')}</p>
+        <Link to="/app/profile">
+          <Button variant="orange">{t('nav.profile')}</Button>
+        </Link>
       </div>
     )
   }
@@ -73,9 +78,10 @@ export default function AskImole() {
   }
 
   return (
-    <div className="container-main flex h-[calc(100dvh-4rem)] flex-col pb-4">
-      <PageHero className="-mx-4 md:-mx-8 mb-4" eyebrow={t('nav.ask')} title={currentProfile.name} subtitle={t('ask.subtitle')} />
+    <>
+      <PageHero className="mb-4" eyebrow={t('nav.ask')} title={currentProfile.name} subtitle={t('ask.subtitle')} />
 
+      <div className="container-main flex h-[calc(100dvh-4rem)] flex-col pb-4">
       <div className="flex-1 space-y-3 overflow-y-auto pr-1">
         {messages.length === 0 && !busy && (
           <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border px-6 py-10 text-center">
@@ -157,7 +163,8 @@ export default function AskImole() {
           <SendHorizonal className="size-4" />
         </Button>
       </form>
-    </div>
+      </div>
+    </>
   )
 }
 

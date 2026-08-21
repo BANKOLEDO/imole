@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Plus, Trash2, Lock, LogIn, Fingerprint, Copy, Check, UserRound } from 'lucide-react'
 import Button from '../../components/shared/Button'
 import { Card, CardContent } from '../../components/shared/Card'
-import { Input } from '../../components/shared/Field'
+import PasswordInput from '../../components/shared/PasswordInput'
 import PageHero from '../../components/shared/PageHero'
 import { useT } from '../../i18n/I18nContext'
 import { useApp } from '../../context/AppContext'
@@ -86,8 +86,10 @@ export default function ProfileSelector() {
 
   if (creating) {
     return (
-      <div className="container-main py-6">
-        <Onboarding onDone={() => setCreating(false)} onCancel={() => setCreating(false)} />
+      <div className="flex min-h-[calc(100dvh-4rem)] items-start justify-center px-4 py-10 md:items-center md:py-6">
+        <div className="w-full max-w-md">
+          <Onboarding onDone={() => setCreating(false)} onCancel={() => setCreating(false)} />
+        </div>
       </div>
     )
   }
@@ -100,13 +102,13 @@ export default function ProfileSelector() {
   }
 
   return (
-    <div className="container-main space-y-6 pb-10">
+    <>
       <PageHero
-        className="-mx-4 md:-mx-8"
         eyebrow={t('profile.title')}
         title={profiles.length ? t('profile.switch') : t('profile.createTitle')}
       />
 
+      <div className="container-main space-y-6 pb-10">
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,8 +138,7 @@ export default function ProfileSelector() {
               </button>
             </div>
             <div className="flex gap-2 border-t border-border/60 bg-bg-surface px-5 py-3">
-              <Input
-                type="password"
+              <PasswordInput
                 inputMode="numeric"
                 maxLength={4}
                 value={pins[profile.id] ?? ''}
@@ -198,7 +199,8 @@ export default function ProfileSelector() {
           </motion.div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   )
 }
 
@@ -212,8 +214,7 @@ function DeleteConfirm({
   const [pin, setPin] = useState('')
   return (
     <div className="mt-4 flex flex-col gap-3">
-      <Input
-        type="password"
+      <PasswordInput
         inputMode="numeric"
         maxLength={4}
         value={pin}

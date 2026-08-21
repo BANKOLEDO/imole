@@ -31,9 +31,8 @@ export default function AnonymousBoard() {
   const myRank = entries?.find((e) => e.profileId === currentProfile?.id)?.rank
 
   return (
-    <div className="container-main space-y-6 pb-10">
+    <>
       <PageHero
-        className="-mx-4 md:-mx-8"
         eyebrow={t('leaderboard.title')}
         title={t('leaderboard.subtitle')}
         actions={
@@ -46,6 +45,7 @@ export default function AnonymousBoard() {
         }
       />
 
+      <div className="container-main space-y-6 pb-10">
       {!entries ? (
         <div className="flex justify-center py-12">
           <Spinner />
@@ -53,7 +53,7 @@ export default function AnonymousBoard() {
       ) : entries.length === 0 ? (
         <div className="space-y-4 py-10 text-center">
           <p className="text-sm text-text-muted">{t('leaderboard.empty')}</p>
-          <Link to="/challenge">
+          <Link to="/app/challenge">
             <Button variant="orange">{t('leaderboard.emptyCta')}</Button>
           </Link>
         </div>
@@ -92,6 +92,7 @@ export default function AnonymousBoard() {
           ))}
         </ol>
       )}
-    </div>
+      </div>
+    </>
   )
 }

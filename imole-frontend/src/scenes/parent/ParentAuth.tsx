@@ -1,3 +1,4 @@
+import PasswordInput from '../../components/shared/PasswordInput'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Sun, Mail, Lock, UserRound } from 'lucide-react'
@@ -57,7 +58,7 @@ export default function ParentAuth() {
                   mode === m ? 'bg-bg-card text-accent shadow-sm' : 'text-text-muted'
                 }`}
               >
-                {m === 'login' ? t('school.login') : t('school.register')}
+                {m === 'login' ? t('parent.auth.login') : t('parent.auth.register')}
               </button>
             ))}
           </div>
@@ -87,9 +88,8 @@ export default function ParentAuth() {
 
           <label className="relative block">
             <Lock className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
-            <Input
-              type="password"
-              value={password}
+            <PasswordInput
+            value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               className="pl-10"
@@ -105,7 +105,7 @@ export default function ParentAuth() {
             disabled={!email || password.length < 6 || busy || (mode === 'register' && !name.trim())}
             onClick={submit}
           >
-            {busy ? t('common.loading') : mode === 'login' ? t('school.login') : t('school.register')}
+            {busy ? t('common.loading') : mode === 'login' ? t('parent.auth.login') : t('parent.auth.register')}
           </Button>
 
           <button

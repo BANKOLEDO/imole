@@ -1,6 +1,7 @@
+import PasswordInput from '../../components/shared/PasswordInput'
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Sparkles, Check, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Sparkles, Check, ArrowRight, ArrowLeft, Globe } from 'lucide-react'
 import Button from '../../components/shared/Button'
 import { Card, CardContent } from '../../components/shared/Card'
 import { Input } from '../../components/shared/Field'
@@ -8,12 +9,12 @@ import { LANGUAGES, useT, type LanguageCode } from '../../i18n/I18nContext'
 import { useApp, type Profile } from '../../context/AppContext'
 import { useToast } from '../../components/shared/Toast'
 
-const AVATAR_COLORS = ['#cdd7f5', '#a6ebf0', '#d8f37e', '#c9cdfc', '#ffd9ab', '#ffe4db']
+const AVATAR_COLORS = ['#cdd7f5', '#a6ebf0', '#ff8a00', '#00cede', '#7580ef', '#ffd9ab']
 
 type Props = { onDone?: (profile: Profile) => void; onCancel?: () => void }
 
 export default function Onboarding({ onDone, onCancel }: Props) {
-  const { t } = useT()
+  const { t, setLang } = useT()
   const toast = useToast()
   const { createProfile } = useApp()
   const [step, setStep] = useState(0)
@@ -25,10 +26,16 @@ export default function Onboarding({ onDone, onCancel }: Props) {
   const [busy, setBusy] = useState(false)
 
   const canNext =
-    (step === 0 && name.trim().length >= 2) ||
-    (step === 1 && Number(age) >= 5 && Number(age) <= 18) ||
-    step === 2 ||
-    (step === 3 && pin.length === 4)
+    (step === 0 && !!language) ||
+    (step === 1 && name.trim().length >= 2) ||
+    (step === 2 && Number(age) >= 5 && Number(age) <= 18) ||
+    step === 3 ||
+    (step === 4 && pin.length === 4)
+
+  const chooseLanguage = (code: LanguageCode) => {
+    setLanguage(code)
+    setLang(code)
+  }
 
   const finish = async () => {
     setBusy(true)
@@ -60,7 +67,7 @@ export default function Onboarding({ onDone, onCancel }: Props) {
           </button>
         )}
         <div className="flex flex-1 gap-1.5">
-          {[0, 1, 2, 3].map((i) => (
+          {[0, 1, 2, 3, 4].map((i) => (
             <div
               key={i}
               className={`h-1.5 flex-1 rounded-pill transition-colors ${i <= step ? 'bg-periwinkle' : 'bg-border'}`}
@@ -72,6 +79,38 @@ export default function Onboarding({ onDone, onCancel }: Props) {
       <Card>
         <CardContent className="flex flex-col gap-5 py-6">
           {step === 0 && (
+            <>
+              <div className="flex items-center gap-2">
+                <Globe className="size-5 text-accent" />
+                <h2 className="font-heading text-xl font-bold text-text-primary">
+                  {t('profile.createLanguage')}
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {LANGUAGES.map((option) => (
+                  <button
+                    key={option.code}
+                    onClick={() => chooseLanguage(option.code)}
+                    className={`relative cursor-pointer rounded-xl border px-3 py-3 text-sm font-semibold transition-all ${
+                      language === option.code
+                        ? 'border-accent bg-accent-soft text-accent'
+                        : 'border-border text-text-secondary hover:border-accent/40'
+                    }`}
+                  >
+                    {option.label}
+                    {language === option.code && (
+                      <Check className="absolute right-2 top-2 size-3.5" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              <p className="-mt-2 text-xs text-text-muted">
+                Choose the language Imole speaks to you.
+              </p>
+            </>
+          )}
+
+          {step === 1 && (
             <>
               <h2 className="font-heading text-xl font-bold text-text-primary">
                 {t('profile.createName')}
@@ -86,7 +125,7 @@ export default function Onboarding({ onDone, onCancel }: Props) {
             </>
           )}
 
-          {step === 1 && (
+          {step === 2 && (
             <>
               <h2 className="font-heading text-xl font-bold text-text-primary">
                 {t('profile.createAge')}
@@ -103,33 +142,12 @@ export default function Onboarding({ onDone, onCancel }: Props) {
             </>
           )}
 
-          {step === 2 && (
+          {step === 3 && (
             <>
-              <h2 className="font-heading text-xl font-bold text-text-primary">
-                {t('profile.createLanguage')}
-              </h2>
-              <div className="grid grid-cols-2 gap-2">
-                {LANGUAGES.map((option) => (
-                  <button
-                    key={option.code}
-                    onClick={() => setLanguage(option.code)}
-                    className={`relative cursor-pointer rounded-xl border px-3 py-3 text-sm font-semibold transition-all ${
-                      language === option.code
-                        ? 'border-accent bg-accent-soft text-accent'
-                        : 'border-border text-text-secondary hover:border-accent/40'
-                    }`}
-                  >
-                    {option.label}
-                    {language === option.code && (
-                      <Check className="absolute right-2 top-2 size-3.5" />
-                    )}
-                  </button>
-                ))}
-              </div>
-              <p className="-mt-2 mb-1 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+              <p className="-mt-1 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
                 {t('profile.chooseAvatar')}
               </p>
-              <div className="flex gap-2.5">
+              <div className="flex flex-wrap gap-2.5">
                 {AVATAR_COLORS.map((color) => (
                   <button
                     key={color}
@@ -147,13 +165,13 @@ export default function Onboarding({ onDone, onCancel }: Props) {
             </>
           )}
 
-          {step === 3 && (
+          {step === 4 && (
             <>
               <h2 className="font-heading text-xl font-bold text-text-primary">
                 {t('profile.pin')}
               </h2>
-              <Input
-                type="password"
+              <PasswordInput
+
                 inputMode="numeric"
                 value={pin}
                 onChange={(e) => setPin(e.target.value.replace(/\D/g, '').slice(0, 4))}
@@ -167,9 +185,15 @@ export default function Onboarding({ onDone, onCancel }: Props) {
           <Button
             variant="orange"
             disabled={!canNext || busy}
-            onClick={() => (step < 3 ? setStep(step + 1) : finish())}
+            onClick={() =>
+              step === 0 && !language
+                ? undefined
+                : step < 4
+                  ? setStep(step + 1)
+                  : finish()
+            }
           >
-            {step < 3 ? (
+            {step < 4 ? (
               <>
                 {t('common.confirm')}
                 <ArrowRight className="size-4" />
@@ -190,7 +214,7 @@ export default function Onboarding({ onDone, onCancel }: Props) {
         animate={{ opacity: 1 }}
         className="text-center text-xs text-text-muted"
       >
-        {step + 1} / 4
+        {step + 1} / 5
       </motion.p>
     </div>
   )
