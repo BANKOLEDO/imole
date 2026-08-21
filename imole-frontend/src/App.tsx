@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import StarField from './components/StarField'
 import LandingScene from './scenes/LandingScene'
 import ChildLayout from './layouts/ChildLayout'
@@ -13,6 +13,12 @@ import ParentAuth from './scenes/parent/ParentAuth'
 import ParentDashboard from './scenes/parent/ParentDashboard'
 import ParentReports from './scenes/parent/ParentReports'
 import ParentSettings from './scenes/parent/ParentSettings'
+import { useApp } from './context/AppContext'
+
+function RootRoute() {
+  const { currentProfile } = useApp()
+  return currentProfile ? <Navigate to="/app" replace /> : <LandingScene />
+}
 
 export default function App() {
   return (
@@ -20,7 +26,7 @@ export default function App() {
       <StarField />
       <div className="min-h-screen bg-bg-base">
         <Routes>
-          <Route path="/" element={<LandingScene />} />
+          <Route path="/" element={<RootRoute />} />
           <Route element={<ChildLayout />}>
             <Route path="/app" element={<ChildDashboard />} />
             <Route path="/app/challenge" element={<TodayChallenge />} />
