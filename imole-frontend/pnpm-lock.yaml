@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      lottie-react:
+        specifier: ^2.4.2
+        version: 2.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       lucide-react:
         specifier: ^1.33.0
         version: 1.33.0(react@19.2.8)
@@ -1973,6 +1976,15 @@ packages:
 
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+
+  lottie-react@2.4.2:
+    resolution: {integrity: sha512-YkEEKN4E2Y2cFpPEwcvAXTAiRGy/P+0mJKYp9aDP1+r42xZgeXTZCf6No1csWRGmh4YQc3kbYtTq/b4c3IRCYg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  lottie-web@5.13.0:
+    resolution: {integrity: sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==}
 
   lru-cache@11.5.2:
     resolution: {integrity: sha512-4pfM1Ff0x50o0tQwb5ucw/RzNyD0/YJME6IVcStalZuMWxdt3sR3huStTtxz4PUmvZfRguvDejasvQ2kifR11g==}
@@ -4551,6 +4563,14 @@ snapshots:
       lightningcss-win32-x64-msvc: 1.33.0
 
   lodash.debounce@4.0.8: {}
+
+  lottie-react@2.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+    dependencies:
+      lottie-web: 5.13.0
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+
+  lottie-web@5.13.0: {}
 
   lru-cache@11.5.2: {}
 
