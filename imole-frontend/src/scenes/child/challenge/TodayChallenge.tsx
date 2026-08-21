@@ -84,9 +84,16 @@ export default function TodayChallenge() {
   return (
     <>
       <PageHero
-        eyebrow={t('challenge.title')}
-        title={t(`skill.${challenge.skill}.title`)}
-        subtitle={challenge.description}
+        className="-mx-4 md:-mx-8"
+        wave="#fff4e6"
+        eyebrow={
+          <span className="inline-flex items-center gap-1.5">
+            <Zap className="size-3" />
+            {t('challenge.title')}
+          </span>
+        }
+        title={t('challenge.title')}
+        subtitle={t(`skill.${challenge.skill}.title`)}
         actions={
           <Badge tone="streak">
             <Zap className="mr-1 size-3" />

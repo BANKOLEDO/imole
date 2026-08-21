@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { SendHorizonal, Plus, Trash2, Volume2, Square, MessageCircleHeart } from 'lucide-react'
+import { SendHorizonal, Plus, Trash2, Volume2, Square, MessageCircleHeart, MessagesSquare } from 'lucide-react'
 import Button from '../../components/shared/Button'
+import { Card, CardContent } from '../../components/shared/Card'
 import { Spinner } from '../../components/shared/Feedback'
 import PageHero from '../../components/shared/PageHero'
 import { api, audioApi } from '../../lib/api'
@@ -10,6 +11,7 @@ import { useApp } from '../../context/AppContext'
 import { useT } from '../../i18n/I18nContext'
 
 type Msg = { role: 'user' | 'assistant'; content: string }
+const suggestedKeys = ['ask.suggested.0', 'ask.suggested.1', 'ask.suggested.2', 'ask.suggested.3']
 
 export default function AskImole() {
   const { t, lang } = useT()
@@ -51,8 +53,8 @@ export default function AskImole() {
     )
   }
 
-  const send = async () => {
-    const text = draft.trim()
+  const send = async (suggested?: string) => {
+    const text = (suggested ?? draft).trim()
     if (!text || busy) return
     setDraft('')
     setMessages((prev) => [...prev, { role: 'user', content: text }])
@@ -107,14 +109,56 @@ export default function AskImole() {
 
   return (
     <>
-      <PageHero className="mb-4" eyebrow={t('nav.ask')} title={currentProfile.name} subtitle={t('ask.subtitle')} />
+      <PageHero className="-mx-4 md:-mx-8" eyebrow={t('nav.ask')} title={t('ask.title')} subtitle={t('ask.input')} />
 
-      <div className="container-main flex h-[calc(100dvh-4rem)] flex-col pb-4">
-      <div className="flex-1 space-y-3 overflow-y-auto pr-1">
+      <div className="container-main grid gap-4 pb-10 pt-8 lg:grid-cols-[220px_1fr]">
+      <Card className="h-fit">
+        <CardContent className="flex flex-col gap-3 p-3">
+          <Button variant="orange" className="w-full justify-start" onClick={() => setMessages([])}>
+            <Plus className="size-4" />
+            {t('ask.newChat')}
+          </Button>
+          <div className="border-t border-border/60 pt-3">
+            <p className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-widest text-text-muted">
+              {t('ask.history')}
+            </p>
+            <div className="flex items-center gap-2 rounded-xl bg-accent-soft/40 px-2.5 py-2 text-xs font-semibold text-accent">
+              <MessagesSquare className="size-3.5" />
+              <span className="truncate">{t('ask.newChatHint')}</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="flex min-h-[calc(100dvh-12rem)] flex-col">
+      <CardContent className="flex flex-1 flex-col p-0">
+      <div className="flex items-center gap-3 border-b border-border/60 bg-bg-surface px-5 py-3.5">
+        <div className="flex size-9 items-center justify-center rounded-full bg-accent text-white">
+          <MessageCircleHeart className="size-4" />
+        </div>
+        <div>
+          <p className="font-heading text-sm font-bold text-text-primary">Imole</p>
+          <p className="text-[11px] text-text-muted">{t('ask.subtitle')}</p>
+        </div>
+      </div>
+      <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
         {messages.length === 0 && !busy && (
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border px-6 py-10 text-center">
+          <div className="flex flex-col gap-3 py-3">
             <MessageCircleHeart className="size-9 text-periwinkle" />
-            <p className="max-w-xs text-sm text-text-muted">{t('ask.subtitle')}</p>
+            <p className="text-sm font-semibold text-text-primary">{t('ask.newChatHint')}</p>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {suggestedKeys.map((key, i) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => void send(t(key))}
+                  className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-bg-card px-4 py-3 text-left text-sm text-text-primary transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
+                >
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-xs font-bold text-accent">{i + 1}</span>
+                  <span>{t(key)}</span>
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
@@ -172,7 +216,7 @@ export default function AskImole() {
           e.preventDefault()
           void send()
         }}
-        className="mt-2 flex items-end gap-2"
+        className="border-t border-border/60 p-4 flex items-end gap-2"
       >
         <textarea
           value={draft}
@@ -191,6 +235,8 @@ export default function AskImole() {
           <SendHorizonal className="size-4" />
         </Button>
       </form>
+      </CardContent>
+      </Card>
       </div>
     </>
   )

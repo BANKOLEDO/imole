@@ -15,6 +15,8 @@ const schoolRoutes = require('./routes/school');
 const audioRoutes = require('./routes/audio');
 const memoryRoutes = require('./routes/memory');
 const leaderboardRoutes = require('./routes/leaderboard');
+const aiRoutes = require('./routes/ai');
+const docsRoutes = require('./routes/docs');
 const { initSchema } = require('./db');
 
 const app = express();
@@ -37,6 +39,8 @@ const rateLimiter = rateLimit({
 app.use(rateLimiter);
 
 app.get('/health', (req, res) => res.json({ ok: true }));
+app.use('/docs', docsRoutes);
+app.use('/ai', aiRoutes);
 
 app.use('/auth', authRoutes);
 app.use('/challenge', challengeRoutes);

@@ -95,8 +95,15 @@ router.get('/sessions/:id/messages', async (req, res) => {
 
 router.delete('/sessions/:id', async (req, res) => {
   try {
+    const { profileId } = req.query
+    if (!profileId) return res.status(400).json({ error: 'profileId is required' })
+    const session = await pool.query(
+      'SELECT id FROM chat_sessions WHERE id = $1 AND profile_id = $2',
+      [req.params.id, profileId],
+    )
+    if (!session.rows.length) return res.status(404).json({ error: 'Session not found' })
     await pool.query('DELETE FROM chat_messages WHERE session_id = $1', [req.params.id])
-    await pool.query('DELETE FROM chat_sessions WHERE id = $1', [req.params.id])
+    await pool.query('DELETE FROM chat_sessions WHERE id = $1 AND profile_id = $2', [req.params.id, profileId])
     res.json({ ok: true })
   } catch (err) {
     console.error(err);

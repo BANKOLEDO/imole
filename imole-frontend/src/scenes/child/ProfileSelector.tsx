@@ -21,7 +21,7 @@ export default function ProfileSelector() {
 
   if (currentProfile) {
     return (
-      <div className="container-main space-y-5 pb-10">
+      <div className="mx-auto w-full max-w-2xl space-y-5 px-4 pb-10">
         <PageHero
           className="-mx-4 md:-mx-8"
           eyebrow={t('profile.title')}
@@ -112,7 +112,7 @@ export default function ProfileSelector() {
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col gap-3"
+        className="grid gap-3 md:grid-cols-2"
       >
         {profiles.map((profile) => (
           <Card key={profile.id} className="overflow-hidden">
@@ -162,7 +162,7 @@ export default function ProfileSelector() {
         ))}
       </motion.section>
 
-      <Button variant="orange" className="w-full" onClick={() => setCreating(true)}>
+      <Button variant="orange" className="w-full md:col-span-2" onClick={() => setCreating(true)}>
         <Plus className="size-4" />
         {t('profile.createTitle')}
       </Button>

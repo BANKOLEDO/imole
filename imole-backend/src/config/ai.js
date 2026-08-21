@@ -125,20 +125,24 @@ async function withFallback(endpoint, payload, groqTask, mockTask) {
   const cached = cacheGet(key)
   if (cached) return cached
 
-  try {
-    const value = await groqTask()
-    cacheSet(key, value)
-    return value
-  } catch (err) {
-    console.log(`[ai] groq failed: ${err.message} — trying gemini.`)
+  if (process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY) {
+    try {
+      const value = await groqTask()
+      cacheSet(key, value)
+      return value
+    } catch (err) {
+      console.log(`[ai] providers failed: ${err.message} — trying external or mock.`)
+    }
   }
 
-  try {
-    const value = await callExternal(endpoint, payload)
-    cacheSet(key, value)
-    return value
-  } catch (err) {
-    console.log(`[ai] external failed: ${err.message} — using mock.`)
+  if (process.env.AI_SERVICE_URL) {
+    try {
+      const value = await callExternal(endpoint, payload)
+      cacheSet(key, value)
+      return value
+    } catch (err) {
+      console.log(`[ai] external failed: ${err.message} — using mock.`)
+    }
   }
 
   const value = mockTask()

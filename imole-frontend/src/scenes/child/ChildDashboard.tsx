@@ -25,6 +25,8 @@ import { useApp } from '../../context/AppContext'
 import { useT } from '../../i18n/I18nContext'
 import StreakTracker from './StreakTracker'
 import { SparkleDots } from '../../components/doodles/Doodles'
+import { lottie } from '../../lib/animations'
+import { LottieView } from '../../components/shared/LottieView'
 
 const SKILL_ICONS = {
   'mental-math': Brain,
@@ -42,6 +44,14 @@ const SKILL_BARS: Record<string, string> = {
   'financial-literacy': 'from-success to-cyan',
   'creative-problem-solving': 'from-periwinkle to-cyan',
   'emotional-intelligence': 'from-streak to-cyan',
+}
+
+const SKILL_COLORS: Record<string, string> = {
+  'mental-math': 'text-accent bg-accent/10',
+  'persuasive-speaking': 'text-streak bg-streak/10',
+  'financial-literacy': 'text-success bg-success/10',
+  'creative-problem-solving': 'text-periwinkle bg-periwinkle/10',
+  'emotional-intelligence': 'text-cyan bg-cyan/10',
 }
 
 export default function ChildDashboard() {
@@ -90,8 +100,9 @@ export default function ChildDashboard() {
     <div className="relative flex flex-col gap-8 px-4 pb-10 md:px-8">
       <PageHero
         className="-mx-4 md:-mx-8"
+        wave="#fff4e6"
         eyebrow={t('home.welcome')}
-        title={`${currentProfile.name}`}
+        title={`${currentProfile.name} 👋`}
         subtitle={quote}
         actions={
           <Button variant="orange" size="lg" onClick={() => navigate('/app/challenge')}>
@@ -103,16 +114,19 @@ export default function ChildDashboard() {
         decoration={
           <>
             <SparkleDots className="absolute inset-x-0 bottom-0 h-14 w-full opacity-70" />
-            <div className="relative flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur">
-              <span className="text-2xl">🔥</span>
-              <div className="text-left">
-                <p className="font-heading text-2xl font-black leading-none text-white">
-                  {streak.current}
-                </p>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-white/55">
-                  {t('streak.day')}
-                </p>
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-end">
+              <div className="relative flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur">
+                <span className="text-2xl">🔥</span>
+                <div className="text-left">
+                  <p className="font-heading text-2xl font-black leading-none text-white">
+                    {streak.current}
+                  </p>
+                  <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-white/55">
+                    {t('streak.day')}
+                  </p>
+                </div>
               </div>
+              <LottieView src={lottie.lightbulb} className="hidden w-36 drop-shadow-[0_0_40px_rgba(0,206,222,0.35)] md:block" />
             </div>
           </>
         }
@@ -164,9 +178,9 @@ export default function ChildDashboard() {
       >
         <SectionHeader title={t('home.yourStats')} tone="navy" />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <StatCard icon={<Trophy className="size-4" />} value={done} label={t('home.challengesDone')} tone="orange" soft />
-          <StatCard icon={<Award className="size-4" />} value={avg ?? '—'} label={t('home.avgScore')} tone="cyan" soft />
-          <StatCard icon={<Users className="size-4" />} value={weeklyActive} label={t('home.weeklyActive')} tone="peach" soft />
+          <StatCard icon={<Trophy className="size-4" />} value={done} label={t('home.challengesDone')} tone="orange" />
+          <StatCard icon={<Award className="size-4" />} value={avg ?? '—'} label={t('home.avgScore')} tone="cyan" />
+          <StatCard icon={<Users className="size-4" />} value={weeklyActive} label={t('home.weeklyActive')} tone="peach" />
         </div>
       </motion.section>
 
@@ -197,7 +211,7 @@ export default function ChildDashboard() {
               return (
                 <Card key={skill} className="transition-colors hover:border-accent/30">
                   <CardContent className="flex items-center gap-4 py-4">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+                    <div className={`flex size-11 shrink-0 items-center justify-center rounded-2xl ${SKILL_COLORS[skill] ?? 'bg-accent/10 text-accent'}`}>
                       <Icon className="size-5" />
                     </div>
                     <div className="min-w-0 flex-1">
